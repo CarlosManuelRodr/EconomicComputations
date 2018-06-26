@@ -24,6 +24,13 @@ TrendReturns::usage = "Calculate log returns using the elemental trends as start
 DatedTrendReturns::usage = "TrendReturns with date info";
 VelocityTrendReturns::usage = "Calculate the velocity of change of each elemental trend";
 DatedVelocityTrendReturns::usage = "VelocityTrendReturns with date info";
+MultiscaleReturns::usage = "Calculate the returns using various time lags";
+UncorrelatedMultiscaleReturns::usage = "Calculate the uncorrelated returns using various time lags";
+DetrendedReturns::usage = "Returns with mean substracted";
+DetendedMultiscaleReturns::usage = "Multiscale returns with mean substracted";
+
+PricesFromSimpleReturns::usage = "Get prices from single returns";
+PricesFromReturns::usage = "Get prices from logarithmic returns";
 
 
 (* ::Text:: *)
@@ -97,7 +104,7 @@ Begin["`Private`"]
 Needs["AdvancedMapping`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Returns*)
 
 
@@ -139,6 +146,32 @@ DatedVelocityTrendReturns[datedprices_] := Block[{tr},
 	tr = DatedTrendReturns[datedprices];
 	tr[[All, 2]] = tr[[All, 2]] / TrendDuration[datedprices[[All, 2]]];
 	Return[tr];
+];
+
+MultiscaleReturns[prices_, maxLag_] := Flatten[Table[Thread[{\[CapitalDelta]t, Returns[prices, \[CapitalDelta]t]}], {\[CapitalDelta]t, 1, maxLag}], 1];
+
+UncorrelatedMultiscaleReturns[prices_, maxLag_] := Flatten[Table[Thread[{\[CapitalDelta]t, UncorrelatedReturns[prices, \[CapitalDelta]t]}], {\[CapitalDelta]t, 1, maxLag}], 1]
+
+DetrendedReturns[x_, lag_] := Block[{returns},
+	returns = Returns[x, lag];
+	returns -= Mean[returns];
+	Return[returns];
+];
+
+DetendedMultiscaleReturns[prices_, maxLag_, skip_:5] := Flatten[Table[Thread[{\[CapitalDelta]t, DetrendedReturns[prices, \[CapitalDelta]t]}], {\[CapitalDelta]t, 1, maxLag, skip}], 1]
+
+
+(* ::Text:: *)
+(*Inverse functions*)
+
+
+PricesFromSimpleReturns[simpleReturns_] := Block[{acc},
+	acc = Accumulate[simpleReturns];
+	acc - Min[acc]
+];
+PricesFromReturns[returns_] := Block[{acc},
+	acc = Accumulate[returns];
+	Map[Exp[#] - 1&, acc - Min[acc]]
 ];
 
 
@@ -236,7 +269,7 @@ EventProbability[returns_, event_] := Module[{selection, \[Gamma], nonExtremeRet
 ]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Symmetry analysis*)
 
 
@@ -258,13 +291,14 @@ Install[exeFile];
 qs = {7.803,5.768,4.909,3.798,2.983,2.200,1.768,1.258,0.659};
 \[Alpha]q = Transpose[{\[Alpha]s, qs}];
 upp = Interpolation[\[Alpha]q];
-UpperPercentagePoint[p_]:= upp[p];
+UpperPercentagePoint[p_] := upp[p];
 
-NestedFirst[list_]:=Nest[First, list, Depth[list]-1];
-Tn[v_IntegerList, c_]:= Tn[N[v],c];
-Tn[v_IntegerList, c_Integer]:= Tn[N[v],N[c]];
-Tn[v_Real64List, c_Integer]:= Tn[v,N[c]];
-Tn[v_]:= Tn[v, 0.0];
+NestedFirst[list_] := Nest[First, list, Depth[list]-1];
+
+Tn[v_IntegerList, c_] := Tn[N[v], c];
+Tn[v_IntegerList, c_Integer] := Tn[N[v], N[c]];
+Tn[v_Real64List, c_Integer] := Tn[v, N[c]];
+Tn[v_] := Tn[v, 0.0];
 
 MeasureTn[returns_, CL_: 0.05, symmetryPoints_: 50] := Module[
 {standardError, c, cmin, cmax, \[CapitalDelta]c, test, cSymm, plausiblePoints, mean, 
@@ -492,7 +526,7 @@ DatasetBuilderDialog[] := Block[{selected},
 ];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Database management*)
 
 
@@ -525,11 +559,11 @@ DownwardTrendDuration[prices_] := Module[{splitted,negTrends},
 (*Kullback-Leiber Divergence*)
 
 
-HackLog[x_]:=If[x>0, Log[x], 0];
+HackLog[x_] := If[x>0, Log[x], 0];
 
 KullbackLeibler[data_, dist_] := Module[{empirical},
 	empirical = SmoothKernelDistribution[data];
-	Quiet[NIntegrate[PDF[empirical,x]*HackLog[PDF[empirical,x]/PDF[dist,x]],{x,-\[Infinity],\[Infinity]}, MaxRecursion->100]]
+	Quiet[NIntegrate[PDF[empirical, x]*HackLog[PDF[empirical, x]/PDF[dist, x]],{x, -\[Infinity], \[Infinity]}, MaxRecursion->100]]
 ];
 
 KullbackLeiblerInTime[returns_, window_, dist_:NormalDistribution[], skip_:1]:=Module[{standarized,part},
@@ -539,8 +573,8 @@ KullbackLeiblerInTime[returns_, window_, dist_:NormalDistribution[], skip_:1]:=M
 ];
 
 
-(* ::Section:: *)
-(*Trading strategies*)
+(* ::Section::Closed:: *)
+(*Trading strategies (experimental)*)
 
 
 (* ::Text:: *)
@@ -560,7 +594,7 @@ RootsInRange[{f1_, f2_}, {t_, tmin_, tmax_}, opts___] := Module[
 
 RootsInRange[f1_==f2_, {t_, tmin_, tmax_}, opts___] := RootsInRange[{f1, f2}, {t, tmin, tmax}, opts];
 
-Middle[l_List]:=Part[l, Floor[Length[l]/2]];
+Middle[l_List] := Part[l, Floor[Length[l]/2]];
 
 VariableMovingAverage[l_List, f_] := Module[{subLists, windows}, 
 	windows = Map[Ceiling[f[#]]&, l[[All, 1]]];
