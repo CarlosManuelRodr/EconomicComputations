@@ -61,7 +61,8 @@ EventProbability::usage = "Calculate event probability";
 UpperPercentagePoint::usage = "Calculate the upper percentage point in the Tn symmetry statistic";
 Tn::usage = "Calculate Tn";
 MeasureTn::usage = "Apply Tn symmetry test";
-MeasureHeightRatio::usage = "Measure height ratio of a bimodal distribution";
+MeasureHeightRatio::usage = "Measure height ratio of the peaks in a bimodal distribution";
+MeasureHeightDistance::usage = "Measure height distance of the peaks in a bimodal distribution";
 
 
 (* ::Text:: *)
@@ -104,7 +105,7 @@ Begin["`Private`"]
 Needs["AdvancedMapping`"]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Returns*)
 
 
@@ -337,6 +338,15 @@ MeasureHeightRatio[vtret_]:=Quiet[
 		m1 = First[FindMaximum[{PDF[dist, x], x>0},{x, 0.01}]];
 		m2 = First[FindMaximum[{PDF[dist, x], x<0},{x, -0.01}]];
 		Return[m1/m2];
+	]
+];
+
+MeasureHeightDistance[vtret_]:=Quiet[
+	Block[{dist, m1, m2},
+		dist = SmoothKernelDistribution[vtret];
+		m1 = First[FindMaximum[{PDF[dist, x], x>0},{x, 0.01}]];
+		m2 = First[FindMaximum[{PDF[dist, x], x<0},{x, -0.01}]];
+		Return[m1-m2];
 	]
 ];
 
