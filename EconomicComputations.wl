@@ -15,80 +15,208 @@ BeginPackage["EconomicComputations`"]
 (*Returns definitions*)
 
 
-Returns::usage = "Calculate log returns";
-DatedReturns::usage = "Calculate log returns with dates";
-SimpleReturns::usage = "Calculate returns";
-UncorrelatedReturns::usage = "Calculate uncorrelated log returns (delete returns with repeated prices)";
-TrendDuration::usage = "Calculate the duration of each elemental trend";
-TrendReturns::usage = "Calculate log returns using the elemental trends as start and end points";
-DatedTrendReturns::usage = "TrendReturns with date info";
-VelocityTrendReturns::usage = "Calculate the velocity of change of each elemental trend";
-DatedVelocityTrendReturns::usage = "VelocityTrendReturns with date info";
-MultiscaleReturns::usage = "Calculate the returns using various time lags";
-UncorrelatedMultiscaleReturns::usage = "Calculate the uncorrelated returns using various time lags";
-DetrendedReturns::usage = "Returns with mean substracted";
-DetendedMultiscaleReturns::usage = "Multiscale returns with mean substracted";
+Returns::usage = "\!\(\*
+StyleBox[\"Returns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"lag\",\nFontSlant->\"Italic\"]\): 1] calculates log returns using the selected lag.";
+DatedReturns::usage = "\!\(\*
+StyleBox[\"DatedReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"lag\",\nFontSlant->\"Italic\"]\): 1] calculates log returns with dates using the selected lag.";
+SimpleReturns::usage = "\!\(\*
+StyleBox[\"SimpleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"lag\",\nFontSlant->\"Italic\"]\): 1] calculates simple returns using the selected lag.";
+UncorrelatedReturns::usage = "\!\(\*
+StyleBox[\"UncorrelatedReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"lag\",\nFontSlant->\"Italic\"]\)] calculates uncorrelated log returns, that is, avoiding calculating returns with previously used prices.";
+TrendDuration::usage = "\!\(\*
+StyleBox[\"TrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] calculates the duration of each elemental trend.";
+TrendReturns::usage = "\!\(\*
+StyleBox[\"TrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] calculates log returns using the elemental trends as start and end-points.";
+DatedTrendReturns::usage = 
+"\!\(\*
+StyleBox[\"DatedTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"datedprices\",\nFontSlant->\"Italic\"]\)]
+\!\(\*
+StyleBox[\"DatedTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"dates\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)]
+calculates TrendReturns with date info.";
+VelocityTrendReturns::usage = "\!\(\*
+StyleBox[\"VelocityTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] calculates the velocity of change of each elemental trend.";
+DatedVelocityTrendReturns::usage = 
+"\!\(\*
+StyleBox[\"DatedVelocityTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"datedprices\",\nFontSlant->\"Italic\"]\)]
+\!\(\*
+StyleBox[\"DatedVelocityTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"dates\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)]
+calculates VelocityTrendReturns with date info.";
+MultiscaleReturns::usage = "\!\(\*
+StyleBox[\"MultiscaleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"maxLag\",\nFontSlant->\"Italic\"]\)] calculates the returns using various time lags.";
+UncorrelatedMultiscaleReturns::usage = "\!\(\*
+StyleBox[\"UncorrelatedMultiscaleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"maxLag\",\nFontSlant->\"Italic\"]\)] calculates the uncorrelated returns using various time lags.";
+DetrendedReturns::usage = "\!\(\*
+StyleBox[\"DetrendedReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"x\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"lag\",\nFontSlant->\"Italic\"]\)] calculates log returns with the mean substracted.";
+DetendedMultiscaleReturns::usage = "\!\(\*
+StyleBox[\"DetendedMultiscaleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"maxLag\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"skip\",\nFontSlant->\"Italic\"]\):1] calculates DetrendedReturns with mean substracted.";
 
-PricesFromSimpleReturns::usage = "Get prices from single returns";
-PricesFromReturns::usage = "Get prices from logarithmic returns";
+PricesFromSimpleReturns::usage = "\!\(\*
+StyleBox[\"PricesFromSimpleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"simpleReturns\",\nFontSlant->\"Italic\"]\)] return prices from single returns with lag 1.";
+PricesFromReturns::usage = "\!\(\*
+StyleBox[\"PricesFromReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"returns\",\nFontSlant->\"Italic\"]\)] return prices from logarithmic returns with lag 1.";
 
 
 (* ::Text:: *)
 (*Power law distribution selection*)
 
 
-PowerLawAndersonDarling::usage = "Calculate the value of the Anderson-Darling test assuming a power law distribution";
-LeftCutoff::usage = "Calculate the cutoff point where the distribution starts behaving power law-like";
-RightCutoff::usage = "Calculate the cutoff point where the distribution stops behaving power law-like. Points after this are considered extreme events.";
-CalculateCutoff::usage = "Automatically calculate the left cutoff point";
-SelectGaussianReturns::usage = "Return the gaussian part of a return distribution, removing the power law-like points.";
-SelectDatedGaussianReturns::usage = "Return the gaussian part of a return distribution, removing the power law-like points.";
+PowerLawAndersonDarling::usage = "\!\(\*
+StyleBox[\"PowerLawAndersonDarling\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"data\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"\[Gamma]\",\nFontSlant->\"Italic\"]\)] returns the p-value of the Anderson-Darling test assuming a power law distribution.";
+LeftCutoff::usage = "\!\(\*
+StyleBox[\"LeftCutoff\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"data\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"\[Gamma]min\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"\[Gamma]max\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"d\[Gamma]\",\nFontSlant->\"Italic\"]\)] calculates the cutoff point where the distribution starts behaving power law-like.";
+RightCutoff::usage = "\!\(\*
+StyleBox[\"RightCutoff\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"data\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"\[Gamma]left\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"\[Gamma]max\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"d\[Gamma]\",\nFontSlant->\"Italic\"]\)] calculates the cutoff point where the distribution stops behaving power law-like.
+Points with magnitude greater than this are considered extreme events.";
+CalculateCutoff::usage = "\!\(\*
+StyleBox[\"CalculateCutoff\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"absreturns\",\nFontSlant->\"Italic\"]\)] automatically calculates the left cutoff point.";
+SelectGaussianReturns::usage = "\!\(\*
+StyleBox[\"SelectGaussianReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"returns\",\nFontSlant->\"Italic\"]\)] returns the gaussian part of a return distribution, removing the power law-like points.";
+SelectDatedGaussianReturns::usage = "\!\(\*
+StyleBox[\"SelectDatedGaussianReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"datedreturns\",\nFontSlant->\"Italic\"]\)] returns the gaussian part of a return distribution, removing the power law-like points.";
 
 
 (* ::Text:: *)
 (*Extreme events analysis*)
 
 
-ExtremeEventThreshold::usage = "Calculate the return value threshold where extreme events begin";
-GetExtremeEventDates::usage = "Get the dates where extreme events happened";
-EventProbability::usage = "Calculate event probability";
+ExtremeEventThreshold::usage = "\!\(\*
+StyleBox[\"ExtremeEventThreshold\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"returns\",\nFontSlant->\"Italic\"]\)] calculates the return value threshold where extreme events begin.";
+GetExtremeEventDates::usage = "\!\(\*
+StyleBox[\"GetExtremeEventDates\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"datedReturns\",\nFontSlant->\"Italic\"]\)] get the dates where extreme events happened.";
+GetExtremeEventDateValues::usage = "\!\(\*
+StyleBox[\"GetExtremeEventDateValues\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"datedReturns\",\nFontSlant->\"Italic\"]\)] get the dates and probability of extreme events.";
+EventProbability::usage = "\!\(\*
+StyleBox[\"EventProbability\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"returns\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"event\",\nFontSlant->\"Italic\"]\)] calculate the probability of event with magnitude greater than \!\(\*
+StyleBox[\"event\",\nFontSlant->\"Italic\"]\) ocurring.";
+FindImportantDates::usage = "\!\(\*
+StyleBox[\"FindImportantDates\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"extremeDates\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"sameMarkets\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"window\",\nFontSlant->\"Italic\"]\):100] returns the most relevant extreme dates by clustering and comparing 
+with other markets. Useful for selecting algorithmically the dates of 
+important events.";
 
 
 (* ::Text:: *)
 (*Symmetry analysis*)
 
 
-UpperPercentagePoint::usage = "Calculate the upper percentage point in the Tn symmetry statistic";
-Tn::usage = "Calculate Tn";
-MeasureTn::usage = "Apply Tn symmetry test";
-MeasureHeightRatio::usage = "Measure height ratio of the peaks in a bimodal distribution";
-MeasureHeightDistance::usage = "Measure height distance of the peaks in a bimodal distribution";
+UpperPercentagePoint::usage = "\!\(\*
+StyleBox[\"UpperPercentagePoint\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"\[Alpha]\",\nFontSlant->\"Italic\"]\)] calculates the upper percentage point in the \!\(\*SubscriptBox[\(T\), \(n\)]\) symmetry statistic.";
+Tn::usage = "\!\(\*
+StyleBox[\"Tn\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"c\",\nFontSlant->\"Italic\"]\)] evaluates \!\(\*SubscriptBox[\(T\), \(n\)]\)(c)";
+MeasureTn::usage = "\!\(\*
+StyleBox[\"MeasureTn\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"returns\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"CL\",\nFontSlant->\"Italic\"]\):0.05, \!\(\*
+StyleBox[\"symmetryPoints\",\nFontSlant->\"Italic\"]\):50] applies the \!\(\*SubscriptBox[\(T\), \(n\)]\) symmetry test with a confidence level \!\(\*
+StyleBox[\"CL\",\nFontSlant->\"Italic\"]\) and resolution \!\(\*
+StyleBox[\"symmetryPoints\",\nFontSlant->\"Italic\"]\).";
+MeasureHeightRatio::usage = "\!\(\*
+StyleBox[\"MeasureHeightRatio\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"vtret\",\nFontSlant->\"Italic\"]\)] Measures the height ratio of the peaks in a bimodal distribution.";
+MeasureHeightDistance::usage = "\!\(\*
+StyleBox[\"MeasureHeightDistance\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"vtret\",\nFontSlant->\"Italic\"]\)] Measures the height distance of the peaks in a bimodal distribution.";
 
 
 (* ::Text:: *)
 (*Database building*)
 
 
-DatasetBuilderDialog::usage = "Launch dialog to create the database";
-AddToDatabase::usage = "Adds entry to the database using the selected function";
+DatasetBuilderDialog::usage = "\!\(\*
+StyleBox[\"DatasetBuilderDialog\",\nFontWeight->\"Bold\"]\)[] launchs a dialog to create a dataset that is compatible with this package.";
+AddToDataset::usage = "\!\(\*
+StyleBox[\"AddToDataset\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"dataset\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"newkey\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"f\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"argkeys\",\nFontSlant->\"Italic\"]\)] adds entry with key \!\(\*
+StyleBox[\"newkey\",\nFontSlant->\"Italic\"]\) to the dataset using the function f evaluated with the argument in \!\(\*
+StyleBox[\"argkeys\",\nFontSlant->\"Italic\"]\).";
 
 
 (* ::Text:: *)
 (*Trend duration analysis*)
 
 
-UpwardTrendDuration::usage = "Count the duration of positive elemental trends";
-DownwardTrendDuration::usage = "Count the duration of negative elemental trends";
+UpwardTrendDuration::usage = "\!\(\*
+StyleBox[\"UpwardTrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] counts the duration of positive elemental trends.";
+DownwardTrendDuration::usage = "\!\(\*
+StyleBox[\"DownwardTrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] counts the duration of negative elemental trends.";
 
 
 (* ::Text:: *)
 (*Kullback-Leibler*)
 
 
-KullbackLeibler::usage = "Calculate the Kullback-Leibler divergence on data assuming the distribution dist";
+KullbackLeibler::usage = "\!\(\*
+StyleBox[\"KullbackLeibler\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"data\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"dist\",\nFontSlant->\"Italic\"]\)] calculates the Kullback-Leibler divergence on \!\(\*
+StyleBox[\"data\",\nFontSlant->\"Italic\"]\) assuming the distribution \!\(\*
+StyleBox[\"dist\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\".\",\nFontSlant->\"Italic\"]\)";
 KullbackLeiblerInTime::usage = 
-"Calculate the time evolution of Kullback-Leibler divergence 
-on data assuming the distribution dist and using the window specified.";
+"\!\(\*
+StyleBox[\"KullbackLeiblerInTime\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"returns\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"window\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"dist\",\nFontSlant->\"Italic\"]\):NormalDistribution[], \!\(\*
+StyleBox[\"skip\",\nFontSlant->\"Italic\"]\):1] calculates the time evolution of Kullback-Leibler divergence 
+on data assuming the distribution \!\(\*
+StyleBox[\"dist\",\nFontSlant->\"Italic\"]\) and using the \!\(\*
+StyleBox[\"window\",\nFontSlant->\"Italic\"]\) specified.";
 
 
 (* ::Chapter:: *)
@@ -159,7 +287,7 @@ DetrendedReturns[x_, lag_] := Block[{returns},
 	Return[returns];
 ];
 
-DetendedMultiscaleReturns[prices_, maxLag_, skip_:5] := Flatten[Table[Thread[{\[CapitalDelta]t, DetrendedReturns[prices, \[CapitalDelta]t]}], {\[CapitalDelta]t, 1, maxLag, skip}], 1]
+DetendedMultiscaleReturns[prices_, maxLag_, skip_:1] := Flatten[Table[Thread[{\[CapitalDelta]t, DetrendedReturns[prices, \[CapitalDelta]t]}], {\[CapitalDelta]t, 1, maxLag, skip}], 1]
 
 
 (* ::Text:: *)
@@ -236,6 +364,10 @@ SelectDatedGaussianReturns[datedreturns_] := Block[{pos,neg,\[Gamma]pos,\[Gamma]
 (*Extreme events*)
 
 
+(* ::Text:: *)
+(*Extreme event detection using a power law cutoff.*)
+
+
 ExtremeEventThreshold[returns_] := Block[{\[CapitalDelta],\[Gamma]left, \[Gamma]right},
 	\[CapitalDelta] = (Max[returns] - Quantile[returns, 0.5])/1000;
 	\[Gamma]left = LeftCutoff[returns, 0.02, Max[returns], \[CapitalDelta]];
@@ -243,7 +375,7 @@ ExtremeEventThreshold[returns_] := Block[{\[CapitalDelta],\[Gamma]left, \[Gamma]
 	Return[\[Gamma]right];
 ];
 
-GetExtremeEventDates[datedReturns_] := Block[{pos, neg, \[Gamma], posDates, negDates},
+GetExtremeEventDateValues[datedReturns_] := Block[{pos, neg, \[Gamma], posDates, negDates},
 	pos = Select[datedReturns, Last[Positive[#]]&];
 	\[Gamma] = ExtremeEventThreshold[pos[[All,2]]];
 	posDates = Select[datedReturns, Last[#]>\[Gamma]&];
@@ -253,6 +385,7 @@ GetExtremeEventDates[datedReturns_] := Block[{pos, neg, \[Gamma], posDates, negD
 	negDates = Select[datedReturns, Last[-#] > \[Gamma] &];
 	Return[Join[posDates, negDates]];
 ];
+GetExtremeEventDates[datedReturns_] := Part[GetExtremeEventDateValues[datedReturns], All, 1];
 
 EventProbability[returns_, event_] := Module[{selection, \[Gamma], nonExtremeReturns, \[Lambda], fit, r, p},
 	If[Positive[event],
@@ -270,7 +403,45 @@ EventProbability[returns_, event_] := Module[{selection, \[Gamma], nonExtremeRet
 ]
 
 
-(* ::Section:: *)
+(* ::Subsubsection:: *)
+(*Functions to detect "important dates" by clustering*)
+
+
+ClusterDate[current_, dates_, window_]:=Block[{nearestDate, first, last, diff},
+	nearestDate = First[Nearest[dates, current]];
+	{first,last} = Sort[{current, nearestDate}];
+	diff = last-first;
+	If[diff < Quantity[window, "days"] ,
+		Return[first+diff/2],
+		Return[$Failed]
+	]
+];
+
+
+(* ::Text:: *)
+(*Test for cluster by folding with dates*)
+
+
+TryCluster[start_, dates_, window_] := FoldWhileList[ClusterDate[#1, #2, window]&, (#1 =!= $Failed)&, start, dates];
+FindDateClusters[extremeDates_, window_, minSize_:3] := Block[{clusterTests},
+	clusterTests = Map[TryCluster[#, Drop[extremeDates, 1], window]&, First[extremeDates]];
+	Select[clusterTests, Length[#] > minSize&]
+];
+
+
+(* ::Text:: *)
+(*This function return the most relevant extreme dates by clustering and comparing with other markets. Useful for selecting algorithmically the dates of important events.*)
+
+
+DateAverage[dates_] := DateObject[Mean[Map[AbsoluteTime,dates]],"Day"];
+FindImportantDates[extremeDates_List, sameMarkets_Integer, window_Integer:100] := Block[{dateClusters, importantDates},
+	dateClusters = FindDateClusters[extremeDates, window, sameMarkets];
+	importantDates = Map[DateAverage[DeleteCases[#, $Failed]]&, dateClusters];
+	Return[importantDates];
+];
+
+
+(* ::Section::Closed:: *)
 (*Symmetry analysis*)
 
 
@@ -285,46 +456,54 @@ If[$OperatingSystem == "Windows",
 	exeName = "TnStatisticMathLink";
 ];
 exeFile = FileNameJoin[{DirectoryName[$InputFileName], "TnSymmetryStatistic", "Mathematica", "bin", exeName}];
-Install[exeFile];
 
-(* Confidence level values *)
-\[Alpha]s = {0.001,0.005,0.01,0.025,0.05,0.1,0.15,0.25,0.5};
-qs = {7.803,5.768,4.909,3.798,2.983,2.200,1.768,1.258,0.659};
-\[Alpha]q = Transpose[{\[Alpha]s, qs}];
-upp = Interpolation[\[Alpha]q];
-UpperPercentagePoint[p_] := upp[p];
+If[FileExistsQ[exeFile],
+	Install[exeFile];
 
-NestedFirst[list_] := Nest[First, list, Depth[list]-1];
+	(* Confidence level values *)
+	\[Alpha]s = {0.001,0.005,0.01,0.025,0.05,0.1,0.15,0.25,0.5};
+	qs = {7.803,5.768,4.909,3.798,2.983,2.200,1.768,1.258,0.659};
+	\[Alpha]q = Transpose[{\[Alpha]s, qs}];
+	upp = Interpolation[\[Alpha]q];
+	UpperPercentagePoint[p_] := upp[p];
 
-Tn[v_IntegerList, c_] := Tn[N[v], c];
-Tn[v_IntegerList, c_Integer] := Tn[N[v], N[c]];
-Tn[v_Real64List, c_Integer] := Tn[v, N[c]];
-Tn[v_] := Tn[v, 0.0];
+	NestedFirst[list_] := Nest[First, list, Depth[list]-1];
 
-MeasureTn[returns_, CL_: 0.05, symmetryPoints_: 50] := Module[
-{standardError, c, cmin, cmax, \[CapitalDelta]c, test, cSymm, plausiblePoints, mean, 
-plausibleMin = Nothing, plausibleMax = Nothing, testResult},
-	
-	mean = Mean[returns];
-	standardError = StandardDeviation[returns] / Sqrt[Length[returns]];
-	cmin = mean - 3*standardError;
-	cmax = mean + 3*standardError;
-	\[CapitalDelta]c = (cmax-cmin)/symmetryPoints;
-	test = Table[{c, Tn[N[returns], c]}, {c, cmin, cmax, \[CapitalDelta]c}];
-	cSymm = NestedFirst[MinimalBy[test, Last]];
-	plausiblePoints = Select[test, Last[#] < UpperPercentagePoint[CL]&];
-	If[Length[plausiblePoints] > 0,
-		plausibleMin = NestedFirst[MinimalBy[plausiblePoints, First]];
-		plausibleMax = NestedFirst[MaximalBy[plausiblePoints, First]];
-	];
-	
-	testResult = <|
-	"TnValues"->test, "BestSymmetry"->cSymm, "MinimumC"->cmin, 
-	"MaximumC"->cmax, "PlausibleSymmMin"->plausibleMin, "PlausibleSymmMax"->plausibleMax,
-	"Mean"->mean
-	|>;
-	
-	Return[testResult];
+	Tn[v_IntegerList, c_] := Tn[N[v], c];
+	Tn[v_IntegerList, c_Integer] := Tn[N[v], N[c]];
+	Tn[v_Real64List, c_Integer] := Tn[v, N[c]];
+	Tn[v_] := Tn[v, 0.0];
+
+	MeasureTn[returns_, CL_: 0.05, symmetryPoints_: 50] := Module[
+	{standardError, c, cmin, cmax, \[CapitalDelta]c, test, cSymm, plausiblePoints, mean, 
+	plausibleMin = Nothing, plausibleMax = Nothing, testResult},
+		
+		mean = Mean[returns];
+		standardError = StandardDeviation[returns] / Sqrt[Length[returns]];
+		cmin = mean - 3*standardError;
+		cmax = mean + 3*standardError;
+		\[CapitalDelta]c = (cmax-cmin)/symmetryPoints;
+		test = Table[{c, Tn[N[returns], c]}, {c, cmin, cmax, \[CapitalDelta]c}];
+		cSymm = NestedFirst[MinimalBy[test, Last]];
+		plausiblePoints = Select[test, Last[#] < UpperPercentagePoint[CL]&];
+		If[Length[plausiblePoints] > 0,
+			plausibleMin = NestedFirst[MinimalBy[plausiblePoints, First]];
+			plausibleMax = NestedFirst[MaximalBy[plausiblePoints, First]];
+		];
+		
+		testResult = <|
+		"TnValues"->test, "BestSymmetry"->cSymm, "MinimumC"->cmin, 
+		"MaximumC"->cmax, "PlausibleSymmMin"->plausibleMin, "PlausibleSymmMax"->plausibleMax,
+		"Mean"->mean
+		|>;
+		
+		Return[testResult];
+	]
+	,
+	MessageDialog[
+	"In order to be able to use the Tn symmetry statistic functions, you need them to compile them manually.
+Please follow the instructions in the README file."
+	]
 ];
 
 
@@ -332,7 +511,7 @@ plausibleMin = Nothing, plausibleMax = Nothing, testResult},
 (*Measuring height ratio (bimodal distributions)*)
 
 
-MeasureHeightRatio[vtret_]:=Quiet[
+MeasureHeightRatio[vtret_] := Quiet[
 	Block[{dist, m1, m2},
 		dist = SmoothKernelDistribution[vtret];
 		m1 = First[FindMaximum[{PDF[dist, x], x>0},{x, 0.01}]];
@@ -540,8 +719,8 @@ DatasetBuilderDialog[] := Block[{selected},
 (*Database management*)
 
 
-SetAttributes[AddToDatabase, HoldFirst];
-AddToDatabase[database_, newkey_, f_, argkeys_]:=
+SetAttributes[AddToDataset, HoldFirst];
+AddToDataset[database_, newkey_, f_, argkeys_]:=
 If[!MemberQ[Keys[First[database]], newkey],
 	database = Map[Append[#, newkey->Apply[f, Map[#, argkeys]]]&, database],
 	
