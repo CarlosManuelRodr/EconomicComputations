@@ -182,6 +182,31 @@ StyleBox[\"f\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"argkeys\",\nFontSlant->\"Italic\"]\)] adds entry with key \!\(\*
 StyleBox[\"newkey\",\nFontSlant->\"Italic\"]\) to the dataset using the function f evaluated with the argument in \!\(\*
 StyleBox[\"argkeys\",\nFontSlant->\"Italic\"]\).";
+AddKeyToMarket::usage = "\!\(\*
+StyleBox[\"AddKeyToMarket\",\nFontWeight->\"Bold\"]\)\!\(\*
+StyleBox[\"[\",\nFontWeight->\"Plain\"]\)\!\(\*
+StyleBox[\"market\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\",\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"newkey\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"->\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"newvalue\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"]\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"adds\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"an\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"entry\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"to\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"the\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"dataset\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"item\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\".\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)";
 
 
 (* ::Text:: *)
@@ -546,7 +571,7 @@ DateFromYearPercentual[yearPercentual_] := Block[{year, daysEllapsed, date},
 ];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Dataset builder*)
 
 
@@ -725,6 +750,21 @@ If[!MemberQ[Keys[First[database]], newkey],
 	database = Map[Append[#, newkey->Apply[f, Map[#, argkeys]]]&, database],
 	
 	database = Map[ReplacePart[#, newkey->Apply[f, Map[#, argkeys]]]&, database]
+];
+
+SetAttributes[AddKeyToMarket, HoldFirst];
+AddKeyToMarket[market_, newkey_, f_, argkeys_]:=
+If[!MemberQ[Keys[market], newkey],
+	market = Append[market, newkey->Apply[f, Map[market, argkeys]]];
+	,
+	market = ReplacePart[market, newkey->Apply[f, Map[market, argkeys]]];
+];
+
+AddKeyToMarket[market_, newkey_->newvalue_]:=
+If[!MemberQ[Keys[market], newkey],
+	market = Append[market, newkey->newvalue];
+	,
+	market = ReplacePart[market, newkey->newvalue];
 ];
 
 
