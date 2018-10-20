@@ -208,6 +208,9 @@ StyleBox[\" \",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"item\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\".\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)";
 
+ExportMarket::usage = "ExportMarket[market, path:\"\"] Export every key in the market database.";
+ExportDatabase::usage = "ExportDatabase[database, path:\"\"] Export every market in the database.";
+
 
 (* ::Text:: *)
 (*Trend duration analysis*)
@@ -501,7 +504,7 @@ If[FileExistsQ[exeFile],
 
 	MeasureTn[returns_, CL_: 0.05, symmetryPoints_: 50] := Module[
 	{standardError, c, cmin, cmax, \[CapitalDelta]c, test, cSymm, plausiblePoints, mean, 
-	plausibleMin = Nothing, plausibleMax = Nothing, testResult},
+	plausibleMin = Nothing, plausibleMax = Nothing, testResult, tnc,zeroSymm},
 		
 		mean = Mean[returns];
 		standardError = StandardDeviation[returns] / Sqrt[Length[returns]];
@@ -510,16 +513,18 @@ If[FileExistsQ[exeFile],
 		\[CapitalDelta]c = (cmax-cmin)/symmetryPoints;
 		test = Table[{c, Tn[N[returns], c]}, {c, cmin, cmax, \[CapitalDelta]c}];
 		cSymm = NestedFirst[MinimalBy[test, Last]];
+		zeroSymm = Tn[N[returns], 0.0];
 		plausiblePoints = Select[test, Last[#] < UpperPercentagePoint[CL]&];
 		If[Length[plausiblePoints] > 0,
 			plausibleMin = NestedFirst[MinimalBy[plausiblePoints, First]];
 			plausibleMax = NestedFirst[MaximalBy[plausiblePoints, First]];
+			tnc = Last[First[MinimalBy[test, Last]]];
 		];
 		
 		testResult = <|
 		"TnValues"->test, "BestSymmetry"->cSymm, "MinimumC"->cmin, 
 		"MaximumC"->cmax, "PlausibleSymmMin"->plausibleMin, "PlausibleSymmMax"->plausibleMax,
-		"Mean"->mean
+		"Mean"->mean, "Tn(C)"->tnc, "Tn(0)"->zeroSymm
 		|>;
 		
 		Return[testResult];
@@ -572,7 +577,7 @@ DateFromYearPercentual[yearPercentual_] := Block[{year, daysEllapsed, date},
 
 
 (* ::Section:: *)
-(*Dataset builder*)
+(*Dataset management*)
 
 
 (* ::Subsection::Closed:: *)
@@ -766,6 +771,32 @@ If[!MemberQ[Keys[market], newkey],
 	,
 	market = ReplacePart[market, newkey->newvalue];
 ];
+
+
+(* ::Subsection:: *)
+(*Database exporting*)
+
+
+TestDated[l_/;Depth[l] == 5] := MemberQ[DeleteDuplicates[Map[Head, l[[All,1]]]], DateObject];
+TestDated[l_/;Depth[l] == 4] := MemberQ[DeleteDuplicates[Map[Head, l]], DateObject];
+
+FormatDatesExport[l_/;Depth[l] == 5] := If[TestDated[l], MapAt[DateString[#, "ISODate"]&, l, {All, 1}], l];
+FormatDatesExport[l_/;Depth[l] == 4] := If[TestDated[l], Map[DateString[#, "ISODate"]&, l], l];
+FormatDatesExport[l_/;Depth[l] < 4] := l;
+
+MarketKeyExportPath[path_, market_, key_, format_:"csv"] := FileNameJoin[{path, StringJoin[market["Name"], "_", key, format]}];
+
+ExportMarket[market_, databasePath_:"Database"] :=
+Map[
+	Export[
+		MarketKeyExportPath[FileNameJoin[{NotebookDirectory[],databasePath}],market,#],
+		FormatDatesExport[market[#]]
+	]&
+	,
+	Drop[Keys[market], 1]
+];
+
+ExportDatabase[database_, path_] := Map[ExportMarket[#, path]&, database];
 
 
 (* ::Section::Closed:: *)
