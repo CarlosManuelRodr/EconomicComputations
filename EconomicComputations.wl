@@ -34,6 +34,15 @@ StyleBox[\"lag\",\nFontSlant->\"Italic\"]\)] calculates uncorrelated log returns
 TrendDuration::usage = "\!\(\*
 StyleBox[\"TrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] calculates the duration of each elemental trend.";
+DatedTrendDuration::usage ="
+\!\(\*
+StyleBox[\"DatedTrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"datedprices\",\nFontSlant->\"Italic\"]\)]
+\!\(\*
+StyleBox[\"DatedTrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"dates\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)]
+calculates TrendDuration with date info.";
 TrendReturns::usage = "\!\(\*
 StyleBox[\"TrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] calculates log returns using the elemental trends as start and end-points.";
@@ -261,7 +270,7 @@ Begin["`Private`"]
 Needs["AdvancedMapping`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Returns*)
 
 
@@ -270,7 +279,18 @@ DatedReturns[dates_, prices_, lag_:1] := Transpose[{Drop[dates,-1], N[Log[Drop[p
 
 UncorrelatedReturns[prices_, lag_]:= Take[Returns[prices, lag], {1, -1, lag+1}];
 SimpleReturns[prices_, lag_:1]:= Drop[prices, lag]-Drop[prices, -lag];
+
 TrendDuration[prices_] := Map[Length, Split[Sign[Returns[prices]]]];
+DatedTrendDuration[dates_, prices_] := Block[{endpoints,trendDuration},
+	trendDuration = TrendDuration[prices];
+	endpoints = Map[First, TakeList[dates, Append[trendDuration, All]]];
+	Return[Transpose[{Drop[endpoints, -1], trendDuration}]];
+];
+DatedTrendDuration[datedprices_] := Block[{endpoints,trendDuration},
+	trendDuration = TrendDuration[datedprices[[All, 2]]];
+	endpoints = Map[First, TakeList[datedprices[[All, 1]], Append[trendDuration, All]]];
+	Return[Transpose[{Drop[endpoints, -1], trendDuration}]];
+];
 
 If[$VersionNumber < 11.2,
 	TakeList[list_,seqs_] := FoldPairList[TakeDrop, list, seqs];
