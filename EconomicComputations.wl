@@ -19,21 +19,38 @@ Returns::usage = "\!\(\*
 StyleBox[\"Returns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"lag\",\nFontSlant->\"Italic\"]\): 1] calculates log returns using the selected lag.";
+
 DatedReturns::usage = "\!\(\*
 StyleBox[\"DatedReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"lag\",\nFontSlant->\"Italic\"]\): 1] calculates log returns with dates using the selected lag.";
+
 SimpleReturns::usage = "\!\(\*
 StyleBox[\"SimpleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"lag\",\nFontSlant->\"Italic\"]\): 1] calculates simple returns using the selected lag.";
+
+DatedSimpleReturns::usage = "
+\!\(\*
+StyleBox[\"DatedSimpleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"datedprices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"lag\",\nFontSlant->\"Italic\"]\): 1]
+\!\(\*
+StyleBox[\"DatedSimpleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
+StyleBox[\"dates\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"lag\",\nFontSlant->\"Italic\"]\): 1]
+Calculates simple returns using the selected lag."
+
 UncorrelatedReturns::usage = "\!\(\*
 StyleBox[\"UncorrelatedReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"lag\",\nFontSlant->\"Italic\"]\)] calculates uncorrelated log returns, that is, avoiding calculating returns with previously used prices.";
+
 TrendDuration::usage = "\!\(\*
 StyleBox[\"TrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] calculates the duration of each elemental trend.";
+
 DatedTrendDuration::usage ="
 \!\(\*
 StyleBox[\"DatedTrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
@@ -43,9 +60,11 @@ StyleBox[\"DatedTrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"dates\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)]
 calculates TrendDuration with date info.";
+
 TrendReturns::usage = "\!\(\*
 StyleBox[\"TrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] calculates log returns using the elemental trends as start and end-points.";
+
 DatedTrendReturns::usage = 
 "\!\(\*
 StyleBox[\"DatedTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
@@ -55,9 +74,11 @@ StyleBox[\"DatedTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"dates\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)]
 calculates TrendReturns with date info.";
+
 VelocityTrendReturns::usage = "\!\(\*
 StyleBox[\"VelocityTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] calculates the velocity of change of each elemental trend.";
+
 DatedVelocityTrendReturns::usage = 
 "\!\(\*
 StyleBox[\"DatedVelocityTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
@@ -67,18 +88,22 @@ StyleBox[\"DatedVelocityTrendReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"dates\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)]
 calculates VelocityTrendReturns with date info.";
+
 MultiscaleReturns::usage = "\!\(\*
 StyleBox[\"MultiscaleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"maxLag\",\nFontSlant->\"Italic\"]\)] calculates the returns using various time lags.";
+
 UncorrelatedMultiscaleReturns::usage = "\!\(\*
 StyleBox[\"UncorrelatedMultiscaleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"maxLag\",\nFontSlant->\"Italic\"]\)] calculates the uncorrelated returns using various time lags.";
+
 DetrendedReturns::usage = "\!\(\*
 StyleBox[\"DetrendedReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"x\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"lag\",\nFontSlant->\"Italic\"]\)] calculates log returns with the mean substracted.";
+
 DetendedMultiscaleReturns::usage = "\!\(\*
 StyleBox[\"DetendedMultiscaleReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\), \!\(\*
@@ -101,12 +126,14 @@ PowerLawAndersonDarling::usage = "\!\(\*
 StyleBox[\"PowerLawAndersonDarling\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"data\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"\[Gamma]\",\nFontSlant->\"Italic\"]\)] returns the p-value of the Anderson-Darling test assuming a power law distribution.";
+
 LeftCutoff::usage = "\!\(\*
 StyleBox[\"LeftCutoff\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"data\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"\[Gamma]min\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"\[Gamma]max\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"d\[Gamma]\",\nFontSlant->\"Italic\"]\)] calculates the cutoff point where the distribution starts behaving power law-like.";
+
 RightCutoff::usage = "\!\(\*
 StyleBox[\"RightCutoff\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"data\",\nFontSlant->\"Italic\"]\), \!\(\*
@@ -114,12 +141,15 @@ StyleBox[\"\[Gamma]left\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"\[Gamma]max\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"d\[Gamma]\",\nFontSlant->\"Italic\"]\)] calculates the cutoff point where the distribution stops behaving power law-like.
 Points with magnitude greater than this are considered extreme events.";
+
 CalculateCutoff::usage = "\!\(\*
 StyleBox[\"CalculateCutoff\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"absreturns\",\nFontSlant->\"Italic\"]\)] automatically calculates the left cutoff point.";
+
 SelectGaussianReturns::usage = "\!\(\*
 StyleBox[\"SelectGaussianReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"returns\",\nFontSlant->\"Italic\"]\)] returns the gaussian part of a return distribution, removing the power law-like points.";
+
 SelectDatedGaussianReturns::usage = "\!\(\*
 StyleBox[\"SelectDatedGaussianReturns\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"datedreturns\",\nFontSlant->\"Italic\"]\)] returns the gaussian part of a return distribution, removing the power law-like points.";
@@ -132,17 +162,21 @@ StyleBox[\"datedreturns\",\nFontSlant->\"Italic\"]\)] returns the gaussian part 
 ExtremeEventThreshold::usage = "\!\(\*
 StyleBox[\"ExtremeEventThreshold\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"returns\",\nFontSlant->\"Italic\"]\)] calculates the return value threshold where extreme events begin.";
+
 GetExtremeEventDates::usage = "\!\(\*
 StyleBox[\"GetExtremeEventDates\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"datedReturns\",\nFontSlant->\"Italic\"]\)] get the dates where extreme events happened.";
+
 GetExtremeEventDateValues::usage = "\!\(\*
 StyleBox[\"GetExtremeEventDateValues\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"datedReturns\",\nFontSlant->\"Italic\"]\)] get the dates and probability of extreme events.";
+
 EventProbability::usage = "\!\(\*
 StyleBox[\"EventProbability\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"returns\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"event\",\nFontSlant->\"Italic\"]\)] calculate the probability of event with magnitude greater than \!\(\*
 StyleBox[\"event\",\nFontSlant->\"Italic\"]\) ocurring.";
+
 FindImportantDates::usage = "\!\(\*
 StyleBox[\"FindImportantDates\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"extremeDates\",\nFontSlant->\"Italic\"]\), \!\(\*
@@ -159,9 +193,11 @@ important events.";
 UpperPercentagePoint::usage = "\!\(\*
 StyleBox[\"UpperPercentagePoint\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"\[Alpha]\",\nFontSlant->\"Italic\"]\)] calculates the upper percentage point in the \!\(\*SubscriptBox[\(T\), \(n\)]\) symmetry statistic.";
+
 Tn::usage = "\!\(\*
 StyleBox[\"Tn\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"c\",\nFontSlant->\"Italic\"]\)] evaluates \!\(\*SubscriptBox[\(T\), \(n\)]\)(c)";
+
 MeasureTn::usage = "\!\(\*
 StyleBox[\"MeasureTn\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"returns\",\nFontSlant->\"Italic\"]\), \!\(\*
@@ -169,9 +205,11 @@ StyleBox[\"CL\",\nFontSlant->\"Italic\"]\):0.05, \!\(\*
 StyleBox[\"symmetryPoints\",\nFontSlant->\"Italic\"]\):50] applies the \!\(\*SubscriptBox[\(T\), \(n\)]\) symmetry test with a confidence level \!\(\*
 StyleBox[\"CL\",\nFontSlant->\"Italic\"]\) and resolution \!\(\*
 StyleBox[\"symmetryPoints\",\nFontSlant->\"Italic\"]\).";
+
 MeasureHeightRatio::usage = "\!\(\*
 StyleBox[\"MeasureHeightRatio\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"vtret\",\nFontSlant->\"Italic\"]\)] Measures the height ratio of the peaks in a bimodal distribution.";
+
 MeasureHeightDistance::usage = "\!\(\*
 StyleBox[\"MeasureHeightDistance\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"vtret\",\nFontSlant->\"Italic\"]\)] Measures the height distance of the peaks in a bimodal distribution.";
@@ -183,6 +221,7 @@ StyleBox[\"vtret\",\nFontSlant->\"Italic\"]\)] Measures the height distance of t
 
 DatasetBuilderDialog::usage = "\!\(\*
 StyleBox[\"DatasetBuilderDialog\",\nFontWeight->\"Bold\"]\)[] launchs a dialog to create a dataset that is compatible with this package.";
+
 AddToDataset::usage = "\!\(\*
 StyleBox[\"AddToDataset\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"dataset\",\nFontSlant->\"Italic\"]\), \!\(\*
@@ -191,6 +230,7 @@ StyleBox[\"f\",\nFontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"argkeys\",\nFontSlant->\"Italic\"]\)] adds entry with key \!\(\*
 StyleBox[\"newkey\",\nFontSlant->\"Italic\"]\) to the dataset using the function f evaluated with the argument in \!\(\*
 StyleBox[\"argkeys\",\nFontSlant->\"Italic\"]\).";
+
 AddKeyToMarket::usage = "\!\(\*
 StyleBox[\"AddKeyToMarket\",\nFontWeight->\"Bold\"]\)\!\(\*
 StyleBox[\"[\",\nFontWeight->\"Plain\"]\)\!\(\*
@@ -218,6 +258,7 @@ StyleBox[\"item\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\".\",\nFontWeight->\"Plain\",\nFontSlant->\"Italic\"]\)";
 
 ExportMarket::usage = "ExportMarket[market, path:\"\"] Export every key in the market database.";
+
 ExportDatabase::usage = "ExportDatabase[database, path:\"\"] Export every market in the database.";
 
 
@@ -228,6 +269,7 @@ ExportDatabase::usage = "ExportDatabase[database, path:\"\"] Export every market
 UpwardTrendDuration::usage = "\!\(\*
 StyleBox[\"UpwardTrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] counts the duration of positive elemental trends.";
+
 DownwardTrendDuration::usage = "\!\(\*
 StyleBox[\"DownwardTrendDuration\",\nFontWeight->\"Bold\"]\)[\!\(\*
 StyleBox[\"prices\",\nFontSlant->\"Italic\"]\)] counts the duration of negative elemental trends.";
@@ -244,6 +286,7 @@ StyleBox[\"dist\",\nFontSlant->\"Italic\"]\)] calculates the Kullback-Leibler di
 StyleBox[\"data\",\nFontSlant->\"Italic\"]\) assuming the distribution \!\(\*
 StyleBox[\"dist\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\".\",\nFontSlant->\"Italic\"]\)";
+
 KullbackLeiblerInTime::usage = 
 "\!\(\*
 StyleBox[\"KullbackLeiblerInTime\",\nFontWeight->\"Bold\"]\)[\!\(\*
@@ -275,10 +318,13 @@ Needs["AdvancedMapping`"]
 
 
 Returns[prices_, lag_:1]:= N[Log[Drop[prices,lag]]-Log[Drop[prices,-lag]]];
-DatedReturns[dates_, prices_, lag_:1] := Transpose[{Drop[dates,-1], N[Log[Drop[prices,lag]]-Log[Drop[prices,-lag]]]}];
+DatedReturns[dates_, prices_, lag_:1] := Transpose[{Drop[dates, -1], N[Log[Drop[prices, lag]] - Log[Drop[prices, -lag]]]}];
 
 UncorrelatedReturns[prices_, lag_]:= Take[Returns[prices, lag], {1, -1, lag+1}];
-SimpleReturns[prices_, lag_:1]:= Drop[prices, lag]-Drop[prices, -lag];
+
+SimpleReturns[prices_, lag_:1]:= Drop[prices, lag] - Drop[prices, -lag];
+DatedSimpleReturns[dates_, prices_, lag_:1] := Transpose[{Drop[dates, -1], N[Drop[prices, lag] - Drop[prices, -lag]]}];
+DatedSimpleReturns[datedprices_, lag_:1] := DatedSimpleReturns[datedprices[[All, 1]], datedprices[[All, 2]], lag];
 
 TrendDuration[prices_] := Map[Length, Split[Sign[Returns[prices]]]];
 DatedTrendDuration[dates_, prices_] := Block[{endpoints,trendDuration},
