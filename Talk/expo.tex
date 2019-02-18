@@ -9,7 +9,7 @@
 \usepackage{hyperref}
 \usepackage{movie15}
 \usepackage[style=verbose,backend=biber,citestyle=authoryear]{biblatex}
-\addbibresource{Referencias.bib}
+\addbibresource{expo.bib}
 
 %\usecolortheme[named=Green]{structure} 
 \usetheme{Frankfurt}
@@ -257,10 +257,10 @@ Simulation of 100 normally distributed numbers. The weight transformation is app
 	\begin{itemize}
 	\item We can test for $c$ in an interval $[C_{min},C_{max}]$, for example
 	  \begin{figure}
-        \includegraphics[scale=0.33]{img/new/simetria_retornos_simples_DJIA}
+        \includegraphics[scale=0.3]{img4/SymmetryPlots/simetria_TReturns_DJIA}
         \caption{$T_n$ symmetry test evaluated on the returns of the DJIA index.}
   \end{figure}
-	\item We can affirm with 95 \% certainty that the distribution is symmetrical in a interval between 0.0003 and 0.0006.
+	\item We can affirm with 95 \% certainty that the distribution is symmetrical in a interval between 0.0002 and 0.001.
 	\end{itemize}
 
 \end{frame}
@@ -285,13 +285,32 @@ Simulation of 100 normally distributed numbers. The weight transformation is app
   \item Multiscale return definition. Given a financial time series $P_{1},\ldots,P_{n}$, we define an ``uninterrupted trend'' of duration  $k$, a succession of $k+1$ consecutive values of the given time series where each value is greater than the preceding one.
   \item We define their corresponding trend return as:
 	\begin{equation}
-		R_m^k := \log(P_{m+k}) - \log(P_{m})  
+		TRet_m^k := \log(P_{m+k}) - \log(P_{m})  
 	\end{equation}
 Where $m$ indexes the different trends and $k$ indicates the duration in days of $m$-Th trend.
   \begin{figure}
         \includegraphics[scale=0.33]{img/TrendLines.eps}
   \end{figure}
   \end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Trend returns distribution}
+	Analogously we can define the \textit{trend velocity returns} as the rate in which the trend returns change.
+	\begin{equation}
+		TVRet_m^k := \frac{\log(P_{m+k}) - \log(P_{m})}{k}  
+	\end{equation}
+  	  \begin{figure}[h!]
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.3]{img4/tret_dist}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.3]{img4/tvret_dist}
+		\end{subfigure}%
+	  \end{figure}
 \end{frame}
 
 %-----------------------------------------------------------------------------
@@ -335,45 +354,25 @@ Describes a procedure to select the cutoff point where returns start behaving as
 
 %-----------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Symmetry tests: Simple returns}
-  	  \begin{figure}[h!]
-		\begin{subfigure}{.5\textwidth}
-			\centering
-			\includegraphics[scale=0.30]{img4/SymmetryPlots/simetria_retornos_simples_DAX}
-		\end{subfigure}%
-		\begin{subfigure}{.5\textwidth}
-			\centering
-			\includegraphics[scale=0.30]{img4/SymmetryPlots/simetria_retornos_simples_IPC}
-		\end{subfigure}%
-	\end{figure}
-
-  \begin{figure}
-        \includegraphics[scale=0.35]{img2/SymmetryNotAtMean.eps}
-        \caption{Symmetry test for 1 day returns} 
-  \end{figure}
-\end{frame}
-
-%-----------------------------------------------------------------------------
-\begin{frame}
 \frametitle{Symmetry tests: Trend returns}
   	  \begin{figure}[h!]
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=0.35]{img4/SymmetryPlots/simetria_TReturns_DAX}
+			\includegraphics[scale=0.3]{img4/SymmetryPlots/simetria_TReturns_DJIA}
 		\end{subfigure}%
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=0.35]{img4/SymmetryPlots/simetria_TReturns_IPC}
+			\includegraphics[scale=0.3]{img4/SymmetryPlots/simetria_TReturns_IPC}
 		\end{subfigure}%
 	\end{figure}
 	  	  \begin{figure}[h!]
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=0.35]{img4/SymmetryPlots/simetria_TReturns_DJIA}
+			\includegraphics[scale=0.3]{img4/SymmetryPlots/simetria_TReturns_DAX}
 		\end{subfigure}%
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=0.35]{img4/SymmetryPlots/simetria_TReturns_NIKKEI225}
+			\includegraphics[scale=0.3]{img4/SymmetryPlots/simetria_TReturns_NIKKEI225}
 		\end{subfigure}%
 	\end{figure}
 \end{frame}
@@ -441,10 +440,63 @@ Describes a procedure to select the cutoff point where returns start behaving as
 
 %-----------------------------------------------------------------------------
 \begin{frame}
+\frametitle{TRet and TVRet signals}
+	The distributions of TRets and TVRets can be separated by run length by days.
+  	  \begin{figure}[h!]
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{img4/DecompositionByRun/dist_TRet_DJIA}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{img4/DecompositionByRun/dist_TRet_IPC}
+		\end{subfigure}%
+	\end{figure}
+	  	  \begin{figure}[h!]
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{img4/DecompositionByRun/dist_TRet_DAX}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{img4/DecompositionByRun/dist_TRet_NIKKEI225}
+		\end{subfigure}%
+	\end{figure}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{TRet and TVRet signals}
+	The shape of distributions of $k>1$ are more visible in TVRets because of the scaling done when dividing the TRets by run duration.
+  	  \begin{figure}[h!]
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{img4/DecompositionByRun/dist_TVRet_DJIA}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{img4/DecompositionByRun/dist_TVRet_IPC}
+		\end{subfigure}%
+	\end{figure}
+	  	  \begin{figure}[h!]
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{img4/DecompositionByRun/dist_TVRet_DAX}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{img4/DecompositionByRun/dist_TVRet_NIKKEI225}
+		\end{subfigure}%
+	\end{figure}
+\end{frame}
+
+
+%-----------------------------------------------------------------------------
+\begin{frame}
 \frametitle{Conclusion}
   \begin{itemize}
   	\item We can measure symmetry of the returns using the $T_n$ statistic. We also defined the trend returns in order to select a scale independent observable.
-  	\item Symmetry is not constant. Particularly symmetry around $c=0$ tends to be not plausible in dates closer to extreme events.
+  	\item Symmetry is not constant. Particularly symmetry around $c=0$ tends to be plausible in dates closer to extreme events.
   \end{itemize}
 \end{frame}
 
