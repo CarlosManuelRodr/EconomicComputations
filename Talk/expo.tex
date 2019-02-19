@@ -76,9 +76,9 @@
 %-----------------------------------------------------------------------------
 \begin{frame}{Efficient market hypothesis (EMH)}
   \begin{itemize}
-  \item Bachelier 1900 proposes that since in a voluntary stock exchange between two agents, each of them believes them to be the winning party. If the game is fair (Martingale) it must behave like a random walk. His work was not well received.
-  \item \cite{Samuelson} proposes the efficient market hypothesis. If investors were able to incorporate future events in the current price, they would have done so, incorporating their knowledge in the current price.
-  \item \cite{Fama1995} finds empirical evidence that markets behave like a random walk.
+  \item \textbf{Bachelier (1900)} proposes that since in a voluntary stock exchange between two agents, each of them believes them to be the winning party. If the game is fair (Martingale) it must behave like a random walk. His work was not well received.
+  \item \textbf{Samuelson (1965)} proposes the efficient market hypothesis. If investors were able to incorporate future events in the current price, they would have done so, incorporating their knowledge in the current price.
+  \item \textbf{Fama (1995)} finds empirical evidence that markets behave like a random walk.
   \item The EMH requires agents to be rational.
   \end{itemize}
 \end{frame}
@@ -99,7 +99,7 @@
 %-----------------------------------------------------------------------------
 \begin{frame}{If I can't win there is no point}
   \begin{itemize}
-  \item \cite{Markowitz1952} optimal portfolio theory tell us that we can construct a portfolio such that the relation between expected return and risk is optimal.
+  \item \textbf{Markowitz (1952)} optimal portfolio theory tell us that we can construct a portfolio such that the relation between expected return and risk is optimal.
   \begin{figure}
         \includegraphics[scale=0.30]{img/portafolio}
   \end{figure}
@@ -176,11 +176,11 @@
   \begin{figure}[h!]
 \begin{subfigure}{.5\textwidth}
 	\centering
-	\includegraphics[scale=0.3]{img/Volatility}
+	\includegraphics[scale=0.4]{img/Volatility}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
 	\centering
-	\includegraphics[scale=0.3]{img/RetST}
+	\includegraphics[scale=0.4]{img/RetST}
 \end{subfigure}%
 \end{figure}
 
@@ -209,31 +209,6 @@
 	\begin{figure}
         \includegraphics[scale=0.43]{img2/Hoja25.png}
     \end{figure}
-\end{frame}
-
-\begin{frame}{A quick visualization}
-Simulation of 100 normally distributed numbers. The weight transformation is applied.
-	\begin{figure}[h!]
-		\begin{subfigure}{.5\textwidth}
-			\centering
-			\includegraphics[scale=0.25]{img2/transform1}
-		\end{subfigure}%
-		\begin{subfigure}{.5\textwidth}
-			\centering
-			\includegraphics[scale=0.25]{img2/transform2}
-		\end{subfigure}%
-	\end{figure}
-	\begin{figure}
-        \includegraphics[scale=0.25]{img2/transform3}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{A quick visualization}
-	\begin{figure}
-        \includegraphics[scale=0.35]{img2/ps}
-        \caption{Left and right cumulative distribution functions.}
-    \end{figure}
-    
 \end{frame}
 
 %-----------------------------------------------------------------------------
@@ -383,33 +358,40 @@ Describes a procedure to select the cutoff point where returns start behaving as
   	  \begin{figure}[h!]
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=0.35]{img4/SimmTReturns/Simetria_DAX_CL005}
+			\includegraphics[scale=0.38]{img4/SimmTReturns/Simetria_DAX_CL005}
 		\end{subfigure}%
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=0.35]{img4/SimmTReturns/Simetria_DJIA_CL005}
+			\includegraphics[scale=0.38]{img4/SimmTReturns/Simetria_DJIA_CL005}
 		\end{subfigure}%
 	\end{figure}
 	  	  \begin{figure}[h!]
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=0.35]{img4/SimmTReturns/Simetria_IPC_CL005}
+			\includegraphics[scale=0.38]{img4/SimmTReturns/Simetria_IPC_CL005}
 		\end{subfigure}%
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=0.35]{img4/SimmTReturns/Simetria_NIKKEI_CL005}
+			\includegraphics[scale=0.38]{img4/SimmTReturns/Simetria_NIKKEI_CL005}
 		\end{subfigure}%
 	\end{figure}
 \end{frame}
 
 %-----------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Symmetry around zero}
+\frametitle{Symmetry around zero: Simple returns}
   \begin{figure}
-  	\includegraphics[scale=0.4]{img4/ZeroSymmetry/simetria_cero_tiempo_simpleret}
+  	\includegraphics[scale=0.6]{img4/ZeroSymmetry/simetria_cero_tiempo_simpleret}
+  	\caption*{Symmetry around $c = 0$ for simple returns}
   \end{figure}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Symmetry around zero: Trend returns}
   \begin{figure}
-  	\includegraphics[scale=0.4]{img4/ZeroSymmetry/simetria_cero_tiempo_trendret}
+  	\includegraphics[scale=0.6]{img4/ZeroSymmetry/simetria_cero_tiempo_trendret}
+  	\caption*{Symmetry around $c = 0$ for trend returns}
   \end{figure}
 \end{frame}
 
@@ -471,7 +453,9 @@ Describes a procedure to select the cutoff point where returns start behaving as
 \frametitle{Conclusion}
   \begin{itemize}
   	\item We can measure symmetry of the returns using the $T_n$ statistic. We also defined the trend returns in order to select a scale independent observable.
+  	\item The most plausible symmetry point is not always correlated with the average.
   	\item Symmetry is not constant. Particularly symmetry around $c=0$ tends to be plausible in dates closer to extreme events.
+  	\item Might be interesting to investigate the dynamics of the run signals.
   \end{itemize}
 \end{frame}
 
