@@ -10,19 +10,20 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   3892368,      73216]
-NotebookOptionsPosition[   3877389,      72945]
-NotebookOutlinePosition[   3877723,      72960]
-CellTagsIndexPosition[   3877680,      72957]
+NotebookDataLength[   3895548,      73351]
+NotebookOptionsPosition[   3880567,      73080]
+NotebookOutlinePosition[   3880902,      73095]
+CellTagsIndexPosition[   3880859,      73092]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Symmetry test", "Title",
- CellChangeTimes->{{3.7275348219363956`*^9, 
-  3.727534823890615*^9}},ExpressionUUID->"99f59b5b-5000-4dba-9767-\
+Cell["Distribution decomposition by runs", "Title",
+ CellChangeTimes->{{3.7275348219363956`*^9, 3.727534823890615*^9}, {
+  3.768746371332479*^9, 
+  3.76874638055156*^9}},ExpressionUUID->"99f59b5b-5000-4dba-9767-\
 087d5c054ef9"],
 
 Cell[CellGroupData[{
@@ -2481,8 +2482,9 @@ jGqBruV//Nw5dmlbR5Na/n3+/s8P/i//P/fkB/c=
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -2530,8 +2532,9 @@ jGqBruV//Nw5dmlbR5Na/n3+/s8P/i//P/fkB/c=
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -2577,8 +2580,9 @@ jGqBruV//Nw5dmlbR5Na/n3+/s8P/i//P/fkB/c=
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -2629,8 +2633,9 @@ jGqBruV//Nw5dmlbR5Na/n3+/s8P/i//P/fkB/c=
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -2691,8 +2696,9 @@ jGqBruV//Nw5dmlbR5Na/n3+/s8P/i//P/fkB/c=
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -5249,8 +5255,9 @@ x2UZ4wxwrmBZOMeaDf83f4b/P3/+fzIlH/E=
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -5298,8 +5305,9 @@ x2UZ4wxwrmBZOMeaDf83f4b/P3/+fzIlH/E=
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -5345,8 +5353,9 @@ x2UZ4wxwrmBZOMeaDf83f4b/P3/+fzIlH/E=
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -5397,8 +5406,9 @@ x2UZ4wxwrmBZOMeaDf83f4b/P3/+fzIlH/E=
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -5436,8 +5446,7 @@ x2UZ4wxwrmBZOMeaDf83f4b/P3/+fzIlH/E=
                  RowBox[{"{", 
                    RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
                  RowBox[{"{", 
-                   RowBox[{"False", ",", "Automatic"}], "}"}]}], "}"}]}], ",",
-            
+                   RowBox[{"False", ",", "Automatic"}], "}"}]}], "}"}]}], ",", 
            RowBox[{"Joined", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"True", ",", "True", ",", "True", ",", "True"}], 
@@ -5460,8 +5469,9 @@ x2UZ4wxwrmBZOMeaDf83f4b/P3/+fzIlH/E=
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -8021,8 +8031,9 @@ TapXA9v9pFZ6VTOow9s9YtWrhv/7P83//z/zf/5/SuWoUw==
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -8070,8 +8081,9 @@ TapXA9v9pFZ6VTOow9s9YtWrhv/7P83//z/zf/5/SuWoUw==
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -8117,8 +8129,9 @@ TapXA9v9pFZ6VTOow9s9YtWrhv/7P83//z/zf/5/SuWoUw==
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -8169,8 +8182,9 @@ TapXA9v9pFZ6VTOow9s9YtWrhv/7P83//z/zf/5/SuWoUw==
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -8231,8 +8245,9 @@ TapXA9v9pFZ6VTOow9s9YtWrhv/7P83//z/zf/5/SuWoUw==
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -24705,8 +24720,9 @@ Ulf/PEw/9LusGd4LKkDiciem9kVNPyfPxhvz7itAv5ZyWw==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -24755,8 +24771,9 @@ Ulf/PEw/9LusGd4LKkDiciem9kVNPyfPxhvz7itAv5ZyWw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -24802,8 +24819,9 @@ Ulf/PEw/9LusGd4LKkDiciem9kVNPyfPxhvz7itAv5ZyWw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -24854,8 +24872,9 @@ Ulf/PEw/9LusGd4LKkDiciem9kVNPyfPxhvz7itAv5ZyWw==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -24916,8 +24935,9 @@ Ulf/PEw/9LusGd4LKkDiciem9kVNPyfPxhvz7itAv5ZyWw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -25472,8 +25492,9 @@ xeh9QGI/gOSS7nVyGEBfWbFGUu1iPw0e4zxa1BpAQtB5mQ==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -25522,8 +25543,9 @@ xeh9QGI/gOSS7nVyGEBfWbFGUu1iPw0e4zxa1BpAQtB5mQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -25540,10 +25562,10 @@ xeh9QGI/gOSS7nVyGEBfWbFGUu1iPw0e4zxa1BpAQtB5mQ==
                     FrontEnd`AttachCell[Typeset`box$, 
                     FrontEndResource["GrayLevelColorValueSelector"], {
                     0, {Left, Bottom}}, {Left, Top}, 
-                    "ClosingActions" -> {"SelectionDeparture", 
-                    "ParentChanged", "EvaluatorQuit"}]]]], BaseStyle -> 
-                    Inherited, Evaluator -> Automatic, Method -> 
-                    "Preemptive"], 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
                     GrayLevel[0], Editable -> False, Selectable -> False]}], 
                     "]"}], ",", 
                     RowBox[{"Directive", "[", 
@@ -25569,8 +25591,9 @@ xeh9QGI/gOSS7nVyGEBfWbFGUu1iPw0e4zxa1BpAQtB5mQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -25621,8 +25644,9 @@ xeh9QGI/gOSS7nVyGEBfWbFGUu1iPw0e4zxa1BpAQtB5mQ==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -25683,8 +25707,9 @@ xeh9QGI/gOSS7nVyGEBfWbFGUu1iPw0e4zxa1BpAQtB5mQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -26239,8 +26264,9 @@ eGbquWw/jhwekb2JHEBKO5JHKwtuP5nH1dYqux5AK8CBLw==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -26289,8 +26315,9 @@ eGbquWw/jhwekb2JHEBKO5JHKwtuP5nH1dYqux5AK8CBLw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -26336,8 +26363,9 @@ eGbquWw/jhwekb2JHEBKO5JHKwtuP5nH1dYqux5AK8CBLw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -26388,8 +26416,9 @@ eGbquWw/jhwekb2JHEBKO5JHKwtuP5nH1dYqux5AK8CBLw==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -26450,8 +26479,9 @@ eGbquWw/jhwekb2JHEBKO5JHKwtuP5nH1dYqux5AK8CBLw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -26662,6 +26692,7 @@ eGbquWw/jhwekb2JHEBKO5JHKwtuP5nH1dYqux5AK8CBLw==
                 AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, AxesStyle -> 
                 GrayLevel[0], BaseStyle -> (FontSize -> 13), DisplayFunction :> 
                 Identity, Epilog -> {
+                  
                   Line[{{-0.0003529390377226759, 0}, {-0.0003529390377226759, 
                     3.819689005648051}}], 
                   
@@ -26829,7 +26860,6 @@ I/wEYYc/Sls3A8pLJUA0D3SljPSHP6GbtkxvLCZAHlt3jA==
                    0.011696909713016273`, 2.2}}]}}}, {}, {}, {}, {}}, {
                InsetBox[
                 FormBox[
-                 
                  TemplateBox[{
                   "\"\\!\\(\\*SubscriptBox[\\(T\\), \\(n\\)]\\)\"", 
                    "\"99% CL\"", "\"95% CL\"", "\"90% CL\""}, "LineLegend", 
@@ -27005,8 +27035,9 @@ I/wEYYc/Sls3A8pLJUA0D3SljPSHP6GbtkxvLCZAHlt3jA==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -27055,8 +27086,9 @@ I/wEYYc/Sls3A8pLJUA0D3SljPSHP6GbtkxvLCZAHlt3jA==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -27102,8 +27134,9 @@ I/wEYYc/Sls3A8pLJUA0D3SljPSHP6GbtkxvLCZAHlt3jA==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -27154,8 +27187,9 @@ I/wEYYc/Sls3A8pLJUA0D3SljPSHP6GbtkxvLCZAHlt3jA==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -27216,8 +27250,9 @@ I/wEYYc/Sls3A8pLJUA0D3SljPSHP6GbtkxvLCZAHlt3jA==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -27790,8 +27825,9 @@ q3UOzlo/xcP23UsEMkDJDjTgI4BbPzOKmEEP8jJAF3NmKg==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -27840,8 +27876,9 @@ q3UOzlo/xcP23UsEMkDJDjTgI4BbPzOKmEEP8jJAF3NmKg==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -27887,8 +27924,9 @@ q3UOzlo/xcP23UsEMkDJDjTgI4BbPzOKmEEP8jJAF3NmKg==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -27939,8 +27977,9 @@ q3UOzlo/xcP23UsEMkDJDjTgI4BbPzOKmEEP8jJAF3NmKg==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -28001,8 +28040,9 @@ q3UOzlo/xcP23UsEMkDJDjTgI4BbPzOKmEEP8jJAF3NmKg==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -28558,8 +28598,9 @@ OhZiM2g/0LYJNrUYKEAPUMj18i5pP5MWATuXnilAkzV6jQ==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -28608,8 +28649,9 @@ OhZiM2g/0LYJNrUYKEAPUMj18i5pP5MWATuXnilAkzV6jQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -28655,8 +28697,9 @@ OhZiM2g/0LYJNrUYKEAPUMj18i5pP5MWATuXnilAkzV6jQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -28707,8 +28750,9 @@ OhZiM2g/0LYJNrUYKEAPUMj18i5pP5MWATuXnilAkzV6jQ==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -28769,8 +28813,9 @@ OhZiM2g/0LYJNrUYKEAPUMj18i5pP5MWATuXnilAkzV6jQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -29325,8 +29370,9 @@ s24MNHc/2+zFLbXSGkD01NG38SV4P9wZBkAKFB1AVCJ7Yg==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -29375,8 +29421,9 @@ s24MNHc/2+zFLbXSGkD01NG38SV4P9wZBkAKFB1AVCJ7Yg==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -29422,8 +29469,9 @@ s24MNHc/2+zFLbXSGkD01NG38SV4P9wZBkAKFB1AVCJ7Yg==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -29474,8 +29522,9 @@ s24MNHc/2+zFLbXSGkD01NG38SV4P9wZBkAKFB1AVCJ7Yg==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -29536,8 +29585,9 @@ s24MNHc/2+zFLbXSGkD01NG38SV4P9wZBkAKFB1AVCJ7Yg==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -30090,8 +30140,9 @@ Gos/Ie45n+RpH0A+PkJWSwaMP8l6NiEHbSBAVuiVty/yjD+8NwwKakwhQHCS
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -30140,8 +30191,9 @@ Gos/Ie45n+RpH0A+PkJWSwaMP8l6NiEHbSBAVuiVty/yjD+8NwwKakwhQHCS
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -30187,8 +30239,9 @@ Gos/Ie45n+RpH0A+PkJWSwaMP8l6NiEHbSBAVuiVty/yjD+8NwwKakwhQHCS
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -30239,8 +30292,9 @@ Gos/Ie45n+RpH0A+PkJWSwaMP8l6NiEHbSBAVuiVty/yjD+8NwwKakwhQHCS
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -30301,8 +30355,9 @@ Gos/Ie45n+RpH0A+PkJWSwaMP8l6NiEHbSBAVuiVty/yjD+8NwwKakwhQHCS
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -30513,6 +30568,7 @@ Gos/Ie45n+RpH0A+PkJWSwaMP8l6NiEHbSBAVuiVty/yjD+8NwwKakwhQHCS
                 AxesOrigin -> {0, 0}, AxesStyle -> GrayLevel[0], 
                 BaseStyle -> (FontSize -> 13), DisplayFunction :> Identity, 
                 Epilog -> {
+                  
                   Line[{{0.003785453535059034, 0}, {0.003785453535059034, 
                     3.8327987956177845`}}], 
                   
@@ -30674,7 +30730,6 @@ Jgd2cpU/np6t8uNFIEBcHTb0/SuWPyfR5OGUIyFA6qaCNA==
                    AbsoluteThickness[1.6], 
                    AbsoluteDashing[{6, 2, 2, 2}], FontSize -> 13, 
                    RGBColor[0.230003, 0.370006, 0.170003]], 
-                  
                   LineBox[{{-0.01373503129340149, 2.2}, {
                    0.021652191191177436`, 2.2}}]}}}, {}, {}, {}, {}}, {
                InsetBox[
@@ -30855,8 +30910,9 @@ Jgd2cpU/np6t8uNFIEBcHTb0/SuWPyfR5OGUIyFA6qaCNA==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -30905,8 +30961,9 @@ Jgd2cpU/np6t8uNFIEBcHTb0/SuWPyfR5OGUIyFA6qaCNA==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -30952,8 +31009,9 @@ Jgd2cpU/np6t8uNFIEBcHTb0/SuWPyfR5OGUIyFA6qaCNA==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -31004,8 +31062,9 @@ Jgd2cpU/np6t8uNFIEBcHTb0/SuWPyfR5OGUIyFA6qaCNA==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -31066,8 +31125,9 @@ Jgd2cpU/np6t8uNFIEBcHTb0/SuWPyfR5OGUIyFA6qaCNA==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -31112,6 +31172,7 @@ Jgd2cpU/np6t8uNFIEBcHTb0/SuWPyfR5OGUIyFA6qaCNA==
                 
                 LineBox[{{0.003958579948887974, 0}, {0.003958579948887974, 
                   3.4547527025045577`}}], 
+                
                 LineBox[{{0.0025430910495048194`, 0}, {0.0025430910495048194`,
                    3.4547527025045577`}}], 
                 
@@ -31279,7 +31340,6 @@ Jgd2cpU/np6t8uNFIEBcHTb0/SuWPyfR5OGUIyFA6qaCNA==
                   
                   Line[{{0.003958579948887974, 0}, {0.003958579948887974, 
                     3.4547527025045577`}}], 
-                  
                   Line[{{0.0025430910495048194`, 0}, {0.0025430910495048194`, 
                     3.4547527025045577`}}], 
                   
@@ -31639,8 +31699,9 @@ s8mYQE8/46vMMXwpJkCOEXi+3kZQPxtkVTbcmSdAldtxFQ==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -31689,8 +31750,9 @@ s8mYQE8/46vMMXwpJkCOEXi+3kZQPxtkVTbcmSdAldtxFQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -31736,8 +31798,9 @@ s8mYQE8/46vMMXwpJkCOEXi+3kZQPxtkVTbcmSdAldtxFQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -31788,8 +31851,9 @@ s8mYQE8/46vMMXwpJkCOEXi+3kZQPxtkVTbcmSdAldtxFQ==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -31850,8 +31914,9 @@ s8mYQE8/46vMMXwpJkCOEXi+3kZQPxtkVTbcmSdAldtxFQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -32406,8 +32471,9 @@ kq+ia2k/BxIXjpEcGkD0akwNi1dqPyefA+BqZhxA8jV15Q==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -32427,10 +32493,10 @@ kq+ia2k/BxIXjpEcGkD0akwNi1dqPyefA+BqZhxA8jV15Q==
                     FrontEnd`AttachCell[Typeset`box$, 
                     FrontEndResource["RGBColorValueSelector"], {
                     0, {Left, Bottom}}, {Left, Top}, 
-                    "ClosingActions" -> {"SelectionDeparture", 
-                    "ParentChanged", "EvaluatorQuit"}]]]], BaseStyle -> 
-                    Inherited, Evaluator -> Automatic, Method -> 
-                    "Preemptive"], 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
                     RGBColor[0.689993, 0.089999, 0.119999], Editable -> False,
                      Selectable -> False]}], "]"}], ",", 
                     RowBox[{"Directive", "[", 
@@ -32456,8 +32522,9 @@ kq+ia2k/BxIXjpEcGkD0akwNi1dqPyefA+BqZhxA8jV15Q==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -32503,8 +32570,9 @@ kq+ia2k/BxIXjpEcGkD0akwNi1dqPyefA+BqZhxA8jV15Q==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -32555,8 +32623,9 @@ kq+ia2k/BxIXjpEcGkD0akwNi1dqPyefA+BqZhxA8jV15Q==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -32617,8 +32686,9 @@ kq+ia2k/BxIXjpEcGkD0akwNi1dqPyefA+BqZhxA8jV15Q==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -32663,7 +32733,6 @@ kq+ia2k/BxIXjpEcGkD0akwNi1dqPyefA+BqZhxA8jV15Q==
                 
                 LineBox[{{0.00040333326707017817`, 0}, {
                   0.00040333326707017817`, 4.891676129973405}}], 
-                
                 LineBox[{{0.0008532914582907556, 0}, {0.0008532914582907556, 
                   4.891676129973405}}], 
                 
@@ -33172,8 +33241,9 @@ E28/PnIZr3IgG0AyXlpL12xwP13ykVEUfx1A4kChfNRPcT++0cCQ18ofQJAj
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -33222,8 +33292,9 @@ E28/PnIZr3IgG0AyXlpL12xwP13ykVEUfx1A4kChfNRPcT++0cCQ18ofQJAj
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -33269,8 +33340,9 @@ E28/PnIZr3IgG0AyXlpL12xwP13ykVEUfx1A4kChfNRPcT++0cCQ18ofQJAj
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -33321,8 +33393,9 @@ E28/PnIZr3IgG0AyXlpL12xwP13ykVEUfx1A4kChfNRPcT++0cCQ18ofQJAj
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -33383,8 +33456,9 @@ E28/PnIZr3IgG0AyXlpL12xwP13ykVEUfx1A4kChfNRPcT++0cCQ18ofQJAj
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -33580,7 +33654,6 @@ E28/PnIZr3IgG0AyXlpL12xwP13ykVEUfx1A4kChfNRPcT++0cCQ18ofQJAj
                     AbsoluteThickness[1.6], 
                     AbsoluteDashing[{6, 2, 2, 2}], FontSize -> 13, 
                     RGBColor[0.230003, 0.370006, 0.170003]], 
-                   
                    Line[{{-0.0061642108581309914`, 2.2}, {
                     0.004659469693196137, 2.2}}]}}}, {}, {}, {}, {}}, {
                DisplayFunction -> Identity, PlotRangePadding -> {{
@@ -33940,8 +34013,9 @@ jJ+h7IY/XDOowZfZI0BXEHlSPMiHP3JWopDvBiVA3PF9vQ==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -33990,8 +34064,9 @@ jJ+h7IY/XDOowZfZI0BXEHlSPMiHP3JWopDvBiVA3PF9vQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -34037,8 +34112,9 @@ jJ+h7IY/XDOowZfZI0BXEHlSPMiHP3JWopDvBiVA3PF9vQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -34089,8 +34165,9 @@ jJ+h7IY/XDOowZfZI0BXEHlSPMiHP3JWopDvBiVA3PF9vQ==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -34151,8 +34228,9 @@ jJ+h7IY/XDOowZfZI0BXEHlSPMiHP3JWopDvBiVA3PF9vQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -34706,8 +34784,9 @@ XJQ/NrmgzqoJHEB1chDk5RKVP7NFOCGRtRxA/VMB/z3JlT+huPe8xCIdQIU1
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -34756,8 +34835,9 @@ XJQ/NrmgzqoJHEB1chDk5RKVP7NFOCGRtRxA/VMB/z3JlT+huPe8xCIdQIU1
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -34803,8 +34883,9 @@ XJQ/NrmgzqoJHEB1chDk5RKVP7NFOCGRtRxA/VMB/z3JlT+huPe8xCIdQIU1
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -34855,8 +34936,9 @@ XJQ/NrmgzqoJHEB1chDk5RKVP7NFOCGRtRxA/VMB/z3JlT+huPe8xCIdQIU1
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -34917,8 +34999,9 @@ XJQ/NrmgzqoJHEB1chDk5RKVP7NFOCGRtRxA/VMB/z3JlT+huPe8xCIdQIU1
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -35311,7 +35394,6 @@ TTZ49Uc/SIHpRBLUFEB6yyNyQWdJP25gur7a4RZAGRyFgw==
                    AbsoluteThickness[1.6], 
                    AbsoluteDashing[{6, 2, 2, 2}], FontSize -> 13, 
                    RGBColor[0.230003, 0.370006, 0.170003]], 
-                  
                   LineBox[{{-0.001428848244790681, 2.2}, {
                    0.000775248485551535, 2.2}}]}}}, {}, {}, {}, {}}, {
                InsetBox[
@@ -35492,8 +35574,9 @@ TTZ49Uc/SIHpRBLUFEB6yyNyQWdJP25gur7a4RZAGRyFgw==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -35542,8 +35625,9 @@ TTZ49Uc/SIHpRBLUFEB6yyNyQWdJP25gur7a4RZAGRyFgw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -35589,8 +35673,9 @@ TTZ49Uc/SIHpRBLUFEB6yyNyQWdJP25gur7a4RZAGRyFgw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -35641,8 +35726,9 @@ TTZ49Uc/SIHpRBLUFEB6yyNyQWdJP25gur7a4RZAGRyFgw==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -35703,8 +35789,9 @@ TTZ49Uc/SIHpRBLUFEB6yyNyQWdJP25gur7a4RZAGRyFgw==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -35889,6 +35976,7 @@ TTZ49Uc/SIHpRBLUFEB6yyNyQWdJP25gur7a4RZAGRyFgw==
                     AbsoluteThickness[1.6], 
                     AbsoluteDashing[{2, 2}], FontSize -> 13, 
                     RGBColor[0, 0, 1]], 
+                   
                    Line[{{-0.001428848244790681, 2.983}, {
                     0.000775248485551535, 2.983}}]}, {
                    Hue[0.37820393249936934`, 0.6, 0.6], 
@@ -35917,7 +36005,6 @@ TTZ49Uc/SIHpRBLUFEB6yyNyQWdJP25gur7a4RZAGRyFgw==
                   
                   Line[{{-0.0003267998796195729, 0}, {-0.0003267998796195729, 
                     4.580391791904481}}], 
-                  
                   Line[{{-0.0001063902065853513, 0}, {-0.0001063902065853513, 
                     4.580391791904481}}], 
                   
@@ -36258,8 +36345,9 @@ dgcQTnA/tJxNZdxsIkBKTNoC/sRwP9Vvbw38qSNAU/Jv1A==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -36308,8 +36396,9 @@ dgcQTnA/tJxNZdxsIkBKTNoC/sRwP9Vvbw38qSNAU/Jv1A==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -36326,10 +36415,10 @@ dgcQTnA/tJxNZdxsIkBKTNoC/sRwP9Vvbw38qSNAU/Jv1A==
                     FrontEnd`AttachCell[Typeset`box$, 
                     FrontEndResource["GrayLevelColorValueSelector"], {
                     0, {Left, Bottom}}, {Left, Top}, 
-                    "ClosingActions" -> {"SelectionDeparture", 
-                    "ParentChanged", "EvaluatorQuit"}]]]], BaseStyle -> 
-                    Inherited, Evaluator -> Automatic, Method -> 
-                    "Preemptive"], 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
                     GrayLevel[0], Editable -> False, Selectable -> False]}], 
                     "]"}], ",", 
                     RowBox[{"Directive", "[", 
@@ -36355,8 +36444,9 @@ dgcQTnA/tJxNZdxsIkBKTNoC/sRwP9Vvbw38qSNAU/Jv1A==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -36407,8 +36497,9 @@ dgcQTnA/tJxNZdxsIkBKTNoC/sRwP9Vvbw38qSNAU/Jv1A==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -36469,8 +36560,9 @@ dgcQTnA/tJxNZdxsIkBKTNoC/sRwP9Vvbw38qSNAU/Jv1A==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -36654,7 +36746,6 @@ dgcQTnA/tJxNZdxsIkBKTNoC/sRwP9Vvbw38qSNAU/Jv1A==
                     AbsoluteThickness[1.6], 
                     AbsoluteDashing[{2, 2}], FontSize -> 13, 
                     RGBColor[0, 0, 1]], 
-                   
                    Line[{{-0.001576889635001757, 2.983}, {0.00409411643126407,
                      2.983}}]}, {
                    Hue[0.37820393249936934`, 0.6, 0.6], 
@@ -37024,8 +37115,9 @@ Y6lL8nY/MHbGzMAbJkDqjTTSWup3PyoeqAk2kidA3byJHQ==
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -37074,8 +37166,9 @@ Y6lL8nY/MHbGzMAbJkDqjTTSWup3PyoeqAk2kidA3byJHQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -37121,8 +37214,9 @@ Y6lL8nY/MHbGzMAbJkDqjTTSWup3PyoeqAk2kidA3byJHQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -37173,8 +37267,9 @@ Y6lL8nY/MHbGzMAbJkDqjTTSWup3PyoeqAk2kidA3byJHQ==
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -37235,8 +37330,9 @@ Y6lL8nY/MHbGzMAbJkDqjTTSWup3PyoeqAk2kidA3byJHQ==
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -37791,8 +37887,9 @@ rnc/8+GAz9FoGEC0HUd8Gql5PyMeq+QBBxtAjKEVOlejez/VdHtAzngdQGQl
                     0.4599953333333333, 0.059999333333333335`, 
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -37841,8 +37938,9 @@ rnc/8+GAz9FoGEC0HUd8Gql5PyMeq+QBBxtAjKEVOlejez/VdHtAzngdQGQl
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -37888,8 +37986,9 @@ rnc/8+GAz9FoGEC0HUd8Gql5PyMeq+QBBxtAjKEVOlejez/VdHtAzngdQGQl
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -37940,8 +38039,9 @@ rnc/8+GAz9FoGEC0HUd8Gql5PyMeq+QBBxtAjKEVOlejez/VdHtAzngdQGQl
                     0.15333533333333335`, 0.24667066666666668`, 
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -38002,8 +38102,9 @@ rnc/8+GAz9FoGEC0HUd8Gql5PyMeq+QBBxtAjKEVOlejez/VdHtAzngdQGQl
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -39883,8 +39984,9 @@ td7Ki9XOpTGA5hX78MBzloi9QiK+Zskkk//l/wIIr4kD
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -39934,8 +40036,9 @@ td7Ki9XOpTGA5hX78MBzloi9QiK+Zskkk//l/wIIr4kD
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -39983,8 +40086,9 @@ td7Ki9XOpTGA5hX78MBzloi9QiK+Zskkk//l/wIIr4kD
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -40042,8 +40146,9 @@ td7Ki9XOpTGA5hX78MBzloi9QiK+Zskkk//l/wIIr4kD
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -48079,8 +48184,9 @@ EsPauSric2mlzVyir9zDzf8FtUHLzw==
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -48130,8 +48236,9 @@ EsPauSric2mlzVyir9zDzf8FtUHLzw==
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -48179,8 +48286,9 @@ EsPauSric2mlzVyir9zDzf8FtUHLzw==
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -48233,8 +48341,9 @@ EsPauSric2mlzVyir9zDzf8FtUHLzw==
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -48296,8 +48405,9 @@ EsPauSric2mlzVyir9zDzf8FtUHLzw==
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -56198,8 +56308,9 @@ cMuMsJL/QmXGnXDRejiGP3ltUrn4X4LS1gw=
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -56249,8 +56360,9 @@ cMuMsJL/QmXGnXDRejiGP3ltUrn4X4LS1gw=
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -56298,8 +56410,9 @@ cMuMsJL/QmXGnXDRejiGP3ltUrn4X4LS1gw=
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -56352,8 +56465,9 @@ cMuMsJL/QmXGnXDRejiGP3ltUrn4X4LS1gw=
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -56415,8 +56529,9 @@ cMuMsJL/QmXGnXDRejiGP3ltUrn4X4LS1gw=
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -59645,8 +59760,9 @@ A8DzJHOCPtJRtJ57ozN/ILvfTtIxomYX/i4PBPavYhvx//0+9n+9MkZm
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -59694,8 +59810,9 @@ A8DzJHOCPtJRtJ57ozN/ILvfTtIxomYX/i4PBPavYhvx//0+9n+9MkZm
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -59741,8 +59858,9 @@ A8DzJHOCPtJRtJ57ozN/ILvfTtIxomYX/i4PBPavYhvx//0+9n+9MkZm
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -59793,8 +59911,9 @@ A8DzJHOCPtJRtJ57ozN/ILvfTtIxomYX/i4PBPavYhvx//0+9n+9MkZm
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -59856,8 +59975,9 @@ A8DzJHOCPtJRtJ57ozN/ILvfTtIxomYX/i4PBPavYhvx//0+9n+9MkZm
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -64686,8 +64806,9 @@ Mpj3eiPUfBsH+1wFrtsJML6tw7Plt/55H18N5ds5JE0IN1+ruQTKt3eQfbVJ
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -64737,8 +64858,9 @@ Mpj3eiPUfBsH+1wFrtsJML6tw7Plt/55H18N5ds5JE0IN1+ruQTKt3eQfbVJ
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -64786,8 +64908,9 @@ Mpj3eiPUfBsH+1wFrtsJML6tw7Plt/55H18N5ds5JE0IN1+ruQTKt3eQfbVJ
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -64840,8 +64963,9 @@ Mpj3eiPUfBsH+1wFrtsJML6tw7Plt/55H18N5ds5JE0IN1+ruQTKt3eQfbVJ
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -64944,8 +65068,9 @@ Mpj3eiPUfBsH+1wFrtsJML6tw7Plt/55H18N5ds5JE0IN1+ruQTKt3eQfbVJ
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -66773,8 +66898,9 @@ MPfaOPw6uHvmoaIFUL6tA8Pk3ZVpohuhfDsHqXMfTOOkYOFt77D5pm3Gw9tL
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -66824,8 +66950,9 @@ MPfaOPw6uHvmoaIFUL6tA8Pk3ZVpohuhfDsHqXMfTOOkYOFt77D5pm3Gw9tL
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -66873,8 +67000,9 @@ MPfaOPw6uHvmoaIFUL6tA8Pk3ZVpohuhfDsHqXMfTOOkYOFt77D5pm3Gw9tL
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -66927,8 +67055,9 @@ MPfaOPw6uHvmoaIFUL6tA8Pk3ZVpohuhfDsHqXMfTOOkYOFt77D5pm3Gw9tL
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -67031,8 +67160,9 @@ MPfaOPw6uHvmoaIFUL6tA8Pk3ZVpohuhfDsHqXMfTOOkYOFt77D5pm3Gw9tL
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -68619,8 +68749,9 @@ DBuiTEY/p5M2IOCSEUDe0MBa/tJGPycRJYvyURNA1wpgxA==
                     0.07999933333333334], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.689993`", ",", "0.089999`", ",", "0.119999`"}],
@@ -68670,8 +68801,9 @@ DBuiTEY/p5M2IOCSEUDe0MBa/tJGPycRJYvyURNA1wpgxA==
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -68719,8 +68851,9 @@ DBuiTEY/p5M2IOCSEUDe0MBa/tJGPycRJYvyURNA1wpgxA==
                     FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
@@ -68773,8 +68906,9 @@ DBuiTEY/p5M2IOCSEUDe0MBa/tJGPycRJYvyURNA1wpgxA==
                     0.11333533333333333`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.230003`", ",", "0.370006`", ",", "0.170003`"}],
@@ -68836,8 +68970,9 @@ DBuiTEY/p5M2IOCSEUDe0MBa/tJGPycRJYvyURNA1wpgxA==
                     FrameStyle -> GrayLevel[0.], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"GrayLevel", "[", "0", "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
@@ -72943,9 +73078,9 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1920, 1019},
+WindowSize->{1861, 1013},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
-FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+FrontEndVersion->"12.0 para Linux x86 (64-bit) (April 8, 2019)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -72960,261 +73095,261 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 158, 3, 99, "Title",ExpressionUUID->"99f59b5b-5000-4dba-9767-087d5c054ef9"],
+Cell[580, 22, 227, 4, 99, "Title",ExpressionUUID->"99f59b5b-5000-4dba-9767-087d5c054ef9"],
 Cell[CellGroupData[{
-Cell[763, 29, 173, 3, 70, "Chapter",ExpressionUUID->"4214bddf-b77b-4e6c-8fd9-8f7a341f531d"],
-Cell[939, 34, 899, 23, 75, "Input",ExpressionUUID->"f578aa8b-fcb6-4dd5-968f-ad2d4c7f7ddd",
+Cell[832, 30, 173, 3, 70, "Chapter",ExpressionUUID->"4214bddf-b77b-4e6c-8fd9-8f7a341f531d"],
+Cell[1008, 35, 899, 23, 75, "Input",ExpressionUUID->"f578aa8b-fcb6-4dd5-968f-ad2d4c7f7ddd",
  InitializationCell->True],
-Cell[1841, 59, 4249, 81, 301, "Input",ExpressionUUID->"2167a26b-622f-49e4-89bf-4d7e12ace167",
+Cell[1910, 60, 4249, 81, 301, "Input",ExpressionUUID->"2167a26b-622f-49e4-89bf-4d7e12ace167",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[6115, 144, 169, 3, 55, "Subsection",ExpressionUUID->"b439834d-5de3-4e32-a86f-c035babfa7e7"],
+Cell[6184, 145, 169, 3, 55, "Subsection",ExpressionUUID->"b439834d-5de3-4e32-a86f-c035babfa7e7"],
 Cell[CellGroupData[{
-Cell[6309, 151, 139, 2, 31, "Input",ExpressionUUID->"39657a81-52d9-44c4-bb96-da65879e6b61"],
-Cell[6451, 155, 5468, 153, 158, "Print",ExpressionUUID->"3fd66e13-8670-48e4-9412-e77f51a35ce8"]
+Cell[6378, 152, 139, 2, 31, "Input",ExpressionUUID->"39657a81-52d9-44c4-bb96-da65879e6b61"],
+Cell[6520, 156, 5468, 153, 158, "Print",ExpressionUUID->"3fd66e13-8670-48e4-9412-e77f51a35ce8"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11956, 313, 186, 3, 31, "Input",ExpressionUUID->"57d3cbdd-e318-4f11-b655-379dcac44c16"],
-Cell[12145, 318, 10726, 291, 358, "Print",ExpressionUUID->"f26bcd7a-881a-480d-9261-efe549b20430"]
+Cell[12025, 314, 186, 3, 31, "Input",ExpressionUUID->"57d3cbdd-e318-4f11-b655-379dcac44c16"],
+Cell[12214, 319, 10726, 291, 358, "Print",ExpressionUUID->"f26bcd7a-881a-480d-9261-efe549b20430"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22932, 616, 158, 3, 70, "Chapter",ExpressionUUID->"03abc405-fa9a-4800-9577-0835f83d9aa1"],
-Cell[23093, 621, 2104, 56, 163, "Input",ExpressionUUID->"3cad1d8b-afcb-44c8-9c43-fc6871791df6",
+Cell[23001, 617, 158, 3, 70, "Chapter",ExpressionUUID->"03abc405-fa9a-4800-9577-0835f83d9aa1"],
+Cell[23162, 622, 2104, 56, 163, "Input",ExpressionUUID->"3cad1d8b-afcb-44c8-9c43-fc6871791df6",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25234, 682, 211, 4, 70, "Chapter",ExpressionUUID->"2d9448ae-fe5a-4129-af13-91ac6bf01096"],
+Cell[25303, 683, 211, 4, 70, "Chapter",ExpressionUUID->"2d9448ae-fe5a-4129-af13-91ac6bf01096"],
 Cell[CellGroupData[{
-Cell[25470, 690, 220, 4, 65, "Subchapter",ExpressionUUID->"b3097782-0987-4bc8-903a-3dbb824263bd"],
-Cell[25693, 696, 6127, 161, 427, "Input",ExpressionUUID->"9ee06120-bf0b-450a-a365-28d5dec29a04",
+Cell[25539, 691, 220, 4, 65, "Subchapter",ExpressionUUID->"b3097782-0987-4bc8-903a-3dbb824263bd"],
+Cell[25762, 697, 6127, 161, 425, "Input",ExpressionUUID->"9ee06120-bf0b-450a-a365-28d5dec29a04",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31869, 863, 165, 3, 70, "Chapter",ExpressionUUID->"9a26ff7e-7550-4c82-862f-9d117c58c747"],
-Cell[32037, 868, 2960, 74, 347, "Input",ExpressionUUID->"cc66d4de-f91d-404a-b1d1-3c142e123d4b",
+Cell[31938, 864, 165, 3, 70, "Chapter",ExpressionUUID->"9a26ff7e-7550-4c82-862f-9d117c58c747"],
+Cell[32106, 869, 2960, 74, 347, "Input",ExpressionUUID->"cc66d4de-f91d-404a-b1d1-3c142e123d4b",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[35022, 946, 1798, 42, 262, "Input",ExpressionUUID->"1ba4a896-f883-4ae5-ae9c-dfb7e014ec3f"],
-Cell[36823, 990, 185522, 3190, 344, "Output",ExpressionUUID->"aea3a35a-7103-4808-8285-34fb39c9a29c"]
+Cell[35091, 947, 1798, 42, 262, "Input",ExpressionUUID->"1ba4a896-f883-4ae5-ae9c-dfb7e014ec3f"],
+Cell[36892, 991, 185637, 3195, 344, "Output",ExpressionUUID->"aea3a35a-7103-4808-8285-34fb39c9a29c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[222382, 4185, 378, 10, 31, "Input",ExpressionUUID->"0d366eff-4c63-4713-a996-dc551d8aa321"],
-Cell[222763, 4197, 1306, 27, 157, "Output",ExpressionUUID->"a3f6567e-9bb9-4eb6-a1be-d6e18f426c71"]
+Cell[222566, 4191, 378, 10, 31, "Input",ExpressionUUID->"0d366eff-4c63-4713-a996-dc551d8aa321"],
+Cell[222947, 4203, 1306, 27, 157, "Output",ExpressionUUID->"a3f6567e-9bb9-4eb6-a1be-d6e18f426c71"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[224106, 4229, 1730, 41, 262, "Input",ExpressionUUID->"fe740414-40d1-4017-bf3e-ae2f344a6979"],
-Cell[225839, 4272, 123348, 2165, 343, "Output",ExpressionUUID->"cc9adbde-057c-4da7-b395-4915a459019d"]
+Cell[224290, 4235, 1730, 41, 262, "Input",ExpressionUUID->"fe740414-40d1-4017-bf3e-ae2f344a6979"],
+Cell[226023, 4278, 123451, 2169, 343, "Output",ExpressionUUID->"cc9adbde-057c-4da7-b395-4915a459019d"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[349224, 6442, 450, 11, 31, "Input",ExpressionUUID->"5f34abbd-362f-43d8-adaf-b8e3b1da2d59"],
-Cell[349677, 6455, 1326, 28, 157, "Output",ExpressionUUID->"77b65bd2-35d5-4d19-aa8f-25ad7de83fa6"]
+Cell[349511, 6452, 450, 11, 31, "Input",ExpressionUUID->"5f34abbd-362f-43d8-adaf-b8e3b1da2d59"],
+Cell[349964, 6465, 1326, 28, 157, "Output",ExpressionUUID->"77b65bd2-35d5-4d19-aa8f-25ad7de83fa6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[351040, 6488, 1763, 42, 262, "Input",ExpressionUUID->"bd1d4866-35dc-4490-9ca9-46ebb1f5ee20"],
-Cell[352806, 6532, 185329, 3187, 343, "Output",ExpressionUUID->"41e44ce0-c70a-471b-a974-88f90cd1ba6f"]
+Cell[351327, 6498, 1763, 42, 262, "Input",ExpressionUUID->"bd1d4866-35dc-4490-9ca9-46ebb1f5ee20"],
+Cell[353093, 6542, 185444, 3192, 343, "Output",ExpressionUUID->"41e44ce0-c70a-471b-a974-88f90cd1ba6f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[538172, 9724, 434, 11, 31, "Input",ExpressionUUID->"abc89081-398e-4ca6-bd35-c1f4fb313887"],
-Cell[538609, 9737, 1286, 27, 157, "Output",ExpressionUUID->"11d696c9-780d-4614-9237-1ea50c6f78f1"]
+Cell[538574, 9739, 434, 11, 31, "Input",ExpressionUUID->"abc89081-398e-4ca6-bd35-c1f4fb313887"],
+Cell[539011, 9752, 1286, 27, 157, "Output",ExpressionUUID->"11d696c9-780d-4614-9237-1ea50c6f78f1"]
 }, Open  ]],
-Cell[539910, 9767, 528, 13, 31, "Input",ExpressionUUID->"b573db9c-5a5d-410e-b786-7fc506f7d5c6"],
+Cell[540312, 9782, 528, 13, 31, "Input",ExpressionUUID->"b573db9c-5a5d-410e-b786-7fc506f7d5c6"],
 Cell[CellGroupData[{
-Cell[540463, 9784, 547, 14, 31, "Input",ExpressionUUID->"cf07d1cc-7df7-4a7d-a2eb-f101fbc34937"],
-Cell[541013, 9800, 678, 15, 117, "Output",ExpressionUUID->"7dadc572-1d67-4ce5-9fb1-b723956efeb7"]
+Cell[540865, 9799, 547, 14, 31, "Input",ExpressionUUID->"cf07d1cc-7df7-4a7d-a2eb-f101fbc34937"],
+Cell[541415, 9815, 678, 15, 117, "Output",ExpressionUUID->"7dadc572-1d67-4ce5-9fb1-b723956efeb7"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[541740, 9821, 230, 4, 70, "Chapter",ExpressionUUID->"705f13b7-62ca-44a5-96c9-375bb12d59f9"],
-Cell[541973, 9827, 4869, 115, 600, "Input",ExpressionUUID->"ac4aff42-5cd7-4c95-baea-07ebcdcc4a7f",
+Cell[542142, 9836, 230, 4, 70, "Chapter",ExpressionUUID->"705f13b7-62ca-44a5-96c9-375bb12d59f9"],
+Cell[542375, 9842, 4869, 115, 600, "Input",ExpressionUUID->"ac4aff42-5cd7-4c95-baea-07ebcdcc4a7f",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[546867, 9946, 161, 3, 65, "Subchapter",ExpressionUUID->"4d0058fe-9d08-4264-a17f-6a90f2414b37"],
+Cell[547269, 9961, 161, 3, 65, "Subchapter",ExpressionUUID->"4d0058fe-9d08-4264-a17f-6a90f2414b37"],
 Cell[CellGroupData[{
-Cell[547053, 9953, 611, 12, 31, "Input",ExpressionUUID->"32ed52da-a42b-4db1-ae39-0ae5551b9d88"],
-Cell[547667, 9967, 417324, 7097, 756, "Output",ExpressionUUID->"681726e0-daa6-46da-bcd6-9b39270eaa0a"]
+Cell[547455, 9968, 611, 12, 31, "Input",ExpressionUUID->"32ed52da-a42b-4db1-ae39-0ae5551b9d88"],
+Cell[548069, 9982, 417324, 7097, 756, "Output",ExpressionUUID->"681726e0-daa6-46da-bcd6-9b39270eaa0a"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[965040, 17070, 170, 3, 65, "Subchapter",ExpressionUUID->"36e8bd04-4166-4298-964a-6d0d58a62795"],
+Cell[965442, 17085, 170, 3, 65, "Subchapter",ExpressionUUID->"36e8bd04-4166-4298-964a-6d0d58a62795"],
 Cell[CellGroupData[{
-Cell[965235, 17077, 549, 11, 31, "Input",ExpressionUUID->"d2f84816-4a6c-41f6-bcb1-21ea57980963"],
-Cell[965787, 17090, 417718, 7103, 756, "Output",ExpressionUUID->"ca9025e4-d691-43eb-902d-8bc10774660f"]
+Cell[965637, 17092, 549, 11, 31, "Input",ExpressionUUID->"d2f84816-4a6c-41f6-bcb1-21ea57980963"],
+Cell[966189, 17105, 417718, 7103, 756, "Output",ExpressionUUID->"ca9025e4-d691-43eb-902d-8bc10774660f"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1383554, 24199, 180, 3, 65, "Subchapter",ExpressionUUID->"6e12e847-20da-4729-ab0b-2e9f21da1e93"],
-Cell[1383737, 24204, 10247, 241, 1175, "Input",ExpressionUUID->"ad8b7251-2bf3-4832-bfca-23cfb85b6fd5",
+Cell[1383956, 24214, 180, 3, 65, "Subchapter",ExpressionUUID->"6e12e847-20da-4729-ab0b-2e9f21da1e93"],
+Cell[1384139, 24219, 10247, 241, 1175, "Input",ExpressionUUID->"ad8b7251-2bf3-4832-bfca-23cfb85b6fd5",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[1394009, 24449, 257, 4, 31, "Input",ExpressionUUID->"091075f0-7624-43e5-abdf-d5cd431cdfe6"],
-Cell[1394269, 24455, 685788, 13874, 2990, "Output",ExpressionUUID->"52ab7d85-d7e7-43fa-81ea-9bf7f43e7e06"]
+Cell[1394411, 24464, 257, 4, 31, "Input",ExpressionUUID->"091075f0-7624-43e5-abdf-d5cd431cdfe6"],
+Cell[1394671, 24470, 687782, 13960, 2990, "Output",ExpressionUUID->"52ab7d85-d7e7-43fa-81ea-9bf7f43e7e06"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2080106, 38335, 177, 3, 65, "Subchapter",ExpressionUUID->"de8f9995-f95d-4067-bcdd-361804a36038"],
-Cell[2080286, 38340, 4344, 101, 577, "Input",ExpressionUUID->"6a1c3636-9cf4-4dbf-8219-d26f5dec871b",
+Cell[2082502, 38436, 177, 3, 65, "Subchapter",ExpressionUUID->"de8f9995-f95d-4067-bcdd-361804a36038"],
+Cell[2082682, 38441, 4344, 101, 577, "Input",ExpressionUUID->"6a1c3636-9cf4-4dbf-8219-d26f5dec871b",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[2084655, 38445, 273, 5, 31, "Input",ExpressionUUID->"22b0a1b7-5753-49af-a0a9-b80ac453b598"],
-Cell[2084931, 38452, 265, 5, 35, "Output",ExpressionUUID->"59119cd6-8719-4dac-af46-05a73756ff11"]
+Cell[2087051, 38546, 273, 5, 31, "Input",ExpressionUUID->"22b0a1b7-5753-49af-a0a9-b80ac453b598"],
+Cell[2087327, 38553, 265, 5, 35, "Output",ExpressionUUID->"59119cd6-8719-4dac-af46-05a73756ff11"]
 }, Open  ]],
-Cell[2085211, 38460, 380, 9, 31, "Input",ExpressionUUID->"e2338dbe-b0c9-408a-bb61-34ef5f6de6f2"]
+Cell[2087607, 38561, 380, 9, 31, "Input",ExpressionUUID->"e2338dbe-b0c9-408a-bb61-34ef5f6de6f2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2085628, 38474, 179, 3, 65, "Subchapter",ExpressionUUID->"8036166a-5596-4fa5-8345-38e55e83b91d"],
+Cell[2088024, 38575, 179, 3, 65, "Subchapter",ExpressionUUID->"8036166a-5596-4fa5-8345-38e55e83b91d"],
 Cell[CellGroupData[{
-Cell[2085832, 38481, 155, 3, 55, "Subsection",ExpressionUUID->"b8417992-84a6-4192-8900-0a8014e25b28"],
-Cell[2085990, 38486, 8525, 205, 1060, "Input",ExpressionUUID->"ec4988f5-109d-435f-8bab-9a145b08676a",
+Cell[2088228, 38582, 155, 3, 55, "Subsection",ExpressionUUID->"b8417992-84a6-4192-8900-0a8014e25b28"],
+Cell[2088386, 38587, 8525, 205, 1060, "Input",ExpressionUUID->"ec4988f5-109d-435f-8bab-9a145b08676a",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[2094540, 38695, 315, 8, 31, "Input",ExpressionUUID->"39b677ce-b1bd-45d7-9678-db4670ec23bd"],
-Cell[2094858, 38705, 358634, 6288, 722, "Output",ExpressionUUID->"4a724496-df2b-4ac2-99b0-8fddff5f703a"]
+Cell[2096936, 38796, 315, 8, 31, "Input",ExpressionUUID->"39b677ce-b1bd-45d7-9678-db4670ec23bd"],
+Cell[2097254, 38806, 358726, 6292, 722, "Output",ExpressionUUID->"4a724496-df2b-4ac2-99b0-8fddff5f703a"]
 }, Open  ]],
-Cell[2453507, 44996, 425, 10, 31, "Input",ExpressionUUID->"15e0f8fb-129f-47f7-9a8c-2ce5bc8d2244"],
+Cell[2455995, 45101, 425, 10, 31, "Input",ExpressionUUID->"15e0f8fb-129f-47f7-9a8c-2ce5bc8d2244"],
 Cell[CellGroupData[{
-Cell[2453957, 45010, 547, 15, 31, "Input",ExpressionUUID->"550569b4-adad-46ae-b6c7-94254699ea61"],
-Cell[2454507, 45027, 5379, 119, 86, "Output",ExpressionUUID->"56de8b2e-6338-4cb0-862c-05ebb5a688fb"]
+Cell[2456445, 45115, 547, 15, 31, "Input",ExpressionUUID->"550569b4-adad-46ae-b6c7-94254699ea61"],
+Cell[2456995, 45132, 5379, 119, 86, "Output",ExpressionUUID->"56de8b2e-6338-4cb0-862c-05ebb5a688fb"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2459923, 45151, 1553, 37, 285, "Input",ExpressionUUID->"907c187b-0065-4159-86b5-cba044e0fc73"],
-Cell[2461479, 45190, 66492, 1302, 254, "Output",ExpressionUUID->"2db82e4f-4795-4055-a6e3-f0c5704f2460"]
+Cell[2462411, 45256, 1553, 37, 285, "Input",ExpressionUUID->"907c187b-0065-4159-86b5-cba044e0fc73"],
+Cell[2463967, 45295, 66492, 1302, 254, "Output",ExpressionUUID->"2db82e4f-4795-4055-a6e3-f0c5704f2460"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2528020, 46498, 163, 2, 55, "Subsection",ExpressionUUID->"b00a1e7c-f743-46b9-990a-dd4be79b8149"],
-Cell[2528186, 46502, 11089, 268, 1336, "Input",ExpressionUUID->"5b263152-b272-4349-b150-e71c37a2e1e4",
+Cell[2530508, 46603, 163, 2, 55, "Subsection",ExpressionUUID->"b00a1e7c-f743-46b9-990a-dd4be79b8149"],
+Cell[2530674, 46607, 11089, 268, 1336, "Input",ExpressionUUID->"5b263152-b272-4349-b150-e71c37a2e1e4",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[2539300, 46774, 471, 11, 31, "Input",ExpressionUUID->"dd0e4751-ccea-4b55-b8f0-bedf86bb6cb9"],
-Cell[2539774, 46787, 387937, 6801, 724, "Output",ExpressionUUID->"e818c713-c9db-4c98-96b2-1240b9f83231"]
+Cell[2541788, 46879, 471, 11, 31, "Input",ExpressionUUID->"dd0e4751-ccea-4b55-b8f0-bedf86bb6cb9"],
+Cell[2542262, 46892, 388052, 6806, 724, "Output",ExpressionUUID->"e818c713-c9db-4c98-96b2-1240b9f83231"]
 }, Open  ]],
-Cell[2927726, 53591, 257, 4, 36, "Text",ExpressionUUID->"73e5eab0-b7ed-476c-8414-2679a98adbff"],
-Cell[2927986, 53597, 576, 13, 31, "Input",ExpressionUUID->"24a5ea12-a60c-43d6-87ca-114180842359"],
+Cell[2930329, 53701, 257, 4, 36, "Text",ExpressionUUID->"73e5eab0-b7ed-476c-8414-2679a98adbff"],
+Cell[2930589, 53707, 576, 13, 31, "Input",ExpressionUUID->"24a5ea12-a60c-43d6-87ca-114180842359"],
 Cell[CellGroupData[{
-Cell[2928587, 53614, 244, 4, 31, "Input",ExpressionUUID->"8df3b40c-8931-45f5-83b5-460b8cecfe21"],
-Cell[2928834, 53620, 4603, 115, 86, "Output",ExpressionUUID->"7bd1433d-3342-479b-83c5-d1eab61d595e"]
+Cell[2931190, 53724, 244, 4, 31, "Input",ExpressionUUID->"8df3b40c-8931-45f5-83b5-460b8cecfe21"],
+Cell[2931437, 53730, 4603, 115, 86, "Output",ExpressionUUID->"7bd1433d-3342-479b-83c5-d1eab61d595e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2933474, 53740, 1457, 33, 239, "Input",ExpressionUUID->"a0870c02-cc25-430e-9bb3-4abe868fe8a6"],
-Cell[2934934, 53775, 66586, 1315, 254, "Output",ExpressionUUID->"5b502a22-94a8-400c-92e6-40a01ee24cb2"]
+Cell[2936077, 53850, 1457, 33, 239, "Input",ExpressionUUID->"a0870c02-cc25-430e-9bb3-4abe868fe8a6"],
+Cell[2937537, 53885, 66586, 1315, 254, "Output",ExpressionUUID->"5b502a22-94a8-400c-92e6-40a01ee24cb2"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3001581, 55097, 182, 3, 65, "Subchapter",ExpressionUUID->"ecc442f0-3e84-47c5-b6b3-0012d0ca1bf9"],
-Cell[3001766, 55102, 17834, 418, 784, "Input",ExpressionUUID->"f5bafc2e-73ee-457b-b9b6-e97b967ca1fe",
+Cell[3004184, 55207, 182, 3, 65, "Subchapter",ExpressionUUID->"ecc442f0-3e84-47c5-b6b3-0012d0ca1bf9"],
+Cell[3004369, 55212, 17834, 418, 784, "Input",ExpressionUUID->"f5bafc2e-73ee-457b-b9b6-e97b967ca1fe",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3019625, 55524, 469, 10, 31, "Input",ExpressionUUID->"1761734a-82b5-46ab-af00-9da93766166e"],
-Cell[3020097, 55536, 153260, 2836, 767, "Output",ExpressionUUID->"7b35b1a8-6576-408c-8a7a-045a16af4e66"]
+Cell[3022228, 55634, 469, 10, 31, "Input",ExpressionUUID->"1761734a-82b5-46ab-af00-9da93766166e"],
+Cell[3022700, 55646, 153375, 2841, 767, "Output",ExpressionUUID->"7b35b1a8-6576-408c-8a7a-045a16af4e66"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3173406, 58378, 164, 3, 65, "Subchapter",ExpressionUUID->"48fb5f03-c399-482e-bb8f-f1692223a42c"],
-Cell[3173573, 58383, 12561, 296, 508, "Input",ExpressionUUID->"28e71c40-1db3-4f27-8084-6a46ec9e2872",
+Cell[3176124, 58493, 164, 3, 65, "Subchapter",ExpressionUUID->"48fb5f03-c399-482e-bb8f-f1692223a42c"],
+Cell[3176291, 58498, 12561, 296, 508, "Input",ExpressionUUID->"28e71c40-1db3-4f27-8084-6a46ec9e2872",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3186159, 58683, 260, 5, 31, "Input",ExpressionUUID->"59a5460c-270e-491a-97f5-f55e721fb353"],
-Cell[3186422, 58690, 281540, 4855, 723, "Output",ExpressionUUID->"cac31e62-46bc-4b13-ae2f-2d67c5ad9cfe"]
+Cell[3188877, 58798, 260, 5, 31, "Input",ExpressionUUID->"59a5460c-270e-491a-97f5-f55e721fb353"],
+Cell[3189140, 58805, 281655, 4860, 723, "Output",ExpressionUUID->"cac31e62-46bc-4b13-ae2f-2d67c5ad9cfe"]
 }, Open  ]],
-Cell[3467977, 63548, 165, 3, 36, "Text",ExpressionUUID->"4cd0a8f7-a4d2-43c0-a369-eb3eeac20ca8"],
+Cell[3470810, 63668, 165, 3, 36, "Text",ExpressionUUID->"4cd0a8f7-a4d2-43c0-a369-eb3eeac20ca8"],
 Cell[CellGroupData[{
-Cell[3468167, 63555, 1168, 32, 78, "Input",ExpressionUUID->"31e2dd86-9b43-41c9-8b9f-cccbf89cd4a9"],
-Cell[3469338, 63589, 5307, 131, 104, "Output",ExpressionUUID->"5be48233-3e3f-4783-8502-887cef073b99"]
+Cell[3471000, 63675, 1168, 32, 78, "Input",ExpressionUUID->"31e2dd86-9b43-41c9-8b9f-cccbf89cd4a9"],
+Cell[3472171, 63709, 5307, 131, 104, "Output",ExpressionUUID->"5be48233-3e3f-4783-8502-887cef073b99"]
 }, Open  ]],
-Cell[3474660, 63723, 175, 3, 36, "Text",ExpressionUUID->"10ef37a0-3ca5-432a-ab82-04cd98dadbc9"],
-Cell[3474838, 63728, 2255, 56, 324, "Input",ExpressionUUID->"86a907ee-3e5f-451e-b922-2687f2dd1102",
+Cell[3477493, 63843, 175, 3, 36, "Text",ExpressionUUID->"10ef37a0-3ca5-432a-ab82-04cd98dadbc9"],
+Cell[3477671, 63848, 2255, 56, 324, "Input",ExpressionUUID->"86a907ee-3e5f-451e-b922-2687f2dd1102",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3477118, 63788, 252, 5, 31, "Input",ExpressionUUID->"1526155b-b1e8-4980-b05f-2c5eb6daf937"],
-Cell[3477373, 63795, 5801, 129, 128, "Output",ExpressionUUID->"3bc7e388-d24a-471c-ad1d-d37d8fe6aec4"]
+Cell[3479951, 63908, 252, 5, 31, "Input",ExpressionUUID->"1526155b-b1e8-4980-b05f-2c5eb6daf937"],
+Cell[3480206, 63915, 5801, 129, 128, "Output",ExpressionUUID->"3bc7e388-d24a-471c-ad1d-d37d8fe6aec4"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3483235, 63931, 182, 3, 70, "Chapter",ExpressionUUID->"2e1215f4-1437-4094-8f13-cb2fd955f745"],
-Cell[3483420, 63936, 153, 3, 36, "Text",ExpressionUUID->"445e306e-7878-45d4-a41b-fa320e5936b0"],
-Cell[3483576, 63941, 11680, 270, 439, "Input",ExpressionUUID->"203af1a1-0cff-406e-8ba1-dcc4e8f7d573",
+Cell[3486068, 64051, 182, 3, 70, "Chapter",ExpressionUUID->"2e1215f4-1437-4094-8f13-cb2fd955f745"],
+Cell[3486253, 64056, 153, 3, 36, "Text",ExpressionUUID->"445e306e-7878-45d4-a41b-fa320e5936b0"],
+Cell[3486409, 64061, 11680, 270, 439, "Input",ExpressionUUID->"203af1a1-0cff-406e-8ba1-dcc4e8f7d573",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3495281, 64215, 261, 5, 31, "Input",ExpressionUUID->"d6b9969a-0448-478d-8ff9-ce5c6b730951"],
-Cell[3495545, 64222, 82220, 1796, 733, "Output",ExpressionUUID->"2b25d040-42b0-4040-b2b4-e836f3cb0a69"]
+Cell[3498114, 64335, 261, 5, 31, "Input",ExpressionUUID->"d6b9969a-0448-478d-8ff9-ce5c6b730951"],
+Cell[3498378, 64342, 82335, 1801, 733, "Output",ExpressionUUID->"2b25d040-42b0-4040-b2b4-e836f3cb0a69"]
 }, Open  ]],
-Cell[3577780, 66021, 235, 4, 36, "Text",ExpressionUUID->"b8639e62-5e9c-486a-a403-d16748f44ee9"],
-Cell[3578018, 66027, 11722, 272, 462, "Input",ExpressionUUID->"07bfb4cb-a2cb-44d5-8de6-dd6d06d1a58f",
+Cell[3580728, 66146, 235, 4, 36, "Text",ExpressionUUID->"b8639e62-5e9c-486a-a403-d16748f44ee9"],
+Cell[3580966, 66152, 11722, 272, 462, "Input",ExpressionUUID->"07bfb4cb-a2cb-44d5-8de6-dd6d06d1a58f",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3589765, 66303, 234, 5, 31, "Input",ExpressionUUID->"8e53e6d5-c770-4f97-8175-dc0956609f28"],
-Cell[3590002, 66310, 81912, 1790, 745, "Output",ExpressionUUID->"9fd507db-ed1e-4562-996f-9dccf41b5f9f"]
+Cell[3592713, 66428, 234, 5, 31, "Input",ExpressionUUID->"8e53e6d5-c770-4f97-8175-dc0956609f28"],
+Cell[3592950, 66435, 82027, 1795, 745, "Output",ExpressionUUID->"9fd507db-ed1e-4562-996f-9dccf41b5f9f"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3671963, 68106, 162, 3, 70, "Chapter",ExpressionUUID->"c41e736b-bcc7-4d42-ae27-9143eb9e3bed"],
-Cell[3672128, 68111, 11005, 254, 1129, "Input",ExpressionUUID->"03de8029-21db-425b-9688-a3002574914b",
+Cell[3675026, 68236, 162, 3, 70, "Chapter",ExpressionUUID->"c41e736b-bcc7-4d42-ae27-9143eb9e3bed"],
+Cell[3675191, 68241, 11005, 254, 1129, "Input",ExpressionUUID->"03de8029-21db-425b-9688-a3002574914b",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3683158, 68369, 155, 3, 65, "Subchapter",ExpressionUUID->"5abccbf5-ebaf-4846-97df-d0242ed438f2"],
+Cell[3686221, 68499, 155, 3, 65, "Subchapter",ExpressionUUID->"5abccbf5-ebaf-4846-97df-d0242ed438f2"],
 Cell[CellGroupData[{
-Cell[3683338, 68376, 424, 9, 31, "Input",ExpressionUUID->"b59960d1-aabd-4d3d-859c-99d32dac834d"],
-Cell[3683765, 68387, 52228, 1206, 749, "Output",ExpressionUUID->"7cf9ce43-7b58-4465-b805-5c589b2e4d80"]
+Cell[3686401, 68506, 424, 9, 31, "Input",ExpressionUUID->"b59960d1-aabd-4d3d-859c-99d32dac834d"],
+Cell[3686828, 68517, 52343, 1211, 749, "Output",ExpressionUUID->"7cf9ce43-7b58-4465-b805-5c589b2e4d80"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3736042, 69599, 161, 3, 65, "Subchapter",ExpressionUUID->"51b5b154-47f6-4cee-b21f-e2fad80991c9"],
+Cell[3739220, 69734, 161, 3, 65, "Subchapter",ExpressionUUID->"51b5b154-47f6-4cee-b21f-e2fad80991c9"],
 Cell[CellGroupData[{
-Cell[3736228, 69606, 375, 9, 31, "Input",ExpressionUUID->"9a022887-713e-4753-ac74-f7881fefab3f"],
-Cell[3736606, 69617, 52241, 1211, 749, "Output",ExpressionUUID->"fd05c81a-45e0-42c1-88f7-7bd452a7f1bb"]
+Cell[3739406, 69741, 375, 9, 31, "Input",ExpressionUUID->"9a022887-713e-4753-ac74-f7881fefab3f"],
+Cell[3739784, 69752, 52241, 1211, 749, "Output",ExpressionUUID->"fd05c81a-45e0-42c1-88f7-7bd452a7f1bb"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3788896, 70834, 170, 3, 65, "Subchapter",ExpressionUUID->"046cb72a-c069-4956-ae73-9f70203d8ae0"],
+Cell[3792074, 70969, 170, 3, 65, "Subchapter",ExpressionUUID->"046cb72a-c069-4956-ae73-9f70203d8ae0"],
 Cell[CellGroupData[{
-Cell[3789091, 70841, 383, 9, 31, "Input",ExpressionUUID->"6930d436-bbd1-4540-8039-c762f2c0e234"],
-Cell[3789477, 70852, 52309, 1210, 750, "Output",ExpressionUUID->"72d1143f-fefe-4353-a641-d71de59372c1"]
+Cell[3792269, 70976, 383, 9, 31, "Input",ExpressionUUID->"6930d436-bbd1-4540-8039-c762f2c0e234"],
+Cell[3792655, 70987, 52309, 1210, 750, "Output",ExpressionUUID->"72d1143f-fefe-4353-a641-d71de59372c1"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3841847, 72069, 231, 4, 70, "Chapter",ExpressionUUID->"aee5bbd3-644b-4e09-a189-d5f2cef2030a"],
-Cell[3842081, 72075, 4993, 119, 692, "Input",ExpressionUUID->"4c30a5e8-15e7-4829-b827-bd915b2dd365",
+Cell[3845025, 72204, 231, 4, 70, "Chapter",ExpressionUUID->"aee5bbd3-644b-4e09-a189-d5f2cef2030a"],
+Cell[3845259, 72210, 4993, 119, 692, "Input",ExpressionUUID->"4c30a5e8-15e7-4829-b827-bd915b2dd365",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3847099, 72198, 525, 13, 31, "Input",ExpressionUUID->"14b0c31b-6a17-4bd6-9605-21a16453de41"],
-Cell[3847627, 72213, 7005, 196, 136, "Output",ExpressionUUID->"1b50a6bf-6d9d-48dc-a053-092f5dbae06b"]
+Cell[3850277, 72333, 525, 13, 31, "Input",ExpressionUUID->"14b0c31b-6a17-4bd6-9605-21a16453de41"],
+Cell[3850805, 72348, 7005, 196, 136, "Output",ExpressionUUID->"1b50a6bf-6d9d-48dc-a053-092f5dbae06b"]
 }, Open  ]],
-Cell[3854647, 72412, 2306, 47, 255, "Input",ExpressionUUID->"576933ab-1d96-4ee1-82fd-761c3b4e55ca",
+Cell[3857825, 72547, 2306, 47, 255, "Input",ExpressionUUID->"576933ab-1d96-4ee1-82fd-761c3b4e55ca",
  InitializationCell->True],
-Cell[3856956, 72461, 1241, 33, 55, "Input",ExpressionUUID->"752e7ebc-9954-4e51-9834-248aed129805"],
+Cell[3860134, 72596, 1241, 33, 55, "Input",ExpressionUUID->"752e7ebc-9954-4e51-9834-248aed129805"],
 Cell[CellGroupData[{
-Cell[3858222, 72498, 908, 23, 124, "Input",ExpressionUUID->"a60a704d-286b-4c85-b393-e9aaa594b1cd"],
-Cell[3859133, 72523, 2598, 42, 281, "Output",ExpressionUUID->"2550f2ca-5732-433a-9c10-3c3446d69c99"]
+Cell[3861400, 72633, 908, 23, 124, "Input",ExpressionUUID->"a60a704d-286b-4c85-b393-e9aaa594b1cd"],
+Cell[3862311, 72658, 2598, 42, 281, "Output",ExpressionUUID->"2550f2ca-5732-433a-9c10-3c3446d69c99"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3861780, 72571, 169, 3, 70, "Chapter",ExpressionUUID->"9f4bd240-6c24-4abb-a6f2-2869aa9d4cfc"],
-Cell[3861952, 72576, 2178, 52, 393, "Input",ExpressionUUID->"2fe570e7-3bc0-44d0-8be8-a13221d472a2",
+Cell[3864958, 72706, 169, 3, 70, "Chapter",ExpressionUUID->"9f4bd240-6c24-4abb-a6f2-2869aa9d4cfc"],
+Cell[3865130, 72711, 2178, 52, 393, "Input",ExpressionUUID->"2fe570e7-3bc0-44d0-8be8-a13221d472a2",
  InitializationCell->True],
-Cell[3864133, 72630, 499, 13, 31, "Input",ExpressionUUID->"c49b0cad-3520-43df-b962-a8b5af4e5539"],
-Cell[3864635, 72645, 705, 18, 31, "Input",ExpressionUUID->"de56fdc2-2f81-4306-8e21-cc117c0702c8"],
+Cell[3867311, 72765, 499, 13, 31, "Input",ExpressionUUID->"c49b0cad-3520-43df-b962-a8b5af4e5539"],
+Cell[3867813, 72780, 705, 18, 31, "Input",ExpressionUUID->"de56fdc2-2f81-4306-8e21-cc117c0702c8"],
 Cell[CellGroupData[{
-Cell[3865365, 72667, 1087, 25, 124, "Input",ExpressionUUID->"1556d13a-9497-4553-9c90-242832c3a6fb"],
-Cell[3866455, 72694, 3092, 50, 269, "Output",ExpressionUUID->"7c0c4980-3481-4358-bbd2-3b54b74e98f8"]
+Cell[3868543, 72802, 1087, 25, 124, "Input",ExpressionUUID->"1556d13a-9497-4553-9c90-242832c3a6fb"],
+Cell[3869633, 72829, 3092, 50, 269, "Output",ExpressionUUID->"7c0c4980-3481-4358-bbd2-3b54b74e98f8"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3869596, 72750, 165, 3, 70, "Chapter",ExpressionUUID->"cafa181b-0367-4b63-ad60-961f00f09c23"],
-Cell[3869764, 72755, 3221, 83, 324, "Input",ExpressionUUID->"218eb3ea-2f74-425e-9e9f-0148ec569b6c",
+Cell[3872774, 72885, 165, 3, 70, "Chapter",ExpressionUUID->"cafa181b-0367-4b63-ad60-961f00f09c23"],
+Cell[3872942, 72890, 3221, 83, 324, "Input",ExpressionUUID->"218eb3ea-2f74-425e-9e9f-0148ec569b6c",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3873010, 72842, 525, 11, 31, "Input",ExpressionUUID->"0ddd846c-b0ea-4180-ad81-2191e82897ed"],
-Cell[3873538, 72855, 1224, 23, 35, "Output",ExpressionUUID->"3f684213-2d95-47c1-b8eb-706f8a7feb57"]
+Cell[3876188, 72977, 525, 11, 31, "Input",ExpressionUUID->"0ddd846c-b0ea-4180-ad81-2191e82897ed"],
+Cell[3876716, 72990, 1224, 23, 35, "Output",ExpressionUUID->"3f684213-2d95-47c1-b8eb-706f8a7feb57"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3874799, 72883, 1208, 29, 124, "Input",ExpressionUUID->"9dbd9360-f3c3-44e9-a23d-7c7839a274ff"],
-Cell[3876010, 72914, 1339, 26, 117, "Output",ExpressionUUID->"7cbabed5-238e-498e-a851-f47ea943069c"]
+Cell[3877977, 73018, 1208, 29, 124, "Input",ExpressionUUID->"9dbd9360-f3c3-44e9-a23d-7c7839a274ff"],
+Cell[3879188, 73049, 1339, 26, 117, "Output",ExpressionUUID->"7cbabed5-238e-498e-a851-f47ea943069c"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
