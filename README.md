@@ -11,6 +11,17 @@ The definition of returns may be viewed in the `EconomicComputations.wl` package
 
 For the symmetry test an additional package is included at `TnSymmetryStatistic` that needs to be manually compiled.
 
+## Algorithms
+### Trend Returns
+Trend returns are calculated by first obtaining the trend duration, that is, the length in days of each elemental trend, which is obtained by grouping same sign returns.
+![trendDuration](img/td.png?raw=true "Trend Duration")
+With the durations, trend returns are calculated as the logarithmic difference of the prices at their start and end points.
+![trendReturns](img/tr.png?raw=true "Trend Returns")
+
+### Velocity Trend Returns
+TVReturns are calculated as the division between trend return and its corresponding trend duration.
+![velocityTR](img/vtr.png?raw=true "Velocity")
+
 Requirements
 ========
 
