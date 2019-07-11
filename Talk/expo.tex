@@ -17,7 +17,7 @@
 \setbeamercolor{structure}{bg=black, fg=black}
 \useinnertheme{circles}
  
-\author{M. en F. Carlos Manuel Rodríguez Martínez \\ Advisor: Dr. Alejandro Raúl Hernández Montoya}
+\author{Carlos Manuel Rodríguez Martínez \\ David Hernandez Enríquez \\ Advisor: Dr. Alejandro Raúl Hernández Montoya}
 \institute{Universidad Veracruzana}
 \title{A multi-scale symmetry analysis of daily financial time series using uninterrupted trends returns}
 \date{\today}
@@ -111,14 +111,14 @@
 %-----------------------------------------------------------------------------
 \begin{frame}{There are winners however...}
   \begin{itemize}
-  \item The existence of agents that can reliably generate profits like Warren Buffet, Peter Lynch and George Soros, implies the possibility that some agents can sometimes predict better than others future outcomes.
+  \item The existence of agents that can reliably generate profits like Warren Buffet, Peter Lynch and George Soros, implies the possibility that some agents can sometimes predict better than others future outcomes or even affect the market themselves.
   \item Humans have cognitive biases that systematically makes us averse to lose and have high hopes of winning. We are not always rational.
   \end{itemize}
 \end{frame}
 
 %-----------------------------------------------------------------------------
 \begin{frame}{Motivation}
-  How can we assess the efficiency of a market?
+  How can we measure if the market really behaves like a random walk?
 \end{frame}
 
 %-----------------------------------------------------------------------------
@@ -323,8 +323,8 @@ Describes a procedure to select the cutoff point where returns start behaving as
 %-----------------------------------------------------------------------------
 \setbeamercolor{structure}{fg=red!50!black!50!red}
 \begin{frame}
-\section{Results}
-\textbf{Results}
+\section{Symmetry: Results}
+\textbf{Symmetry: Results}
 \end{frame}
 
 %-----------------------------------------------------------------------------
@@ -447,6 +447,138 @@ Describes a procedure to select the cutoff point where returns start behaving as
 	\end{figure}
 \end{frame}
 
+%-----------------------------------------------------------------------------
+\setbeamercolor{structure}{fg=blue!50!black!40!green}
+\begin{frame}
+\section{Distribution of trends}
+\textbf{Distribution of trends}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}{Model}
+  \begin{itemize}
+  \item Among all the possible martingale or sub-martingale models that can describe price fluctuations, the geometric random walk is the simplest one.
+  \item At each step there are two possible outcomes: the index either increases or does not increase. In an efficient market, the expected future price depends only on information about the current price, not on its previous history.
+  \item It should be impossible to predict the expected direction of a future price change given the history of the price process. We have
+  \begin{equation}
+    \mathbb{E}(S(t+\Delta t) - S(t)|\mathcal{F}_t)= 0;
+  \end{equation}
+  if we consider the sign of the price change $Y(t,\Delta t)=\mathrm{sign}(S(t+\Delta t)-S(t))$, which coincides with the sign of     returns, we accordingly have
+\begin{equation}
+\label{expectedsign}
+\mathbb{E}(Y(t,\Delta t))=0.
+\end{equation}
+  \end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}{Model II}
+  \begin{itemize}
+  \item If the price follows a geometric random walk, then the series of price-change signs can be modeled as a Bernoulli process.+ Let $S_0$ be the initial price. The price at time $t$ will be given by
+\begin{equation}
+S(t)=S_0 \prod_{i=1}^t Q_i
+\end{equation}
+where $Q_i$ are independent and identically distributed random variables following a log-normal distribution with parameters $\mu$ and $\sigma$.
+  \item These two parameters come from the corresponding normal distribution for log-returns. As a direct consequence of the EMH we have
+\begin{equation}
+\mathbb{E} (Q) = 1 + r_F,
+\end{equation}
+and for a log-normal distributed random variable, we have also
+\begin{equation}
+\mathbb{E}(Q) = \mathrm{e}^\mu \mathrm{e}^{\sigma^2/2}.
+\end{equation}
+  \end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}{Model III}
+  \begin{itemize}
+  \item This leads to a dependence between the two parameters
+\begin{equation}
+\mu = \log(1+r_F) - \frac{\sigma^2}{2}.
+\end{equation}
+  \item Starting from the cumulative distribution function for a log-normal random variable
+\begin{equation}
+F_Q(u)=\mathbb{P}(Q \leq u) = \frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
+\frac{\log(u) -\mu}{\sqrt{2 \sigma^2}} \right),
+\end{equation}
+the probability of a negative sign would be given by
+\begin{equation}
+q=F_Q(1)=\mathbb{P}(Q \leq 1)=\frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
+\frac{\sigma}{2 \sqrt{2}} - \frac{\log (1+r_F)}{\sigma \sqrt{2}} \right),
+\end{equation}
+which yields $q=1/2$ for $r_F = \mathrm{e}^{\sigma^2/2}-1$.
+  \end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}{Model IV}
+  \begin{itemize}
+  \item It becomes natural to use the biased Bernoulli process as the null hypothesis for the time series of signs. It is well known that the distribution of the number $k$ of failures needed to get one success for a Bernoulli process with success probability $p=1-q$ is the geometric distribution ${\cal{G}}(p)$; the number of failures $N$ is given by
+\begin{equation}
+P(k)=\mathbb{P}(N=k) = p(1 - p)^{k} = pq^{k}.
+\end{equation}
+  \item In order to compare the observed and expected distributions of trend durations, the Anderson-Darling test was used. The Anderson-Darling test was found to be the most suitable for this purpose because it places more weight on the tails of a distribution than other goodness of fit tests. 
+  \end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Distribution of runs}
+  \begin{figure}
+  	\includegraphics[scale=0.23]{img5/runsDist}
+  \end{figure}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Test the data with a Geometric Distribution $p=0.5$}
+  \begin{figure}
+  	\includegraphics[scale=0.28]{img5/runsPVal}
+  \end{figure}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Estimation of $\hat{p}$ for the runs with a geometric distribution}
+  \begin{figure}
+  	\includegraphics[scale=0.35]{img5/runsPEstimation}
+  \end{figure}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Estimation of $\hat{p}$ for positive/negative runs with a geometric distribution}
+  \begin{figure}
+  	\includegraphics[scale=0.28]{img5/estimatedPPosNeg}
+  \end{figure}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}{Waiting time distribution}
+  \begin{itemize}
+  \item In order to investigate the cause of the deviation from the random walk we investigated the distribution of waiting times, which are also expected to distribute as a GeometricDistribution.
+  \end{itemize}
+  \begin{figure}
+  	\includegraphics[scale=0.24]{img5/waitingTime}
+  \end{figure}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Total waiting time parameter estimation}
+  \begin{figure}
+  	\includegraphics[scale=0.24]{img5/waitingTimeDist}
+  \end{figure}
+\end{frame}
+
+%-----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Waiting time parameter estimation in time}
+  \begin{figure}
+  	\includegraphics[scale=0.28]{img5/estimatedPByDays.png}
+  \end{figure}
+\end{frame}
 
 %-----------------------------------------------------------------------------
 \begin{frame}

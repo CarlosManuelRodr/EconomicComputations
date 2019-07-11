@@ -326,7 +326,8 @@ SimpleReturns[prices_, lag_:1]:= Drop[prices, lag] - Drop[prices, -lag];
 DatedSimpleReturns[dates_, prices_, lag_:1] := Transpose[{Drop[dates, -1], N[Drop[prices, lag] - Drop[prices, -lag]]}];
 DatedSimpleReturns[datedprices_, lag_:1] := DatedSimpleReturns[datedprices[[All, 1]], datedprices[[All, 2]], lag];
 
-TrendDuration[prices_] := Map[Length, Split[Sign[Returns[prices]]]];
+TrendSign[returns_] := Flatten[SequenceReplace[Sign[returns], {x_,0} :> {x,x}]];
+TrendDuration[prices_] := Map[Length, Split[TrendSign[Returns[prices]]]];
 DatedTrendDuration[dates_, prices_] := Block[{endpoints,trendDuration},
 	trendDuration = TrendDuration[prices];
 	endpoints = Map[First, TakeList[dates, Append[trendDuration, All]]];

@@ -1,0 +1,14 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {spanish}{}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {1}{Acknowledgments}{2}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{Introduction}{3}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{Background}{11}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{A test for symmetry}{17}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Symmetry: Results}{27}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {6}{Distribution of trends}{34}{0}{6}
