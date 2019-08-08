@@ -1,0 +1,6 @@
+- Check the number of times the record is broken
+- Taking the average over the windows for each stock
+- Check time evolution and space evolution
+- Add indexes like S&P 500 and from other countries
+- Average the waiting time statistic with a lot of stocks from an index
+- From the time series of record break, calculate correlation matrix
