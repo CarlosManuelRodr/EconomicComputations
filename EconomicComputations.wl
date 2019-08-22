@@ -399,6 +399,41 @@ PricesFromReturns[returns_] := Block[{acc},
 ];
 
 
+(* ::Section:: *)
+(*Record breaking statistics*)
+
+
+NewRecord[lastRecord_,list_]:=SelectFirst[list,#>lastRecord&];
+GetRecords[list_]:=Block[{recordCanditates,records},
+	recordCanditates = DeleteDuplicates[list];
+	records = DeleteCases[Drop[FixedPointList[NewRecord[#,recordCanditates]&,0],1],_Missing];
+	Return[records];
+];
+Diff[prices_, lag_:1]:= If[Length[prices]>= 2,
+	Drop[prices, lag] - Drop[prices, -lag],
+	Nothing
+];
+GetRecordTimes[list_]:=Diff[Flatten[Map[FirstPosition[list,#]&,GetRecords[list]]]];
+GetWindowedRecordTimes[list_,window_]:=Flatten[Map[GetRecordTimes,Partition[list,UpTo[window]]]];
+GetWindowedRecordTimes[list_,window_,skip_]:=Flatten[Map[GetRecordTimes,Partition[list,UpTo[window],skip]]];
+
+DatedTrendDuration[datedPrices_]:=Block[{endpoints,datedTD},
+	endpoints = Map[First, TakeList[datedPrices, Append[TrendDuration[datedPrices[[All, 2]]], All]]];
+	datedTD = Transpose[{Drop[endpoints[[All, 1]], -1], TrendDuration[datedPrices[[All, 2]]]}];
+	Return[datedTD];
+];
+DatedPrices[market_]:=Thread[{market["Dates"],market["Prices"]}];
+DatedNumberOfRecordBreaks[datedPrices_List, window_ :50, skip_ :1]:=Block[{dtd},
+	dtd = DatedTrendDuration[datedPrices];
+	Thread[{dtd[[All,1]], GetNumberOfRecordBreaks[dtd[[All,2]], window, skip]}]
+];
+DatedNumberOfRecordBreaks[market_Association, window_ :50, skip_ :1]:=Block[{datedPrices,dtd},
+	datedPrices = DatedPrices[market];
+	dtd = DatedTrendDuration[datedPrices];
+	Thread[{dtd[[All,1]],GetNumberOfRecordBreaks[dtd[[All,2]],window,skip]}]
+];
+
+
 (* ::Section::Closed:: *)
 (*Power law cutoff*)
 
