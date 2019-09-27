@@ -1,0 +1,184 @@
+\documentclass[paper=letter, fontsize=12pt]{scrartcl}
+\usepackage[T1]{fontenc} % 8-bit encoding with 256 gliphs
+\usepackage[english]{babel} % English Hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math Packages
+\usepackage{graphicx}
+
+\usepackage{sectsty} % Allows customized section commands
+\allsectionsfont{\centering \normalfont\scshape} % Format for sections
+
+% Number equations and figures within sections
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+% Custom command for creating a line with one argument (height)
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}}
+
+% Title attributes
+\title{	
+\normalfont \normalsize 
+% Hector Olivares
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge The discrete version of the Anderson-Darling goodness of fit test
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Hector Olivares}
+
+\date{\normalsize\today}
+
+\begin{document}
+
+\maketitle
+
+%\section{The discrete version of the Anderson-Darling goodness of fit test}
+
+% Why Chi2 is not effective
+Determining whether or not a given probability model fits the observed
+ data that it attempts to describe is one of the most important problems of applied statistics.
+
+Even though extensive research has been done regarding this problem, most of it deals with
+ continuous distributions. Unfortunately, the studies done for fitting discrete distributions
+ are much less numerous, or at least harder to find.
+
+Discrete distributions, however, are important in many fields as medicine, psychology and
+ engineering. Scientific papers and textbooks
+ often prescribe the chi-square test as the option to use when testing goodness of fit 
+ for these distributions.
+ 
+Nevertheless, it is well known that chi-square tests suffer from low power, especially when
+ applied to data in which there are bins with very small content (as a single event),
+ and when the expected distribution predicts a very low probability for one of the categories.
+ Data drawn from a process that can be described by a geometric distribution precisely
+ exhibits both features.
+
+% The alternatives tests that have been proposed
+ Bracquemond {\it et. al.} (2002) \cite{BraCreGau} make a review of eight alternatives to the chi-square test
+ proposed over the past years and perform a simulation-based
+ comparative
+ study specifically for the geometric distribution. It consists first on checking the
+ empirical significance level against the nominal one for each test, and then performing
+ a power study. They analyzed three tests based on the empirical distribution function,
+ three based on the empirical generating function, the Neyman smooth test, 
+ and a test by Nikulin (1992) \cite{Nikulin} based on the generalized Smirnov transformation.
+ 
+The tests that had an overall better performance were the Baringhaus-Henze (BH) test,
+ the Anderson-Darling (AD) test and Nikulin's test. Among these, Nikulin's test was considered
+ to have a satisfying power, but they recommend not to use it for small data.
+ The two other tests have the disadvantage of requiring a numerical procedure called
+ parametric bootstrap, that is relatively expensive computationally speaking.
+ However, since the BH test involves by far many more operations than the AD test,
+ we preferred to use the latter for our analysis.
+ The computer power required to carry out the AD tests in this work is reasonable with
+ current technology. The code we made to perform the test gives the results within about
+ one second on an ordinary laptop.
+
+% Who and when proposed to use the A-D statistic
+The AD test belongs to a family of goodness of fit tests called the Cram\'{e}r-von Mises tests,
+ which includes the Anderson-Darling test, Watson's test and the Cram\'{e}r-von Mises test
+ itself.
+ 
+The family was originally developed to test continuous distributions, but a generalization 
+ for discrete distributions appeared for the first time in an article by Choulakian {\it
+ et.al.} \cite{Choulakian}. 
+
+% What is the procedure
+ 
+ The principle behind this kind of tests is defining a statistic that serves to
+ measure the distance between a theoretical distribution function $F_0(k)$ and the empirical
+ (cumulative) distribution function for $n$ events, $\mathbf{F}_n(k)$.
+ Every value of the statistic is associated with a $p$-value, that can be interpreted as the
+ probability of obtaining a value of the statistic at least as large as the one obtained, given
+ that the null hypothesis
+ 
+ \begin{equation} 
+ \label{eq_null_hypothesis}
+ \mathcal{H}_0: \mathbf{F}_n(k) = F_0
+ \end{equation}
+ 
+ \noindent
+ is true. If the $p$-value is smaller than a previously defined threshold value $\alpha$,
+ the null hypothesis is rejected.
+ 
+ For the case of the discrete Anderson-Darling test, this statistic is the
+ {\it Anderson-Darling statistic}:
+
+%% Define the statistic
+ 
+ \begin{equation}
+ \label{eq_statistic}
+ A_n^2 = n\sum_{k=1}^{\infty}\frac{[\mathbf{F}_n(k) - F_0(k)]^2p_0(k)}{F_0(k)(1-F_0(k))},
+ \end{equation}
+ 
+ \noindent
+ where $p_0=F_0(k) - F_0(k-1)$.
+ 
+ 
+ If instead what is being tested is whether the observed data comes from a
+ distribution belonging to a parametric family $F(\cdot;\theta)$, then the parameter $\theta$
+ must be estimated first.
+
+%% Why parametric bootstrap is neede and what is it.
+ For the case of the geometric distribution $\mathcal{G}(p)$,
+ this is an additional complication,
+ since the distribution of $A_n^2$, and therefore the correspondence between it and the
+ $p$-values, depends both on $n$ and on the parameter $p$.
+ 
+ In order to get around this problem, a numerical technique called parametric bootstrap is
+ used. First, $p$ is estimated using the maximum-likelihood estimator
+ 
+ \begin{equation}
+ \label{eq_maximum_likelihood}
+ \hat{p}_n=\frac{n}{\sum_{i=1}^n K_i},
+ \end{equation}
+ 
+ \noindent
+ where $K_i$ are the values of the random variable in the sample.
+ Then, a large number of copies of the sample is  generated and filled with random numbers
+ taken from the actual geometric distribution $\mathcal{G}(\hat{p})$, and the AD statistic
+ is calculated for every one of them.
+ The distribution of the statistic found from the samples can be then integrated up to the
+ value of $A_n^2$ calculated from the empirical data, in order to find the $p$-value for our
+ case of interest.
+ For the parametric bootstrap,  we used 500 copies of the sample,
+ which was the same number used by Bracquemond {\it et. al.} \cite{BraCreGau} for their tests.
+ As our random number generator, we used the routine {\it ran2} from
+ {\it Numerical Recipes in C} \cite{Recipes}, which breaks serial correlations to a
+ great extent and has a period of $\approx 2.3 \times 10^{18}$.
+
+%\includegraphics[scale=1]{DJIup.eps} 
+%\includegraphics[scale=1]{DJIdown.eps} 
+%\includegraphics[scale=1]{NASDAQup.eps} 
+%\includegraphics[scale=1]{NASDAQdown.eps} 
+%\includegraphics[scale=1]{IPCup.eps} 
+%\includegraphics[scale=1]{IPCdown.eps} 
+
+
+ 
+%\section*{References} 
+\begin{thebibliography}{3}
+% Names, % title, Journal, Vol. No. pages.
+\bibitem{BraCreGau}
+Bracquemond, C., Cr\'{e}tois, E., Gaudoin O., (2002)
+``A comparative study of goodness-of-fit tests for the geometric distribution and application
+to discrete-time reliability'' Technical Report, URL: www-ljk.imag.fr/SMS/ftp/BraCreGau02.pdf.
+
+\bibitem{Choulakian}
+Choulakian, V., Lockhart, R. A., Stephens, M. A., (1994)
+% ``Cramer-von Mises Statistics for Discrete Distributions''
+{\it The Canadian Journal of Statistics}, 22, 1, pp. 125-137. 
+
+\bibitem{Nikulin}
+Nikulin, M. S. (1992),
+% ``Gihman statistics and Goodness-of-Fit Tests for Grouped Data''
+{\it C. R. Math. Rep. Acad. Sci. Canada}, 14, 4, pp. 151-156.
+
+\bibitem{Recipes}
+Press, W. H., Teukolsky, S. A., Vetterling, W. T.,
+{\it Numerical Recipes in C: The Art of Scientific Computing}.
+Cambridge University Press, 2002 pp. 281-282.
+
+\end{thebibliography}
+
+\end{document}
+

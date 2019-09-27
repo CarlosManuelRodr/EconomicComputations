@@ -1,0 +1,7 @@
+1. Desinflar serie
+   1.1 Obtener datos de inflacion en formato estandar	✓
+   1.2 Poner indices en formato estandar		✓
+   1.3 Desinflar leyendo de ambos archivos e interpolando inflacion
+2. Dividir serie en ventanas y aplicar AD
+   2.1 Dividir en ventantas
+   2.2 Aplicar AD

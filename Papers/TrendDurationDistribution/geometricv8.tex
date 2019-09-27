@@ -52,7 +52,7 @@ An {\it elemental trend} of duration $k$ will be defined here as a subseries of 
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=9cm]{img/TrendReturnsVisual.eps}
+\includegraphics[width=9cm]{img/TrendReturnsVisual.pdf}
 \end{center}
 \caption{\label{fig:trends}The line segments join the starting and ending points of each elemental trend.}
 \end{figure}
@@ -141,10 +141,10 @@ The duration of a elemental downward trend in daily data is the number of days b
 \section{Methodology}
 \label{methodology}
 \subsection{Data}
-Three indices were analyzed, namely Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and Nikkei 225 during the period 30 October 1978 - 23 January 2018. The data was obtained from Yahoo Finance.
+Three indices were analyzed, namely Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and Nikkei 225 during the period 30 October 1978 - 26 September 2019. The data was obtained from Yahoo Finance.
 
 \subsection{Building the sample}
-For each series of index values, several time windows of 252 trading days (which in average represent one trading year) were created, each one shifted forward by one trading day with respect to the previous one. This procedure resulted in 32102 time windows for the DJIA, 11569 for the NASDAQ and 5885 for the IPC. Two histograms were built for each time window, one for upward trends and the other one for downward trends. For every sample in the time windows, the number of days before every sign change is measured. For instance, given the sequence $-$ $ - + + + + + $ $-$, the recorded times will be $(2,5,1)$. Finally, all the histograms were normalized. Examples of both uptrend and downtrend histograms for different time windows are shown in Figure \ref{fig:oneGT}.
+For each series of index values, several time windows of 504 trading days (which in average represent two trading years) were created, each one shifted forward by one trading day with respect to the previous one. This procedure resulted in 4830 time windows for the DJIA, 4216 for the NASDAQ, 3901 for the IPC and 4584 for the Nikkei. Two histograms were built for each time window, one for upward trends and the other one for downward trends. For every sample in the time windows, the number of days before every sign change is measured. For instance, given the sequence $-$ $ - + + + + + $ $-$, the recorded times will be $(2,5,1)$. Finally, all the histograms were normalized. Examples of both uptrend and downtrend histograms for different time windows are shown in Figure \ref{fig:oneGT}.
 
 
 \subsection{The Anderson-Darling goodness of fit test}
@@ -157,42 +157,42 @@ In order to compare the observed and expected distributions of  trend durations,
 \begin{center}
 \includegraphics[width=9cm]{img/sign_ratios}
 \end{center}
-\caption{\label{fig:simetria}Ratio of upward to total price changes in daily data, plotted against time for the interval from 1978-10-30 to 2018-01-23, calculated over a time window of 1000 trading days.}
+\caption{\label{fig:simetria}Ratio of upward to total price changes in daily data, plotted against time for the interval from 1978-10-30 to 2019-09-26, calculated over a time window of 504 trading days.}
 \end{figure}
 
-In Figure \ref{fig:simetria}, the ratio of the upward to total price changes in daily data is plotted against time for the years 1978 - 2017. This ratio is calculated over a time window of 1000 trading days. It can be seen that variations are greater than those expected for the same time windows in a Bernoulli process with parameter $p = 1/2$ ($\pm{0.05}$), but it might be interesting to find out whether the hypothesis of a geometric distribution holds for smaller periods (such as each of the 1000 days time windows individually), because it would mean that in those periods the direction of price changes was not predictable using historical prices of the index. Plots in figure \ref{fig:oneGT} show the distribution of trend durations corresponding to different indices and periods of 1000 days. Figure \ref{fig:PiValuesAD} display the $p$-values of the Anderson-Darling statistic for different periods. In order to avoid confusion between the parameter of the geometric distribution and the $p$-values for the distribution of $A^{2}_{n}$, the latter will be referred to as $\pi$-values. The meaning of $\pi$-values is the probability of obtaining a value of $A^{2}_{n}$ at least as big as the one that was really obtained, given that the probability distribution is actually geometric.
+In Figure \ref{fig:simetria}, the ratio of the upward to total price changes in daily data is plotted against time for the years 1978 - 2019. This ratio is calculated over a time window of 504 trading days. It can be seen that variations are greater than those expected for the same time windows in a Bernoulli process with parameter $p = 1/2$ ($\pm{0.05}$). Plots in figure \ref{fig:oneGT} show the distribution of trend durations corresponding to different indices and periods of 504 days. Figure \ref{fig:PiValuesAD} display the $p$-values of the Anderson-Darling statistic for different periods. In order to avoid confusion between the parameter of the geometric distribution and the $p$-values for the distribution of $A^{2}_{n}$, the latter will be referred to as $\pi$-values. The meaning of $\pi$-values is the probability of obtaining a value of $A^{2}_{n}$ at least as big as the one that was really obtained, given that the probability distribution is actually geometric.
 
 %Las cuatro figuras juntas, con incisos:
 \begin{figure}[h!tb]
 	\centering
         \begin{subfigure}[b]{0.45\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{img/pvalores_NASDAQ.eps}
+            \includegraphics[width=\textwidth]{img/pvalores_NASDAQ.pdf}
             \caption[]{}    
             \label{fig:nasdaq}
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.45\textwidth}  
             \centering 
-            \includegraphics[width=\textwidth]{img/pvalores_IPC.eps}
+            \includegraphics[width=\textwidth]{img/pvalores_IPC.pdf}
             \caption[]{}     
             \label{fig:ipc}
         \end{subfigure}
         \vskip\baselineskip
         \begin{subfigure}[b]{0.45\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{img/pvalores_DJIA.eps}
+            \includegraphics[width=\textwidth]{img/pvalores_DJIA.pdf}
             \caption[]{}      
             \label{fig:dji}
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.45\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{img/pvalores_Nikkei.eps}
+            \includegraphics[width=\textwidth]{img/pvalores_Nikkei.pdf}
             \caption[]{}      
             \label{fig:nikkei}
         \end{subfigure}
-        \caption{\small (Color online) \ref{fig:nasdaq}: $\pi$-values of the Anderson-Darling statistic for the NASDAQ plotted against time. As time passes, the data agree better with the geometric distribution; \ref{fig:ipc}: $\pi$-values of the Anderson-Darling statistic for the IPC plotted against time. As for NASDAQ, agreement between data and the geometric distribution increases with time;  \ref{fig:dji}: $\pi$-values of the Anderson-Darling statistic for the DJIA plotted against time. The greatest deviations from the geometric distribution occurred between the years 2000-2011.} 
+        \caption{\small (Color online) \ref{fig:nasdaq}: $\pi$-values of the Anderson-Darling statistic for the NASDAQ plotted against time. As time passes, the data agree better with the geometric distribution; \ref{fig:ipc}: $\pi$-values of the Anderson-Darling statistic for the IPC plotted against time. As for NASDAQ, agreement between data and the geometric distribution increases with time;  \ref{fig:dji}: $\pi$-values of the Anderson-Darling statistic for the DJIA plotted against time. The greatest deviations from the geometric distribution occurred between the years 2000-2011. \ref{fig:nikkei}: $\pi$-values of the Anderson-Darling statistic for the Nikkei plotted against time. The greatest deviations from the geometric distribution occurred between the years 1980-2000.} 
 	\label{fig:PiValuesAD}
 \end{figure}
 
@@ -201,188 +201,122 @@ In Figure \ref{fig:simetria}, the ratio of the upward to total price changes in 
 	\centering
         \begin{subfigure}[b]{0.45\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{img/dist_pos_DJIA.eps}
+            \includegraphics[width=\textwidth]{img/dist_pos_DJIA.pdf}
             \caption[]{}    
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.45\textwidth}  
             \centering 
-            \includegraphics[width=\textwidth]{img/dist_neg_DJIA.eps}
+            \includegraphics[width=\textwidth]{img/dist_neg_DJIA.pdf}
             \caption[]{}     
         \end{subfigure}
         \vskip\baselineskip
         \begin{subfigure}[b]{0.45\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{img/dist_pos_NASDAQ.eps}
+            \includegraphics[width=\textwidth]{img/dist_pos_NASDAQ.pdf}
             \caption[]{}      
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.45\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{img/dist_neg_NASDAQ.eps}
+            \includegraphics[width=\textwidth]{img/dist_neg_NASDAQ.pdf}
             \caption[]{}      
         \end{subfigure}
         \begin{subfigure}[b]{0.45\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{img/dist_pos_IPC.eps}
+            \includegraphics[width=\textwidth]{img/dist_pos_IPC.pdf}
             \caption[]{}    
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.45\textwidth}  
             \centering 
-            \includegraphics[width=\textwidth]{img/dist_neg_IPC.eps}
+            \includegraphics[width=\textwidth]{img/dist_neg_IPC.pdf}
             \caption[]{}     
         \end{subfigure}
         \vskip\baselineskip
         \begin{subfigure}[b]{0.45\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{img/dist_pos_Nikkei.eps}
+            \includegraphics[width=\textwidth]{img/dist_pos_Nikkei.pdf}
             \caption[]{}      
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.45\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{img/dist_neg_Nikkei.eps}
+            \includegraphics[width=\textwidth]{img/dist_neg_Nikkei.pdf}
             \caption[]{}      
         \end{subfigure}
         \caption{\small Distribution of trend durations for different indices and a time windows of 1000 days. (a), (c), (e) and (g) present the upward distribution and (b), (d), (f) and (h) the downward distribution. The solid lines are the expected geometric distributions. The parameters $p$ and $q$ are shown on each figure.} 
 	\label{fig:oneGT}
 \end{figure}
 
-It was observed that as time passes, the direction of price changes for the IPC and the Nasdaq is better described by a geometric distribution (Figures \ref{fig:nasdaq} and \ref{fig:ipc}). The distribution of trend durations for the Dow Jones is generally reasonably well fitted by the geometric distribution. This fact can be interpreted as a possible evidence that the Mexican stock market (that has become public and regulated since 1975) has been increasing its efficiency, as reported by previous research \cite{Achach}. The same claim can be made about the NASDAQ, given that it is also a market of relatively recent creation. In contrast, the Dow Jones Industrial Average index represents a more mature market. However, there is also evidence that the New York Stock Exchange, represented by the Dow Jones, has swiftly increased its efficiency between the beginning of the 1980s and the end of the 1990s \cite{NYSE}. Figure \ref{fig:dji} shows that for the Dow Jones, the greatest deviations from the geometric distribution in the studied period (almost the whole XXth Century) occurred between the years 2000-2011.
+It was observed that as time passes, the direction of price changes for the IPC and the Nasdaq is better described by a geometric distribution (Figures \ref{fig:nasdaq} and \ref{fig:ipc}). The distribution of trend durations for the Dow Jones is generally reasonably well fitted by the geometric distribution. This fact can be interpreted as a possible evidence that the Mexican stock market (that has become public and regulated since 1975) has been increasing its efficiency, as reported by previous research \cite{Achach}. The same claim can be made about the NASDAQ, given that it is also a market of relatively recent creation. In contrast, the Dow Jones Industrial Average index represents a more mature market. However, there is also evidence that the New York Stock Exchange, represented by the Dow Jones, has swiftly increased its efficiency between the beginning of the 1980s and the end of the 1990s \cite{NYSE}. Figure \ref{fig:dji} shows that for the Dow Jones, the greatest deviations from the geometric distribution in the studied period occurred between the years 2000-2011. Figure \ref{fig:nikkei} shows that for the Nikkei, the greatest deviations from the geometric distribution in the studied period occurred between the years 1980-2000.
 
 
 \section{Conclusions}
-
-The probability distributions for the duration of elemental trends were studied for the market indices Dow Jones Industrial Average (DJIA), NASDAQ Composite and for the Mexican \'Indice de Precios y Cotizaciones (IPC). These distributions are expected to be geometric and memoryless according to the discussion in section \ref{model}. The IPC and the NASDAQ present periods in which the memoryless hypothesis must be definitively rejected.
+The probability distributions for the duration of elemental trends were studied for the market indices Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and for the Japanese Nikkei 225. These distributions are expected to be geometric and memoryless according to the discussion in section \ref{model}. The IPC and the NASDAQ present periods in which the memoryless hypothesis must be definitively rejected, while DJIA and NIKKEI showed to be fitted reasonably well by geometric distribution with sporadic deviations in specific periods of time.
 
 \begin{appendices}
-   \addappheadtotoc
-   \appendixpage
-  % \clearpage
+\addappheadtotoc
+\appendixpage
+%\clearpage
   
 \section*{The discrete version of the Anderson-Darling goodness of fit test}
 \label{apendice}
  %\section{The discrete version of the Anderson-Darling goodness of fit test}
 
 % Why Chi2 is not effective
-Determining whether or not a given probability model fits the observed
- data that it attempts to describe is one of the most important problems of applied statistics.
+Determining whether or not a given probability model fits the observed data that it attempts to describe is one of the most important problems of applied statistics. Even though extensive research has been done regarding this problem, most of it deals with continuous distributions. Unfortunately, the studies done for fitting discrete distributions are much less numerous, or at least harder to find.
 
-Even though extensive research has been done regarding this problem, most of it deals with
- continuous distributions. Unfortunately, the studies done for fitting discrete distributions
- are much less numerous, or at least harder to find.
-
-Discrete distributions, however, are important in many fields as medicine, psychology and
- engineering. Scientific papers and textbooks
- often prescribe the chi-square test as the option to use when testing goodness of fit 
- for these distributions.
+Discrete distributions, however, are important in many fields as medicine, psychology and engineering. Scientific papers and textbooks often prescribe the chi-square test as the option to use when testing goodness of fit for these distributions.
  
-Nevertheless, it is well known that chi-square tests suffer from low power, especially when
- applied to data in which there are bins with very small content (as a single event),
- and when the expected distribution predicts a very low probability for one of the categories.
- Data drawn from a process that can be described by a geometric distribution precisely
- exhibits both features.
+Nevertheless, it is well known that chi-square tests suffer from low power, especially when applied to data in which there are bins with very small content (as a single event), and when the expected distribution predicts a very low probability for one of the categories. Data drawn from a process that can be described by a geometric distribution precisely exhibits both features.
 
 % The alternatives tests that have been proposed
- Bracquemond {\it et. al.} (2002) \cite{BraCreGau} make a review of eight alternatives to the chi-square test
- proposed over the past years and perform a simulation-based
- comparative
- study specifically for the geometric distribution. It consists first on checking the
- empirical significance level against the nominal one for each test, and then performing
- a power study. They analyzed three tests based on the empirical distribution function,
- three based on the empirical generating function, the Neyman smooth test, 
- and a test by Nikulin (1992) \cite{Nikulin} based on the generalized Smirnov transformation.
+Bracquemond {\it et. al.} (2002) \cite{BraCreGau} make a review of eight alternatives to the chi-square test proposed over the past years and perform a simulation-based comparative study specifically for the geometric distribution. It consists first on checking the empirical significance level against the nominal one for each test, and then performing a power study. They analyzed three tests based on the empirical distribution function, three based on the empirical generating function, the Neyman smooth test, and a test by Nikulin (1992) \cite{Nikulin} based on the generalized Smirnov transformation.
  
-The tests that had an overall better performance were the Baringhaus-Henze (BH) test,
- the Anderson-Darling (AD) test and Nikulin's test. Among these, Nikulin's test was considered
- to have a satisfying power, but they recommend not to use it for small data.
- The two other tests have the disadvantage of requiring a numerical procedure called
- parametric bootstrap, that is relatively expensive computationally speaking.
- However, since the BH test involves by far many more operations than the AD test,
- we preferred to use the latter for our analysis.
- The computer power required to carry out the AD tests in this work is reasonable with
- current technology. The code we made to perform the test gives the results within about
- one second on an ordinary laptop.
+The tests that had an overall better performance were the Baringhaus-Henze (BH) test, the Anderson-Darling (AD) test and Nikulin's test. Among these, Nikulin's test was considered to have a satisfying power, but they recommend not to use it for small data. The two other tests have the disadvantage of requiring a numerical procedure called parametric bootstrap, that is relatively expensive computationally speaking. However, since the BH test involves by far many more operations than the AD test, we preferred to use the latter for our analysis. The computer power required to carry out the AD tests in this work is reasonable with current technology. The code we made to perform the test gives the results within about one second on an ordinary laptop.
 
 % Who and when proposed to use the A-D statistic
-The AD test belongs to a family of goodness of fit tests called the Cram\'{e}r-von Mises tests,
- which includes the Anderson-Darling test, Watson's test and the Cram\'{e}r-von Mises test
- itself.
+The AD test belongs to a family of goodness of fit tests called the Cram\'{e}r-von Mises tests, which includes the Anderson-Darling test, Watson's test and the Cram\'{e}r-von Mises test itself.
  
-The family was originally developed to test continuous distributions, but a generalization 
- for discrete distributions appeared for the first time in an article by Choulakian {\it
- et.al.} \cite{Choulakian}. 
+The family was originally developed to test continuous distributions, but a generalization for discrete distributions appeared for the first time in an article by Choulakian {\it et.al.} \cite{Choulakian}. 
 
 % What is the procedure
- 
- The principle behind this kind of tests is defining a statistic that serves to
- measure the distance between a theoretical distribution function $F_0(k)$ and the empirical
- (cumulative) distribution function for $n$ events, $\mathbf{F}_n(k)$.
- Every value of the statistic is associated with a $p$-value, that can be interpreted as the
- probability of obtaining a value of the statistic at least as large as the one obtained, given
- that the null hypothesis
- 
- \begin{equation} 
- \label{eq_null_hypothesis}
- \mathcal{H}_0: \mathbf{F}_n(k) = F_0
- \end{equation}
- 
- \noindent
- is true. If the $p$-value is smaller than a previously defined threshold value $\alpha$,
- the null hypothesis is rejected.
- 
- For the case of the discrete Anderson-Darling test, this statistic is the
- {\it Anderson-Darling statistic}:
+The principle behind this kind of tests is defining a statistic that serves to measure the distance between a theoretical distribution function $F_0(k)$ and the empirical (cumulative) distribution function for $n$ events, $\mathbf{F}_n(k)$. Every value of the statistic is associated with a $p$-value, that can be interpreted as the probability of obtaining a value of the statistic at least as large as the one obtained, given that the null hypothesis
+
+\begin{equation} 
+\label{eq_null_hypothesis}
+\mathcal{H}_0: \mathbf{F}_n(k) = F_0
+\end{equation}
+
+\noindent
+is true. If the $p$-value is smaller than a previously defined threshold value $\alpha$, the null hypothesis is rejected. For the case of the discrete Anderson-Darling test, this statistic is the {\it Anderson-Darling statistic}:
 
 %% Define the statistic
- 
- \begin{equation}
- \label{eq_statistic}
- A_n^2 = n\sum_{k=1}^{\infty}\frac{[\mathbf{F}_n(k) - F_0(k)]^2p_0(k)}{F_0(k)(1-F_0(k))},
- \end{equation}
- 
- \noindent
- where $p_0=F_0(k) - F_0(k-1)$.
- 
- 
- If instead what is being tested is whether the observed data comes from a
- distribution belonging to a parametric family $F(\cdot;\theta)$, then the parameter $\theta$
- must be estimated first.
+\begin{equation}
+\label{eq_statistic}
+A_n^2 = n\sum_{k=1}^{\infty}\frac{[\mathbf{F}_n(k) - F_0(k)]^2p_0(k)}{F_0(k)(1-F_0(k))},
+\end{equation}
+
+\noindent
+where $p_0=F_0(k) - F_0(k-1)$. If instead what is being tested is whether the observed data comes from a distribution belonging to a parametric family $F(\cdot;\theta)$, then the parameter $\theta$ must be estimated first.
 
 %% Why parametric bootstrap is neede and what is it.
- For the case of the geometric distribution $\mathcal{G}(p)$,
- this is an additional complication,
- since the distribution of $A_n^2$, and therefore the correspondence between it and the
- $p$-values, depends both on $n$ and on the parameter $p$.
- 
- In order to get around this problem, a numerical technique called parametric bootstrap is
- used. First, $p$ is estimated using the maximum-likelihood estimator
- 
- \begin{equation}
- \label{eq_maximum_likelihood}
- \hat{p}_n=\frac{n}{\sum_{i=1}^n K_i},
- \end{equation}
- 
- \noindent
- where $K_i$ are the values of the random variable in the sample.
- Then, a large number of copies of the sample is  generated and filled with random numbers
- taken from the actual geometric distribution $\mathcal{G}(\hat{p})$, and the AD statistic
- is calculated for every one of them.
- The distribution of the statistic found from the samples can be then integrated up to the
- value of $A_n^2$ calculated from the empirical data, in order to find the $p$-value for our
- case of interest.
- For the parametric bootstrap,  we used 500 copies of the sample,
- which was the same number used by Bracquemond {\it et. al.} \cite{BraCreGau} for their tests.
- As our random number generator, we used the routine {\it ran2} from
- {\it Numerical Recipes in C} \cite{Recipes}, which breaks serial correlations to a
- great extent and has a period of $\approx 2.3 \times 10^{18}$.
-  \end{appendices}
+For the case of the geometric distribution $\mathcal{G}(p)$, this is an additional complication, since the distribution of $A_n^2$, and therefore the correspondence between it and the $p$-values, depends both on $n$ and on the parameter $p$. In order to get around this problem, a numerical technique called parametric bootstrap is used. First, $p$ is estimated using the maximum-likelihood estimator
+
+\begin{equation}
+\label{eq_maximum_likelihood}
+\hat{p}_n=\frac{n}{\sum_{i=1}^n K_i},
+\end{equation}
+
+\noindent
+where $K_i$ are the values of the random variable in the sample. Then, a large number of copies of the sample is  generated and filled with random numbers taken from the actual geometric distribution $\mathcal{G}(\hat{p})$, and the AD statistic is calculated for every one of them. The distribution of the statistic found from the samples can be then integrated up to the value of $A_n^2$ calculated from the empirical data, in order to find the $p$-value for our case of interest. For the parametric bootstrap,  we used 500 copies of the sample, which was the same number used by Bracquemond {\it et. al.} \cite{BraCreGau} for their tests. As our random number generator, we used the routine {\it ran2} from {\it Numerical Recipes in C} \cite{Recipes}, which breaks serial correlations to a great extent and has a period of $\approx 2.3 \times 10^{18}$.
+
+\end{appendices}
 
 
 \section*{Acknowledgements}
-This work was supported by Conacyt-Mexico and MAE-Italy under grant 146498. We also thank Conacyt-Mexico for the support under  project grant 155492, Universidad Veracruzana under project 41504 and PRIN 2009 Italian grant ``Finitary and
-non-finitary probabilistic methods in Economics''.
+This work was supported by Conacyt-Mexico and MAE-Italy under grant 146498. We also thank Conacyt-Mexico for the support under  project grant 155492, Universidad Veracruzana under project 41504 and PRIN 2009 Italian grant ``Finitary and non-finitary probabilistic methods in Economics''.
 
 \section*{References}
 \begin{thebibliography}{15}

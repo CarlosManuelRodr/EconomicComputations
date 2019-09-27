@@ -1,0 +1,44 @@
+Archivo: ../Data/IPC_08_11_1991-17_03_2016.csv
+Formato: 
+Date,Open,High,Low,Close,Volume,Adj Close
+2016-03-17,44751.398438,45507.871094,44644.339844,45435.089844,336601600,45435.089844
+
+Los datos no tienen la misma precisión en toda la historia del IPC. A partir de 1991/Nov/08 tienen una cifra significativa más.
+Arreglado poniendo los más posibles con más cifras significativas.
+
+Terminado formato de series.
+
+La interpolación va a ser lineal. Voy a hacer un diccionario con el número de días de cada mes. No voy a considerar diferencias entre años bisiestos y normales. Febrero siempre tendrá 29 días.
+
+
+Checo cuál valor está más cerca.
+
+Para un valor del índice
+Busco cuáles fechas en el índice de inflación están más cercanas.
+
+ó
+
+Leo el primer valor
+
+Para INPC
+
+Si el día es igual o más de 1 e igual o menor a 16,
+
+Valor = (dia/16) * (Valor el 16 - Valor el 1) + Valor el 1
+
+Si el día es mayor a 16
+
+Valor = ((dia-16)*/(No. de dias + 1 - 16)) * (Valor el 1 del mes siguiente - Valor el 16) + Valor el 16
+
+Para CPI
+
+Valor = (dia/(No. de dias + 1)) * (Valor el 1 del mes siguiente - Valor el 1) + Valor el 1
+
+
+Por hacer:
+- Módulo para interpolar y desinflar la serie
+- Módulo para seleccionar una ventana de tiempo de N días laborables.
+- Módulo para hacer test de A-D en esa ventana.
+
+
+
