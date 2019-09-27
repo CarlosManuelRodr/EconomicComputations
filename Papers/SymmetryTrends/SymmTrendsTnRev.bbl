@@ -1,0 +1,230 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Kaldor}
+N.~Kaldor, Capital accumulation and economic growth, in: The theory of capital,
+  International Economic Association, Palgrave Macmillan, London, 1961, pp.
+  177--222.
+\newblock \href {http://dx.doi.org/10.1007/978-1-349-08452-4_10}
+  {\path{doi:10.1007/978-1-349-08452-4_10}}.
+
+\bibitem{Cont}
+R.~Cont, Empirical properties of asset returns: stylized facts and statistical
+  issues, Quantitative Finance 1 (2001) 223--236.
+\newblock \href {http://dx.doi.org/10.1080/713665670}
+  {\path{doi:10.1080/713665670}}.
+
+\bibitem{Beedles}
+W.~L. Beedles, On the asymmetry of market returns, The Journal of Financial and
+  Quantitative Analysis 14~(3) (1979) 653--660.
+\newblock \href {http://dx.doi.org/10.2307/2330196}
+  {\path{doi:10.2307/2330196}}.
+
+\bibitem{Fogler}
+H.~R. Fogler, R.~C. Radcliffe, A note on measurement of skewness, Journal of
+  Financial and Quantitative Analysis 9~(3) (1974) 485–489.
+\newblock \href {http://dx.doi.org/10.2307/2329875}
+  {\path{doi:10.2307/2329875}}.
+
+\bibitem{Bouchaud}
+{J.P. Bouchaud}, M.~Potters,
+  \href{https://books.google.com.mx/books?id=4IBjPwAACAAJ}{Theory of Financial
+  Risk and Derivative Pricing: From Statistical Physics to Risk Management},
+  2nd Edition, Cambridge University Press, 2009.
+\newline\urlprefix\url{https://books.google.com.mx/books?id=4IBjPwAACAAJ}
+
+\bibitem{Jensen2}
+{P. T. Heden Ahlgren}, {M. H. Jensen}, I.~Simonsen, R.~Donangelo, K.~Sneppen,
+  Frustration driven stock market dynamics: Leverage effect and asymmetry,
+  Physica A: Statistical Mechanics and its Applications 383~(1) (2007) 1--4.
+\newblock \href {http://dx.doi.org/10.1016/j.physa.2007.04.081}
+  {\path{doi:10.1016/j.physa.2007.04.081}}.
+
+\bibitem{Dutta}
+A.~Dutta,
+  \href{https://pdfs.semanticscholar.org/5c18/f7ade84ed77319381a45db4f74bde243eec8.pdf?_ga=2.35273953.1115894547.1542995825-2123431015.1542995825}{Modelling
+  volatility: Symmetric or asymmetric garch models?}, Journal of Statistics:
+  Advances in Theory and Applications 12~(2) (2014) 99--108.
+\newline\urlprefix\url{https://pdfs.semanticscholar.org/5c18/f7ade84ed77319381a45db4f74bde243eec8.pdf?_ga=2.35273953.1115894547.1542995825-2123431015.1542995825}
+
+\bibitem{deAlmeida}
+D.~d. Almeida, L.~K. Hotta, { The leverage effect and the asymmetry of the
+  error distribution in GARCH based models: The case of Brazilian market
+  related series}, {Pesquisa Operacional} 34 (2014) 237 -- 250.
+\newblock \href {http://dx.doi.org/10.1590/0101-7438.2014.034.02.0237}
+  {\path{doi:10.1590/0101-7438.2014.034.02.0237}}.
+
+\bibitem{Lillo}
+{Lillo, F.}, {Mantegna, R. N.}, Symmetry alteration of ensemble return
+  distribution in crash and rally days of financial markets, Eur. Phys. J. B
+  15~(4) (2000) 603--606.
+\newblock \href {http://dx.doi.org/10.1007/s100510051162}
+  {\path{doi:10.1007/s100510051162}}.
+
+\bibitem{Jiang}
+X.~Jiang, T.~Chen, B.~Zheng, Time-reversal asymmetry in financial systems,
+  Physica A: Statistical Mechanics and its Applications 392~(21) (2013) 5369 --
+  5375.
+\newblock \href {http://dx.doi.org/10.1016/j.physa.2013.07.006}
+  {\path{doi:10.1016/j.physa.2013.07.006}}.
+
+\bibitem{Jensen}
+M.~H. Jensen, A.~Johansen, I.~Simonsen, Inverse statistics in economics: the
+  gain--loss asymmetry, Physica A: Statistical Mechanics and its Applications
+  324~(1) (2003) 338--343.
+\newblock \href {http://dx.doi.org/10.1016/S0378-4371(02)01884-8}
+  {\path{doi:10.1016/S0378-4371(02)01884-8}}.
+
+\bibitem{Karpio}
+K.~Karpio, M.~A. Załuska-Kotur, A.~Orłowski, Gain–loss asymmetry for
+  emerging stock markets, Physica A: Statistical Mechanics and its Applications
+  375~(2) (2007) 599 -- 604.
+\newblock \href {http://dx.doi.org/10.1016/j.physa.2006.10.003}
+  {\path{doi:10.1016/j.physa.2006.10.003}}.
+
+\bibitem{Jun}
+J.-J. Tseng, S.-P. Li, Asset returns and volatility clustering in financial
+  time series, Physica A: Statistical Mechanics and its Applications 390~(7)
+  (2011) 1300 -- 1314.
+\newblock \href {http://dx.doi.org/10.1016/j.physa.2010.12.002}
+  {\path{doi:10.1016/j.physa.2010.12.002}}.
+
+\bibitem{Savona}
+R.~Savona, M.~Soumare, J.~V. Andersen, Financial symmetry and moods in the
+  market, PLOS ONE 10~(4) (2015) 1--21.
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0118224}
+  {\path{doi:10.1371/journal.pone.0118224}}.
+
+\bibitem{Duarte}
+M.~B. Graczyk, S.~M. Duarte~Queir\'os, Intraday seasonalities and
+  nonstationarity of trading volume in financial markets: Individual and
+  cross-sectional features, PLOS ONE 11~(11) (2016) 1--25.
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0165057}
+  {\path{doi:10.1371/journal.pone.0165057}}.
+
+\bibitem{Zoltan}
+B.~S\'andor, I.~Simonsen, B.~Z. Nagy, Z.~N\'eda, Time-scale effects on the
+  gain-loss asymmetry in stock indices, Phys. Rev. E 94 (2016) 022311.
+\newblock \href {http://dx.doi.org/10.1103/PhysRevE.94.022311}
+  {\path{doi:10.1103/PhysRevE.94.022311}}.
+
+\bibitem{Grech}
+L.~Bil, D.~Grech, M.~Zienowicz, Asymmetry of price return--analysis and
+  perspectives from a non-extensive statistical physics point of view, PLOS ONE
+  12~(11) (2017) 1--24.
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0188541}
+  {\path{doi:10.1371/journal.pone.0188541}}.
+
+\bibitem{Coronel-Montoya}
+H.~F. Coronel-Brizio, A.~R. Hern\'andez-Montoya, R.~Huerta-Quintanilla, M.~E.
+  Rodr\'{i}guez-Achach, Assessing symmetry of financial returns series, Physica
+  A: Statistical Mechanics and its Applications 383~(1) (2007) 5 -- 9,
+  econophysics Colloquium 2006 and Third Bonzenfreies Colloquium.
+\newblock \href {http://dx.doi.org/10.1016/j.physa.2007.04.122}
+  {\path{doi:10.1016/j.physa.2007.04.122}}.
+
+\bibitem{Vitalies}
+J.~V. Siven, J.~T. Lins, Temporal structure and gain-loss asymmetry for real
+  and artificial stock indices, Phys. Rev. E 80 (2009) 057102.
+\newblock \href {http://dx.doi.org/10.1103/PhysRevE.80.057102}
+  {\path{doi:10.1103/PhysRevE.80.057102}}.
+
+\bibitem{Takayasu}
+A.~M. Yamashita Rios~de Sousa, H.~Takayasu, M.~Takayasu, Detection of
+  statistical asymmetries in non-stationary sign time series: Analysis of
+  foreign exchange data, PLOS ONE 12~(5) (2017) 1--18.
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0177652}
+  {\path{doi:10.1371/journal.pone.0177652}}.
+
+\bibitem{peiro}
+A.~Peir\'o, Asymmetries and tails in stock index returns: are their
+  distributions really asymmetric?, Quantitative Finance 4~(1) (2004) 37--44.
+\newblock \href {http://dx.doi.org/10.1088/1469-7688/4/1/003}
+  {\path{doi:10.1088/1469-7688/4/1/003}}.
+
+\bibitem{peiro2}
+A.~Peir\'o, Skewness in financial returns, Journal of Banking \& Finance 23~(6)
+  (1999) 847 -- 862.
+\newblock \href {http://dx.doi.org/10.1016/S0378-4266(98)00119-8}
+  {\path{doi:10.1016/S0378-4266(98)00119-8}}.
+
+\bibitem{Olivares}
+H.~Coronel-Brizio, A.~Hern\'andez-Montoya, H.~Olivares-S{\'a}nchez, E.~Scalas,
+  \href{https://arxiv.org/abs/1211.3060}{Analysis of short term price trends in
+  daily stock-market index data}, arXiv preprint arXiv:1211.3060.
+\newline\urlprefix\url{https://arxiv.org/abs/1211.3060}
+
+\bibitem{Einmahl}
+J.~H. Einmahl, I.~W. Mckeague, Empirical likelihood based hypothesis testing,
+  Bernoulli 9~(2) (2003) 267--290.
+\newblock \href {http://dx.doi.org/10.3150/bj/1068128978}
+  {\path{doi:10.3150/bj/1068128978}}.
+
+\bibitem{imhof}
+J.~P. Imhof, Computing the distribution of quadratic forms in normal variables,
+  Biometrika 48~(3-4) (1961) 419--426.
+\newblock \href {http://dx.doi.org/10.1093/biomet/48.3-4.419}
+  {\path{doi:10.1093/biomet/48.3-4.419}}.
+
+\bibitem{Einmahl2}
+J.~Einmahl, I.~McKeague,
+  \href{https://pure.uvt.nl/ws/portalfiles/portal/543315/92.pdf}{Empirical
+  likelihood based on hypothesis testing}, Workingpaper, Econometrics,
+  pagination: 25 (2002).
+\newline\urlprefix\url{https://pure.uvt.nl/ws/portalfiles/portal/543315/92.pdf}
+
+\bibitem{Wilks}
+S.~Wilks, \href{https://books.google.com.mx/books?id=k38pAQAAMAAJ}{Mathematical
+  Statistics}, Mathematical Statistics, Princeton University Press, 1943.
+\newline\urlprefix\url{https://books.google.com.mx/books?id=k38pAQAAMAAJ}
+
+\bibitem{Karsten}
+K.~Prause, The generalized hyperbolic model: Estimation, financial derivatives,
+  and risk measures, Ph.D. thesis, PhD thesis, University of Freiburg (1999).
+
+\bibitem{Coronel_tesis}
+H.~F. Coronel~Brizio, Regression tests of fit and some comparisons, Ph.D.
+  thesis, Theses (Dept. of Mathematics and Statistics)/Simon Fraser University
+  (1994).
+
+\bibitem{Coronel}
+H.~F. Coronel-Brizio, A.~R. Hern\'andez-Montoya, On fitting the pareto-levy
+  distribution to stock market index data: Selecting a suitable cutoff value,
+  Physica A: Statistical Mechanics and its Applications 354~(Supplement C)
+  (2005) 437 -- 449.
+\newblock \href {http://dx.doi.org/10.1016/j.physa.2005.03.001}
+  {\path{doi:10.1016/j.physa.2005.03.001}}.
+
+\bibitem{Zhang}
+Y.~Zhang, H.~Li, Investors’ risk attitudes and stock price fluctuation
+  asymmetry, Physica A: Statistical Mechanics and its Applications 390~(9)
+  (2011) 1655 -- 1661.
+\newblock \href {http://dx.doi.org/10.1016/j.physa.2011.01.002}
+  {\path{doi:10.1016/j.physa.2011.01.002}}.
+
+\bibitem{refe}
+Y.~Aït-Sahalia, L.~P. Hansen, J.~A. Scheinkman, \{Chapter\} 1 - operator
+  methods for continuous-time markov processes, in: Y.~Ait-Sahalia, L.~P.
+  Hansen (Eds.), Handbook of Financial Econometrics: Tools and Techniques,
+  Vol.~1 of Handbooks in Finance, North-Holland, San Diego, 2010, pp. 1 -- 66.
+\newblock \href {http://dx.doi.org/10.1016/B978-0-444-50897-3.50004-3}
+  {\path{doi:10.1016/B978-0-444-50897-3.50004-3}}.
+
+\bibitem{Durbin}
+J.~Durbin, Distribution Theory for Tests Based on the Sample Distribution
+  Function, CBMS-NSF Regional Conference Series in Applied Mathematics, Society
+  for Industrial and Applied Mathematics, 1973.
+\newblock \href {http://dx.doi.org/10.1137/1.9781611970586}
+  {\path{doi:10.1137/1.9781611970586}}.
+
+\bibitem{code}
+C.~M. Rodr\'{i}guez-Mart\'{i}nez, H.~F. Coronel-Brizio,
+  \href{http://github.com/CarlosManuelRodr/TnSymmetryStatistic}{Tn symmetry
+  statistic [computer program]} (2016).
+\newline\urlprefix\url{http://github.com/CarlosManuelRodr/TnSymmetryStatistic}
+
+\end{thebibliography}
