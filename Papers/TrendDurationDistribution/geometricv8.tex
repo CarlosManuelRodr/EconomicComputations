@@ -118,7 +118,7 @@ and for a log-normal distributed random variable, we have also
 \end{equation}
 This leads to a dependence between the two parameters
 \begin{equation}
-\mu = \log(1+r_F) - \frac{\sigma^2}{2}.
+\sigma = - \sqrt{2(\log(1+r_f)-\mu)}
 \end{equation}
 Note that, when $r_F = 0$, it is impossible to get $\mu=0$. This reflects a more general result, if the price process is a martingale, the log-price process cannot be a martingale and viceversa. Starting from the cumulative distribution function for a log-normal random variable
 \begin{equation}
@@ -128,9 +128,28 @@ F_Q(u)=\mathbb{P}(Q \leq u) = \frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
 the probability of a negative sign would be given by
 \begin{equation}
 q=F_Q(1)=\mathbb{P}(Q \leq 1)=\frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
-\frac{\sigma}{2 \sqrt{2}} - \frac{\log (1+r_F)}{\sigma \sqrt{2}} \right),
+\frac{- \mu}{\sqrt{4(\log(1+r_f)-\mu)}} \right)-
 \end{equation}
-which yields $q=1/2$ for $r_F = \mathrm{e}^{\sigma^2/2}-1$.
+
+\begin{figure}[h!tb]
+	\centering
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{img/model_q}
+            \caption[]{Probability of negative return given the risk-free interest rate $r_f$ and mean $\mu$. The $\mu$ parameter can be estimated from the return time series $Q_i$, and $r_f$ is estimated from a reference asset that depends on the market being studied.}    
+            \label{fig:model_q}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.45\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{img/riskfree_rate}
+            \caption[]{Risk-Free rate of returns $r_f$ for the US market, developed markets and emerging markets. For the period ranging from $1990$ to $2018$ the risk-free rate oscillates between $[0, 0.034)$.}
+            \label{fig:rf}
+      
+        \end{subfigure}
+        \caption{} 
+	\label{}
+\end{figure}
 
 It becomes natural to use the biased Bernoulli process as the null hypothesis for the time series of signs \cite{scalasold}. It is well known that the distribution of the number $k$ of failures needed to get one success for a Bernoulli process with success probability $p=1-q$ is the geometric distribution ${\cal{G}}(p)$; the number of failures $N$ is given by
 \begin{equation}
@@ -311,6 +330,15 @@ For the case of the geometric distribution $\mathcal{G}(p)$, this is an addition
 
 \noindent
 where $K_i$ are the values of the random variable in the sample. Then, a large number of copies of the sample is  generated and filled with random numbers taken from the actual geometric distribution $\mathcal{G}(\hat{p})$, and the AD statistic is calculated for every one of them. The distribution of the statistic found from the samples can be then integrated up to the value of $A_n^2$ calculated from the empirical data, in order to find the $p$-value for our case of interest. For the parametric bootstrap,  we used 500 copies of the sample, which was the same number used by Bracquemond {\it et. al.} \cite{BraCreGau} for their tests. As our random number generator, we used the routine {\it ran2} from {\it Numerical Recipes in C} \cite{Recipes}, which breaks serial correlations to a great extent and has a period of $\approx 2.3 \times 10^{18}$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=9cm]{img/ad_dist}
+\end{center}
+\caption{Distribution of $\hat{A_n}$ generated from replicas of a sample with $\hat{p} = 0.502994$. The area under the curve ranging from $[0,\hat{p}]$ is the $\pi$-value that represents the probability of measuring a value as extreme as $\hat{p}$. The measured $\pi$-value for this sample is $0.609$.}
+\label{fig:ad_dist}
+\end{figure}
+
 
 \end{appendices}
 
