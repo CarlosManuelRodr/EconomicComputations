@@ -15,20 +15,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\title{Analysis of short term price trends in daily stock-market index data}
+\title{Analysis of market efficiency based on short term price trends in daily stock-market index data}
 
-\author{H.R Olivares$^1$ S\'anchez$^1$, H.F. Coronel-Brizio$^1$, E Scalas$^2$,  A R Hern\'andez Montoya$^1$, C.M. Rodr\'{\i}guez-Mart\'{\i}nez$^1$}
+\author{H.R Olivares-S\'anchez$^1$, E Scalas$^2$,  A.R. Hern\'andez-Montoya$^3$, C.M. Rodr\'{\i}guez-Mart\'{\i}nez$^3$}
 
 \address{$^1$Facultad de F\'{\i}sica. Universidad Veracruzana, Apdo. Postal 475. Xalapa, Veracruz. M\'{e}xico.}
 
 \address{$^2$Dipartimento di Scienze e Innovazione Tecnologica,
 Universit\`a del Piemonte Orientale ``Amedeo Avogadro'', Viale T. Michel 11, 15121 Alessandria, Italy. BCAM-Basque Center for Applied Mathematics, Alameda de Mazarredo 14, 48009 Bilbao, Basque Contry, Spain.}
 
+\address{$^3$Centro de Investigaci\'on en Inteligencia Artificial. Universidad Veracruzana. Sebasti\'an Camacho 5, Xalapa Veracruz 91000, M\'exico. Tel/Fax: 52-228-8172957/8172855.}
 
-\ead{hectorolivares100@gmail.com, alhernandez@uv.mx}
+
+\ead{hectorolivares100@gmail.com, alhernandez@uv.mx, fis.carlosmanuel@gmail.com}
 
 \begin{abstract}
-In financial time series there are periods in which the value increases or decreases monotonically. We call those periods {\it elemental trends} and study the probability distribution of their duration for the indices DJIA, NASDAQ and IPC. It is found that the trend duration distribution often differs from the one expected under no memory. The expected and observed distributions are compared by means of the Anderson-Darling test.
+In financial time series there are periods in which the value increases or decreases monotonically. We call those periods {\it elemental trends} and study the probability distribution of their duration for the indices DJIA, NASDAQ, IPC and Nikkei 225. It is found that the trend duration distribution often differs from the one expected under no memory. The expected and observed distributions are compared by means of the Anderson-Darling test.
 \end{abstract}
 
 \section{Introduction}
@@ -52,9 +54,9 @@ An {\it elemental trend} of duration $k$ will be defined here as a subseries of 
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=9cm]{img/TrendReturnsVisual.pdf}
+\includegraphics[width=0.45\textwidth]{img/TrendReturnsVisual.pdf}
 \end{center}
-\caption{\label{fig:trends}The line segments join the starting and ending points of each elemental trend.}
+\caption{\small \label{fig:trends}The line segments join the starting and ending points of each elemental trend for prices of the DJIA. Time period from Oct/30/1978 to Jan/09/1979.}
 \end{figure}
 
 
@@ -65,7 +67,7 @@ The Efficient Market Hypothesis (EMH) claims that the market quickly finds the r
 \label{emh1}
 \mathbb{E}(S(t+\Delta t)|\mathcal{F}_t ) = S(t),
 \end{equation} 
-where $\mathbb{E}(\cdot|\mathcal{F}_t)$ is the conditional expectation with respect to the filtration $\mathcal{F}_t$, namely with respect to the known history up to time $t$. Indeed, it is easy to derive the EMH from a simple no-arbitrage argument. Suppose we have two assets, a risky one, with price $S(t)$ and a risk-free one giving a constant interest rate $r_F$. To avoid arbitrage, one has to require that the expected return of the risky asset is equal to the risk-free interes rate, that is
+where $\mathbb{E}(\cdot|\mathcal{F}_t)$ is the conditional expectation with respect to the filtration $\mathcal{F}_t$, namely with respect to the known history up to time $t$. Indeed, it is easy to derive the EMH from a simple no-arbitrage argument. Suppose we have two assets, a risky one, with price $S(t)$ and a risk-free one giving a constant interest rate $r_F$. To avoid arbitrage, one has to require that the expected return of the risky asset is equal to the risk-free interest rate, that is
 \begin{equation}
 \mathbb{E} (R(t, \Delta t)|\mathcal{F}_t) = r_F;
 \end{equation}
@@ -75,7 +77,7 @@ the latter equation immediately yields, for non vanishing $S(t)$,
 \mathbb{E}(S(t+\Delta t)|\mathcal{F}_t ) = (1+r_F) S(t),
 \end{equation}
 which reduces to \eqref{emh1} for $r_F = 0$. Equations \eqref{emh1} and
-\eqref{emh2}, jointly with the integrability of the process $S(t)$, are known as martingale and sub-martingale (remember that $r_F \geq 0$) conditions, respectively.
+\eqref{emh2}, jointly with the integrability of the process $S(t)$, are known as martingale and sub-martingale conditions (remember that under normal conditions $r_F \geq 0$), respectively.
 
 The EMH would invalidate the attempts of technical analysis to predict future prices or trends; in fact, in Samuelson's words, ``there is no way of making an expected profit by extrapolating past changes in the futures price, by chart or any esoteric devices of magic or mathematics'' \cite{Samuelson 2} as the best forecast of the future price would be the current price.
 
@@ -92,7 +94,7 @@ As mentioned before, financial time series share some nontrivial statistical pro
 
 \section{An `Efficient Market' model for the duration distribution}
 \label{model}
-Among all the possible martingale or sub-martingale models that can describe price fluctuations, the geometric random walk is the simplest one. A geometric random walk is just a product of independent and identically distributed positive random variables. If the expected value of these variables is $1$, then the geometric random walk is a martingale; otherwise, if the expected value is larger than $1$, the geometric random walk is a submartingale. However, the geometric random walk hypothesis is neither necessary nor sufficient for an efficient market, as shown by many authors among whom Leroy \cite{leroy}, Lucas \cite{lucas} and Lo and Mckinlay \cite{lo}. To understand this point, it is enough to consider Equation \eqref{emh2} allowing for any martingale model.
+Among all the possible martingale or sub-martingale models that can describe price fluctuations, the geometric random walk is the simplest one. A geometric random walk is just a product of independent and identically distributed positive random variables. If the expected value of these variables is $1$, then the geometric random walk is a martingale; otherwise, if the expected value is larger than $1$, the geometric random walk is a submartingale. However, the geometric random walk hypothesis is neither necessary nor sufficient for an efficient market, as shown by many authors among whom Leroy \cite{leroy}, Lucas \cite{lucas} and Lo and Mackinlay \cite{lo}. To understand this point, it is enough to consider Equation \eqref{emh2} allowing for any martingale model.
 
 At each step of a series of index values, there are two possible outcomes: the index either increases or does not increase. In an efficient market, the expected future price depends only on information about the current price, not on its previous history. Therefore, it should be impossible to predict the expected direction of a future price change given the history of the price process. In formula, from Equation \eqref{emh1} (after discounting for the risk-free rate), we have\begin{equation}
 \label{expectedincrement}
@@ -104,7 +106,7 @@ if we consider the sign of the price change $Y(t,\Delta t)=\mathrm{sign}(S(t+\De
 \mathbb{E}(Y(t,\Delta t))=0.
 \end{equation}
 
-If the price follows a geometric random walk, then the series of price-change signs can be modeled as a Bernoulli process. This process could be biased to take the presence of a risk free interest rate into account. To be more specific, let us consider a log-normal geometric random walk and let us use the assumption $\Delta t =1$. Let $S_0$ be the initial price. The price at time $t$ will be given by
+If the price follows a geometric random walk, then the series of price-change signs can be modeled as a Bernoulli process. This process could be biased to take the presence of a risk-free interest rate into account. To be more specific, let us consider a log-normal geometric random walk and let us use the assumption $\Delta t =1$. Let $S_0$ be the initial price. The price at time $t$ will be given by
 \begin{equation}
 S(t)=S_0 \prod_{i=1}^t Q_i
 \end{equation}
@@ -118,9 +120,9 @@ and for a log-normal distributed random variable, we have also
 \end{equation}
 This leads to a dependence between the two parameters
 \begin{equation}
-\sigma = - \sqrt{2(\log(1+r_f)-\mu)}
+\sigma = \sqrt{2\left(\log(1+r_f)-\mu \right)}
 \end{equation}
-Note that, when $r_F = 0$, it is impossible to get $\mu=0$. This reflects a more general result, if the price process is a martingale, the log-price process cannot be a martingale and viceversa. Starting from the cumulative distribution function for a log-normal random variable
+Starting from the cumulative distribution function for a log-normal random variable
 \begin{equation}
 F_Q(u)=\mathbb{P}(Q \leq u) = \frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
 \frac{\log(u) -\mu}{\sqrt{2 \sigma^2}} \right),
@@ -128,27 +130,28 @@ F_Q(u)=\mathbb{P}(Q \leq u) = \frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
 the probability of a negative sign would be given by
 \begin{equation}
 q=F_Q(1)=\mathbb{P}(Q \leq 1)=\frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
-\frac{- \mu}{\sqrt{4(\log(1+r_f)-\mu)}} \right)-
+\frac{- \mu}{\sqrt{4(\log(1+r_f)-\mu)}} \right),
 \end{equation}
+which yields $q = 0.5 \pm 0.05$ for typical markets (see figure \ref{fig:qvalue}).
 
 \begin{figure}[h!tb]
 	\centering
         \begin{subfigure}[b]{0.45\textwidth}
             \centering
             \includegraphics[width=\textwidth]{img/model_q}
-            \caption[]{Probability of negative return given the risk-free interest rate $r_f$ and mean $\mu$. The $\mu$ parameter can be estimated from the return time series $Q_i$, and $r_f$ is estimated from a reference asset that depends on the market being studied.}    
+            \caption[]{\small Probability of negative return given the risk-free interest rate $r_f$ and mean $\mu$. The $\mu$ parameter can be estimated from the return time series $Q_i$, and $r_f$ is estimated from a reference asset that depends on the market being studied. Intersection with $q=0.5$ is also shown.}    
             \label{fig:model_q}
         \end{subfigure}
         \quad
         \begin{subfigure}[b]{0.45\textwidth}  
             \centering 
             \includegraphics[width=\textwidth]{img/riskfree_rate}
-            \caption[]{Risk-Free rate of returns $r_f$ for the US market, developed markets and emerging markets. For the period ranging from $1990$ to $2018$ the risk-free rate oscillates between $[0, 0.034)$.}
+            \caption[]{\small Risk-Free rate of returns $r_f$ for the US market, developed markets and emerging markets \cite{French}. For the period ranging from $1978$ to $2018$ the risk-free rate oscillates between the interval $[0, 0.061)$.}
             \label{fig:rf}
       
         \end{subfigure}
-        \caption{} 
-	\label{}
+        \caption{\small For a tipical time series of $Q_i$ the parameter $\mu$ is close to zero oscillating on a small interval ranging from $-0.001$ to $0.001$. The risk-free rate of return $r_f$ oscillates between the interval $[0, 0.061)$. For these values the probability of a negative return is $q = 0.5 \pm 0.05$.} 
+	\label{fig:qvalue}
 \end{figure}
 
 It becomes natural to use the biased Bernoulli process as the null hypothesis for the time series of signs \cite{scalasold}. It is well known that the distribution of the number $k$ of failures needed to get one success for a Bernoulli process with success probability $p=1-q$ is the geometric distribution ${\cal{G}}(p)$; the number of failures $N$ is given by
@@ -160,26 +163,75 @@ The duration of a elemental downward trend in daily data is the number of days b
 \section{Methodology}
 \label{methodology}
 \subsection{Data}
-Three indices were analyzed, namely Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and Nikkei 225 during the period 30 October 1978 - 26 September 2019. The data was obtained from Yahoo Finance.
+Four indices were analyzed, namely Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and Nikkei 225 during the period 30 October 1978 - 26 September 2019. The data was obtained from Yahoo Finance.
 
 \subsection{Building the sample}
-For each series of index values, several time windows of 504 trading days (which in average represent two trading years) were created, each one shifted forward by one trading day with respect to the previous one. This procedure resulted in 4830 time windows for the DJIA, 4216 for the NASDAQ, 3901 for the IPC and 4584 for the Nikkei. Two histograms were built for each time window, one for upward trends and the other one for downward trends. For every sample in the time windows, the number of days before every sign change is measured. For instance, given the sequence $-$ $ - + + + + + $ $-$, the recorded times will be $(2,5,1)$. Finally, all the histograms were normalized. Examples of both uptrend and downtrend histograms for different time windows are shown in Figure \ref{fig:oneGT}.
+For each series of index values, several time windows of 504 trading days (which represent two trading years in average) were created, each one shifted forward by one trading day with respect to the previous one. This procedure resulted in 4830 time windows for the DJIA, 4216 for the NASDAQ, 3901 for the IPC and 4584 for the Nikkei. For every sample in the time windows, the number of days at time $t$ before every sign change $T_d(t)$ (defined as the trend duration) is measured. For instance, given the sequence $-$ $ - + + + + + $ $-$, the recorded times will be $T_d = (2,5,1)$.
+
+Two histograms were built for each market measuring $T_d$ on the whole sample without time windows. One for upward trends and the other one for downward trends. Examples of both uptrend and downtrend histograms for different time windows are shown in Figure \ref{fig:oneGT}.
 
 
 \subsection{The Anderson-Darling goodness of fit test}
-In order to compare the observed and expected distributions of  trend durations, the Anderson-Darling test described in reference \cite{Anderson} was used. The Anderson-Darling test was found to be the most suitable for this purpose because it places more weight on the tails of a distribution than other goodness of fit tests. The critical values of the Anderson-Darling statistic $A^{2}_{n}$ were dependent on the parameter of the geometric distribution which is chosen for every window as the ratio of upward to total price changes. This is necessary to take into account the possible fluctuations of the parameter $p$ of the Bernoulli process. For a more complete discussion on Anderson-Darling Methodology see appendix \ref{apendice}.
+In order to compare the observed and expected distributions of  trend durations, the Anderson-Darling test described in reference \cite{Anderson} was used. The Anderson-Darling test was found to be the most suitable for this purpose because it places more weight on the tails of a distribution than other goodness of fit tests.
+
+Two separate tests were applied. The first is a test of whether the observed data is drawn from a distribution belonging to a parametric family $\mathcal{G}(p)$. This tell us whether the price fluctuations can be modelled as a Bernoulli process. The second is a test of whether the observed data comes from a geometric distribution with $p = 0.5$. Based on the model outlined in section \ref{model} we interpret a rejection of this null hypothesis as evidence that the market is not efficient.
+
+For a more complete discussion on Anderson-Darling Methodology see appendix \ref{apendice}.
 
 \section{Discussion}
 \label{discussion}
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=9cm]{img/sign_ratios}
+\includegraphics[width=0.45\textwidth]{img/sign_ratios}
 \end{center}
-\caption{\label{fig:simetria}Ratio of upward to total price changes in daily data, plotted against time for the interval from 1978-10-30 to 2019-09-26, calculated over a time window of 504 trading days.}
+\caption{\small \label{fig:simetria}Ratio of upward to total price changes in daily data, plotted against time for the interval from 1978-10-30 to 2019-09-26, calculated over a time window of 504 trading days.}
 \end{figure}
 
-In Figure \ref{fig:simetria}, the ratio of the upward to total price changes in daily data is plotted against time for the years 1978 - 2019. This ratio is calculated over a time window of 504 trading days. It can be seen that variations are greater than those expected for the same time windows in a Bernoulli process with parameter $p = 1/2$ ($\pm{0.05}$). Plots in figure \ref{fig:oneGT} show the distribution of trend durations corresponding to different indices and periods of 504 days. Figure \ref{fig:PiValuesAD} display the $p$-values of the Anderson-Darling statistic for different periods. In order to avoid confusion between the parameter of the geometric distribution and the $p$-values for the distribution of $A^{2}_{n}$, the latter will be referred to as $\pi$-values. The meaning of $\pi$-values is the probability of obtaining a value of $A^{2}_{n}$ at least as big as the one that was really obtained, given that the probability distribution is actually geometric.
+In Figure \ref{fig:simetria}, the ratio of the upward to total price changes in daily data is plotted against time for the years 1978 - 2019. This ratio is calculated over a time window of 504 trading days. It can be seen that variations are greater than those expected for the same time windows in a Bernoulli process with parameter $p = 1/2$ ($\pm{0.05}$). Plots in figure \ref{fig:oneGT} show the distribution of trend durations corresponding to different indices. Figure \ref{fig:PiValuesAD} display the $p$-values of the Anderson-Darling statistic for different periods. In order to avoid confusion between the parameter of the geometric distribution and the $p$-values for the distribution of $A^{2}_{n}$, the latter will be referred to as $\pi$-values. The meaning of $\pi$-values is the probability of obtaining a value of $A^{2}_{n}$ at least as big as the one that was really obtained, given that the probability distribution is actually geometric.
+
+%Las cuatro figuras juntas de la prueba paramétrica
+\begin{figure}[h!tb]
+	\centering
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{img/pvalores_family_NASDAQ.pdf}
+            \caption[]{}    
+            \label{fig:nasdaq_fam}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.45\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{img/pvalores_family_IPC.pdf}
+            \caption[]{}     
+            \label{fig:ipc_fam}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.45\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{img/pvalores_family_DJIA.pdf}
+            \caption[]{}      
+            \label{fig:dji_fam}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.45\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{img/pvalores_family_Nikkei.pdf}
+            \caption[]{}      
+            \label{fig:nikkei_fam}
+        \end{subfigure}
+        \caption{\small \ref{fig:nasdaq}: $\pi$-values of the parametric family Anderson-Darling statistic for the studied markets.} 
+	\label{fig:PiValuesADFam}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.70\textwidth]{img/not_geom_dates}
+\end{center}
+\caption{\small \label{fig:not_geom}Dates where events from figure \ref{fig:PiValuesADFam} have a $\pi$-value below the $\alpha = 0.05$ confidence level.}
+\end{figure}
+
+For the parametric family test in figure \ref{fig:PiValuesADFam}, it was observed that the assumption of a Bernoulli process for price directions holds reasonably well most of the time, except for sporadic deviations that are usually present around extreme market movements like a financial crisis.
 
 %Las cuatro figuras juntas, con incisos:
 \begin{figure}[h!tb]
@@ -211,8 +263,15 @@ In Figure \ref{fig:simetria}, the ratio of the upward to total price changes in 
             \caption[]{}      
             \label{fig:nikkei}
         \end{subfigure}
-        \caption{\small (Color online) \ref{fig:nasdaq}: $\pi$-values of the Anderson-Darling statistic for the NASDAQ plotted against time. As time passes, the data agree better with the geometric distribution; \ref{fig:ipc}: $\pi$-values of the Anderson-Darling statistic for the IPC plotted against time. As for NASDAQ, agreement between data and the geometric distribution increases with time;  \ref{fig:dji}: $\pi$-values of the Anderson-Darling statistic for the DJIA plotted against time. The greatest deviations from the geometric distribution occurred between the years 2000-2011. \ref{fig:nikkei}: $\pi$-values of the Anderson-Darling statistic for the Nikkei plotted against time. The greatest deviations from the geometric distribution occurred between the years 1980-2000.} 
+        \caption{\small \ref{fig:nasdaq}: $\pi$-values of the Anderson-Darling statistic for the NASDAQ plotted against time. As time passes, the data agree better with the geometric distribution $\mathcal{G}(0.5)$; \ref{fig:ipc}: $\pi$-values of the Anderson-Darling statistic for the IPC plotted against time. As for NASDAQ, agreement between data and the geometric distribution increases with time;  \ref{fig:dji}: $\pi$-values of the Anderson-Darling statistic for the DJIA plotted against time. The greatest deviations from the geometric distribution occurred between the years 2000-2011. \ref{fig:nikkei}: $\pi$-values of the Anderson-Darling statistic for the Nikkei plotted against time. The greatest deviations from the geometric distribution occurred between the years 1980-2000.} 
 	\label{fig:PiValuesAD}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.70\textwidth]{img/not_eff_dates}
+\end{center}
+\caption{\small \label{fig:not_geom}Dates where events from figure \ref{fig:PiValuesAD} have a $\pi$-value below the $\alpha = 0.05$ confidence level.}
 \end{figure}
 
 % Histogramas de duración de trends
@@ -264,20 +323,22 @@ In Figure \ref{fig:simetria}, the ratio of the upward to total price changes in 
             \includegraphics[width=\textwidth]{img/dist_neg_Nikkei.pdf}
             \caption[]{}      
         \end{subfigure}
-        \caption{\small Distribution of trend durations for different indices and a time windows of 1000 days. (a), (c), (e) and (g) present the upward distribution and (b), (d), (f) and (h) the downward distribution. The solid lines are the expected geometric distributions. The parameters $p$ and $q$ are shown on each figure.} 
+        \caption{\small Distribution of trend durations $T_d$ for different indices. (a), (c), (e) and (g) present the upward distribution and (b), (d), (f) and (h) the downward distribution. The solid lines are the fitted geometric distributions while the dotted lines are the expected geometric distributions ($p = 0.5$). The parameter $\hat{p}$ is shown on each figure.} 
 	\label{fig:oneGT}
 \end{figure}
 
-It was observed that as time passes, the direction of price changes for the IPC and the Nasdaq is better described by a geometric distribution (Figures \ref{fig:nasdaq} and \ref{fig:ipc}). The distribution of trend durations for the Dow Jones is generally reasonably well fitted by the geometric distribution. This fact can be interpreted as a possible evidence that the Mexican stock market (that has become public and regulated since 1975) has been increasing its efficiency, as reported by previous research \cite{Achach}. The same claim can be made about the NASDAQ, given that it is also a market of relatively recent creation. In contrast, the Dow Jones Industrial Average index represents a more mature market. However, there is also evidence that the New York Stock Exchange, represented by the Dow Jones, has swiftly increased its efficiency between the beginning of the 1980s and the end of the 1990s \cite{NYSE}. Figure \ref{fig:dji} shows that for the Dow Jones, the greatest deviations from the geometric distribution in the studied period occurred between the years 2000-2011. Figure \ref{fig:nikkei} shows that for the Nikkei, the greatest deviations from the geometric distribution in the studied period occurred between the years 1980-2000.
+
+It was observed that as time passes, the direction of price changes for the IPC and the NASDAQ is better described by a geometric distribution following the efficient market hypothesis $\mathcal{G}(0.5)$ (Figures \ref{fig:nasdaq} and \ref{fig:ipc}). Meanwhile the distribution of trend durations for the Dow Jones and Nikkei is generally reasonably well fitted by the geometric distribution. This fact can be interpreted as a possible evidence that the Mexican stock market (that has become public and regulated since 1975) has been increasing its efficiency, as reported by previous research \cite{Achach}. The same claim can be made about the NASDAQ, given that it is also a market of relatively recent creation. In contrast, the Dow Jones Industrial Average index represents a more mature market. However, there is also evidence that the New York Stock Exchange, represented by the Dow Jones, has swiftly increased its efficiency between the beginning of the 1980s and the end of the 1990s \cite{NYSE}. Figure \ref{fig:dji} shows that for the Dow Jones, the greatest deviations from the geometric distribution in the studied period occurred between the years 2000-2011. Figure \ref{fig:nikkei} shows that for the Nikkei, the greatest deviations from the geometric distribution in the studied period occurred between the years 1980-2000.
 
 
 \section{Conclusions}
-The probability distributions for the duration of elemental trends were studied for the market indices Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and for the Japanese Nikkei 225. These distributions are expected to be geometric and memoryless according to the discussion in section \ref{model}. The IPC and the NASDAQ present periods in which the memoryless hypothesis must be definitively rejected, while DJIA and NIKKEI showed to be fitted reasonably well by geometric distribution with sporadic deviations in specific periods of time.
+The probability distributions for the duration of elemental trends were studied for the market indices Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and for the Japanese Nikkei 225. These distributions are expected to be geometric and memoryless according to the discussion in section \ref{model}. The IPC and the NASDAQ present periods in which the memoryless hypothesis must be definitively rejected, while DJIA and Nikkei showed to be fitted reasonably well by geometric distribution with sporadic deviations.
+
+\clearpage
 
 \begin{appendices}
 \addappheadtotoc
 \appendixpage
-%\clearpage
   
 \section*{The discrete version of the Anderson-Darling goodness of fit test}
 \label{apendice}
@@ -329,13 +390,13 @@ For the case of the geometric distribution $\mathcal{G}(p)$, this is an addition
 \end{equation}
 
 \noindent
-where $K_i$ are the values of the random variable in the sample. Then, a large number of copies of the sample is  generated and filled with random numbers taken from the actual geometric distribution $\mathcal{G}(\hat{p})$, and the AD statistic is calculated for every one of them. The distribution of the statistic found from the samples can be then integrated up to the value of $A_n^2$ calculated from the empirical data, in order to find the $p$-value for our case of interest. For the parametric bootstrap,  we used 500 copies of the sample, which was the same number used by Bracquemond {\it et. al.} \cite{BraCreGau} for their tests. As our random number generator, we used the routine {\it ran2} from {\it Numerical Recipes in C} \cite{Recipes}, which breaks serial correlations to a great extent and has a period of $\approx 2.3 \times 10^{18}$.
+where $K_i$ are the values of the random variable in the sample. Then, a large number of copies of the sample is  generated and filled with random numbers taken from the actual geometric distribution $\mathcal{G}(\hat{p})$, and the AD statistic is calculated for every one of them (figure \ref{fig:ad_dist}). The distribution of the statistic found from the samples can be then integrated up to the value of $A_n^2$ calculated from the empirical data, in order to find the $p$-value for our case of interest. For the parametric bootstrap,  we used 1000 copies of the sample, which was two times the number used by Bracquemond {\it et. al.} \cite{BraCreGau} for their tests. As our random number generator, we used the routine {\it MersenneTwister} from the software {\it Wolfram Mathematica}, which breaks serial correlations to a great extent and has a period of $\approx 2^{19937}-1$.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=9cm]{img/ad_dist}
 \end{center}
-\caption{Distribution of $\hat{A_n}$ generated from replicas of a sample with $\hat{p} = 0.502994$. The area under the curve ranging from $[0,\hat{p}]$ is the $\pi$-value that represents the probability of measuring a value as extreme as $\hat{p}$. The measured $\pi$-value for this sample is $0.609$.}
+\caption{Distribution of $\hat{A_n}$ generated from $10000$ replicas of a sample with $\hat{p} = 0.502994$. The area under the curve ranging from $[0,\hat{p}]$ is the $\pi$-value that represents the probability of measuring a value as extreme as $\hat{p}$. The measured $\pi$-value for this sample is $0.609$.}
 \label{fig:ad_dist}
 \end{figure}
 
@@ -344,7 +405,7 @@ where $K_i$ are the values of the random variable in the sample. Then, a large n
 
 
 \section*{Acknowledgements}
-This work was supported by Conacyt-Mexico and MAE-Italy under grant 146498. We also thank Conacyt-Mexico for the support under  project grant 155492, Universidad Veracruzana under project 41504 and PRIN 2009 Italian grant ``Finitary and non-finitary probabilistic methods in Economics''.
+This work was supported by Conacyt-Mexico and MAE-Italy under grant 146498. We also thank Conacyt-Mexico for the support under  project grant 155492, Universidad Veracruzana under project 41504 and PRIN 2009 Italian grant ``Finitary and non-finitary probabilistic methods in Economics''. A segment of the IPC daily data set from 1978 to 2006 was provided by P. Zorrilla-Velasco, A. Reynoso del Valle and S. Herrera-Montiel, from BMV at that time. We are grateful to all of them.
 
 \section*{References}
 \begin{thebibliography}{15}
@@ -374,6 +435,9 @@ Lo A W and Mackinlay A C 1999, {\it A Non-Random Walk Down Wall Street}, (Prince
 
 \bibitem{scalasold} Scalas E 1998, `Scaling in the market of futures', {\it Physica} A {\bf 253} 394--402.
 
+\bibitem{French}
+Mba.tuck.dartmouth.edu. (2015). Kenneth R. French - Data Library. [online] Available at: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data\_library.html [Accessed 11 Oct. 2019].
+
 \bibitem{Holyst}
 Ho\l{yst} J A and Sieczka P 2008 `Statistical properties of short term price trends in high frequency stock market data' {\it Physica} A {\bf 387} 1218--1224
 
@@ -402,7 +466,7 @@ Samuelson P A and Nordhaus W D 2005 {\it Economics} (New York: McGraw-Hill)
 Totha B and Kerteszb J `Increasing market efficiency: Evolution of cross-correlations of stock returns' {\it Physica} A {\bf 320} 505--515
 
 \bibitem{cpi}
-U. S. Bureau of Labor Statistics, Consumer Price Index. (2011, 5 de noviembre). http://data.bls.gov/timeseries/CUSR0000SA0?output\_view=pct\_1mth.
+U. S. Bureau of Labor Statistics, Consumer Price Index. [Accessed 5 Nov. 2011]. http://data.bls.gov/timeseries/CUSR0000SA0?output\_view=pct\_1mth.
 
 \bibitem{Voit}
 Voit J 2003 {\it The Statistical Mechanics of Financial Market}. (New York: Springer-Verlag)
@@ -421,11 +485,6 @@ Choulakian, V., Lockhart, R. A., Stephens, M. A., (1994)
 Nikulin, M. S. (1992),
 % ``Gihman statistics and Goodness-of-Fit Tests for Grouped Data''
 {\it C. R. Math. Rep. Acad. Sci. Canada}, 14, 4, pp. 151-156.
-
-\bibitem{Recipes}
-Press, W. H., Teukolsky, S. A., Vetterling, W. T.,
-{\it Numerical Recipes in C: The Art of Scientific Computing}.
-Cambridge University Press, 2002 pp. 281-282.
 
 \end{thebibliography}
 
