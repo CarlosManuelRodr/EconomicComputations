@@ -50,7 +50,7 @@ StyleBox[\"b\", \"TI\"],
 StyleBox[\"2\", \"TR\"]]\),\!\(\*
 StyleBox[\"\[Ellipsis]\", \"TR\"]\)},\!\(\*
 StyleBox[\"\[Ellipsis]\", \"TR\"]\)}] is a MapThread implementation with progress bar. levelspec is always {1}. 
-\"ShowInfo\"\[Rule]True show the detailed version of the progress bar. \"Label\"->\"Custom label\" shows a custom description label."
+\"ShowInfo\"\[Rule]True show the detailed version of the progress bar. \"Label\"->\"Custom label\" shows a custom description label.";
 
 ProgressParallelMapThread::usage = 
 "ProgressParallelMapThread[f, {{\!\(\*SubscriptBox[
@@ -65,10 +65,14 @@ StyleBox[\"b\", \"TI\"],
 StyleBox[\"2\", \"TR\"]]\),\!\(\*
 StyleBox[\"\[Ellipsis]\", \"TR\"]\)},\!\(\*
 StyleBox[\"\[Ellipsis]\", \"TR\"]\)}] is a ParallelMapThread implementation with progress bar. levelspec is always {1}. 
-\"ShowInfo\"\[Rule]True show the detailed version of the progress bar. \"Label\"->\"Custom label\" shows a custom description label."
+\"ShowInfo\"\[Rule]True show the detailed version of the progress bar. \"Label\"->\"Custom label\" shows a custom description label.";
   
 ProgressTable::usage =
- "Table implementation with progress bar. Same usage as Table. 
+ "Table implementation with progress bar. Same usage as Table[]. 
+\"ShowInfo\"\[Rule]True show the detailed version of the progress bar. \"Label\"->\"Custom label\" shows a custom description label.";
+
+ProgressDo::usage =
+ "Do implementation with progress bar. Same usage as Do[]. 
 \"ShowInfo\"\[Rule]True show the detailed version of the progress bar. \"Label\"->\"Custom label\" shows a custom description label.";
 
 ProgressParallelTable::usage =
@@ -404,38 +408,71 @@ Module[{tuplesLength, tableIndex = 0, startTime = AbsoluteTime[]},
 
 
 (* ::Chapter:: *)
+(*Do with progress*)
+
+
+SetAttributes[ProgressDo,HoldFirst];
+Options[ProgressDo] = {"ShowInfo"->True, "Label"->"Evaluating..."};
+
+ProgressDo[expr_, n_Integer /; NonNegative[n], opts:OptionsPattern[]] :=
+Module[{startTime = AbsoluteTime[], indexProgress = 0, output},
+	Monitor[
+		Do[indexProgress++; expr, n],
+		If[OptionValue[ProgressDo, {opts}, "ShowInfo"],
+			DetailedIndicator[indexProgress, n, startTime, OptionValue[ProgressDo, {opts}, "Label"]]
+			,
+			DefaultIndicator[indexProgress, n]
+		]
+	]
+]; 
+
+ProgressDo[expr_, iterators__, opts:OptionsPattern[]] := 
+Module[{tuplesLength, indexProgress = 0, startTime = AbsoluteTime[]},
+	tuplesLength = Length[Tuples[Map[Range[Rest[#] /. List -> Sequence]&, {iterators}]]];
+
+	Monitor[
+		Do[indexProgress++;expr, iterators]
+		,
+		If[OptionValue[ProgressDo, {opts}, "ShowInfo"],
+			DetailedIndicator[indexProgress, tuplesLength, startTime, OptionValue[ProgressDo, {opts}, "Label"]]
+			,
+			DefaultIndicator[indexProgress, tuplesLength]
+		]
+	]
+];
+
+
+(* ::Chapter:: *)
 (*Parallel tables with progress*)
 
 
 SetAttributes[ProgressParallelTable,HoldFirst];
 
-Options[ProgressTable]={"ShowInfo"->True, "Label"->"Evaluating...", ParallelTable};
-
-ProgressParallelTable[expr_, n_Integer, opts:OptionsPattern[]]:=
+ProgressParallelTable[expr_, n_Integer, opts: OptionsPattern[{"ShowInfo"->True, "Label"->"Evaluating...", Parallelize}]]:=
 Module[{tableIndex = 0,startTime = AbsoluteTime[]},
 	SetSharedVariable[tableIndex];
 
 	Monitor[
-		ParallelTable[tableIndex++;expr, n, Evaluate[FilterRules[{opts}, Options[ParallelTable]]]]
+		ParallelTable[tableIndex++;expr, n, Evaluate[FilterRules[{opts}, Options[Parallelize]]]]
 		,
-		If[OptionValue[ProgressTable, {opts}, "ShowInfo"],
-			DetailedIndicator[tableIndex, n, startTime, OptionValue[ProgressTable, {opts}, "Label"]]
+		If[OptionValue["ShowInfo"],
+			DetailedIndicator[tableIndex, n, startTime, OptionValue["Label"]]
 			,
 			DefaultIndicator[tableIndex, n]
 		]
 	]
 ];
 
-ProgressParallelTable[expr_, iterators__, opts:OptionsPattern[]]:= 
+ProgressParallelTable[expr_, iterators__, opts: OptionsPattern[{"ShowInfo"->True, "Label"->"Evaluating...", Parallelize}]]:= 
 Module[{tuplesLength, tableIndex = 0, startTime = AbsoluteTime[]},
 	SetSharedVariable[tableIndex];
 	tuplesLength = Length[Tuples[Map[Range[Rest[#] /. List->Sequence]&, {iterators}]]];
 
 	Monitor[
-		ParallelTable[tableIndex++;expr, iterators, Evaluate[FilterRules[{opts}, Options[ParallelTable]]]]
+		ParallelTable[tableIndex++;expr, iterators, Evaluate[FilterRules[{opts}, Options[Parallelize]]]]
 		,
-		If[OptionValue[ProgressTable, {opts}, "ShowInfo"],
-			DetailedIndicator[tableIndex, tuplesLength, startTime, OptionValue[ProgressTable, {opts}, "Label"]]
+		If[OptionValue["ShowInfo"],
+			DetailedIndicator[tableIndex, tuplesLength, startTime, OptionValue["Label"]]
 			,
 			DefaultIndicator[tableIndex, tuplesLength]
 		]
