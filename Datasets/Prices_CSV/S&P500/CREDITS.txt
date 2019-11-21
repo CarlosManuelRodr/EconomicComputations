@@ -1,0 +1,2 @@
+Data retrieved from Yahoo! Finance:
+http://finance.yahoo.com/
