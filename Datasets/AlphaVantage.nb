@@ -1,0 +1,1331 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     66910,       1323]
+NotebookOptionsPosition[     65369,       1289]
+NotebookOutlinePosition[     65705,       1304]
+CellTagsIndexPosition[     65662,       1301]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Alpha Vantage Wrapper", "Title",
+ CellChangeTimes->{{3.784932273389526*^9, 
+  3.784932283429516*^9}},ExpressionUUID->"06ecc5e4-8465-448f-b8eb-\
+2d77ac3f8ab3"],
+
+Cell["\<\
+Based on:
+https://mathematica.stackexchange.com/questions/155714/use-alpha-vantage-as-\
+an-alternative-to-yahoo-financialdata-and-how-to-use-finan
+Answer by b3m2a1.\
+\>", "Text",
+ CellChangeTimes->{{3.784907668682691*^9, 
+  3.784907695896204*^9}},ExpressionUUID->"36eb6b88-7791-4cef-bee0-\
+2a1ec17afe78"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"AlphaVantageSetAPIKey", "[", "key_", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{"$AVAPIKey", " ", "=", " ", "key"}], ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AlphaVantageSetAPIKey", "[", "\"\<demo\>\"", "]"}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.784907356301696*^9, 3.784907356302352*^9}, {
+  3.784907456304199*^9, 3.784907514358259*^9}, {3.7849075612542477`*^9, 
+  3.784907594942223*^9}, {3.784908883878564*^9, 3.784908884200691*^9}, {
+  3.784909620503113*^9, 3.784909624910644*^9}, {3.784922785165196*^9, 
+  3.7849228057224817`*^9}, {3.784923309594058*^9, 3.784923314715138*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"d408a380-be78-46fc-a3fb-7a9f3917e325"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "AlphaVantageCallBuild", "]"}], "=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<Function\>\"", "\[Rule]", "\"\<TIME_SERIES_DAILY\>\""}], 
+     ",", 
+     RowBox[{"\"\<Symbol\>\"", "\[Rule]", "\"\<MSFT\>\""}], ",", 
+     RowBox[{"\"\<Interval\>\"", "\[Rule]", "\"\<60min\>\""}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<OutputSize\>\"", "\[Rule]", "\"\<compact\>\""}], ",", 
+     RowBox[{"\"\<APIKey\>\"", "\[Rule]", "Automatic"}]}], 
+    "\[IndentingNewLine]", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AlphaVantageCallBuild", "[", 
+    RowBox[{"ops", ":", 
+     RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+   RowBox[{"HTTPRequest", "[", "\[IndentingNewLine]", 
+    RowBox[{"<|", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Scheme\>\"", "\[Rule]", "\"\<https\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Domain\>\"", "\[Rule]", "\"\<www.alphavantage.co\>\""}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Path\>\"", "\[Rule]", 
+       RowBox[{"{", "\"\<query\>\"", "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Query\>\"", "\[Rule]", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"\"\<function\>\"", "\[Rule]", 
+          RowBox[{"OptionValue", "[", "\"\<Function\>\"", "]"}]}], ",", 
+         RowBox[{"\"\<symbol\>\"", "\[Rule]", 
+          RowBox[{"OptionValue", "[", "\"\<Symbol\>\"", "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<apikey\>\"", "\[Rule]", 
+          RowBox[{"Replace", "[", 
+           RowBox[{
+            RowBox[{"OptionValue", "[", "\"\<APIKey\>\"", "]"}], ",", 
+            RowBox[{"Automatic", "\[RuleDelayed]", "$AVAPIKey"}]}], "]"}]}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<datatype\>\"", "\[Rule]", "\"\<json\>\""}], ",", 
+         RowBox[{"\"\<interval\>\"", "\[Rule]", 
+          RowBox[{"OptionValue", "[", "\"\<Interval\>\"", "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<outputsize\>\"", "\[Rule]", 
+          RowBox[{"OptionValue", "[", "\"\<OutputSize\>\"", "]"}]}]}], 
+        "\[IndentingNewLine]", "}"}]}]}], "\[IndentingNewLine]", "|>"}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AlphaVantageMakeCall", "[", 
+    RowBox[{"ops", ":", 
+     RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+     RowBox[{"AlphaVantageCallBuild", "[", "ops", "]"}], ",", 
+     "\"\<RawJSON\>\""}], "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.784923316053184*^9, 3.784923316054228*^9}, {
+  3.784926270694757*^9, 3.784926347030857*^9}, {3.784926817666857*^9, 
+  3.7849268637542133`*^9}, {3.784926902074538*^9, 3.784926938988846*^9}, {
+  3.78492711355931*^9, 3.784927149148801*^9}, {3.784927197383254*^9, 
+  3.784927199316546*^9}, {3.7849276063110247`*^9, 3.7849276740698233`*^9}, {
+  3.7849277107892113`*^9, 3.78492775763678*^9}, {3.78492786317592*^9, 
+  3.784927863348317*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"519be6a4-6121-475b-a2ab-0cc32f04c1e2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"FixAVLabels", "[", "list_", "]"}], ":=", 
+   RowBox[{"ReplaceAll", "[", 
+    RowBox[{"list", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\"\<1. open\>\"", "\[Rule]", "\"\<Open\>\""}], ",", 
+       RowBox[{"\"\<2. high\>\"", "\[Rule]", "\"\<High\>\""}], ",", 
+       RowBox[{"\"\<3. low\>\"", "\[Rule]", "\"\<Low\>\""}], ",", 
+       RowBox[{"\"\<4. close\>\"", "\[Rule]", "\"\<Close\>\""}], ",", 
+       RowBox[{"\"\<5. volume\>\"", "\[Rule]", "\"\<Volume\>\""}]}], "}"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FormatTimeAVSeries", "[", "data_", "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Association", "[", 
+       RowBox[{"Prepend", "[", 
+        RowBox[{
+         RowBox[{"FixAVLabels", "[", 
+          RowBox[{"Normal", "[", 
+           RowBox[{"Last", "[", "#", "]"}], "]"}], "]"}], ",", 
+         RowBox[{"\"\<Date\>\"", "\[Rule]", 
+          RowBox[{"First", "[", "#", "]"}]}]}], "]"}], "]"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Normal", "[", "data", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.784907356301696*^9, 3.784907356302352*^9}, {
+   3.784907456304199*^9, 3.784907514358259*^9}, {3.7849075612542477`*^9, 
+   3.784907594942223*^9}, {3.784908883878564*^9, 3.784908884200691*^9}, {
+   3.784909620503113*^9, 3.784909624910644*^9}, {3.784922785165196*^9, 
+   3.7849228057224817`*^9}, {3.784923309594058*^9, 3.784923314715138*^9}, {
+   3.784927055443306*^9, 3.7849270680849943`*^9}, 3.784928924653433*^9},
+ CellLabel->"In[19]:=",ExpressionUUID->"3d4be716-d2d3-4837-93bb-15cec52c7728"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "AlphaVantageTimeSeriesIntraday", "]"}], "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Options", "[", "AlphaVantageCallBuild", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<ShowInfo\>\"", "\[Rule]", "False"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AlphaVantageTimeSeriesIntraday", "[", 
+    RowBox[{"symbol_", ",", 
+     RowBox[{"opts", ":", 
+      RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"call", ",", "key"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"call", " ", "=", " ", 
+       RowBox[{"AlphaVantageMakeCall", "[", 
+        RowBox[{
+         RowBox[{
+         "\"\<Function\>\"", "\[Rule]", "\"\<TIME_SERIES_INTRADAY\>\""}], ",", 
+         RowBox[{"\"\<Symbol\>\"", "\[Rule]", "symbol"}], ",", 
+         RowBox[{"FilterRules", "[", 
+          RowBox[{
+           RowBox[{"{", "opts", "}"}], ",", 
+           RowBox[{"Options", "[", "AlphaVantageCallBuild", "]"}]}], "]"}]}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Length", "[", 
+          RowBox[{"Keys", "[", "call", "]"}], "]"}], ">", "1"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"key", " ", "=", " ", 
+          RowBox[{"First", "[", 
+           RowBox[{"Complement", "[", 
+            RowBox[{
+             RowBox[{"Keys", "[", "call", "]"}], ",", 
+             RowBox[{"{", "\"\<Meta Data\>\"", "}"}]}], "]"}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"OptionValue", "[", "\"\<ShowInfo\>\"", "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"call", "[", "\"\<Meta Data\>\"", "]"}], ",", 
+             RowBox[{"FormatTimeAVSeries", "[", 
+              RowBox[{"call", "[", "key", "]"}], "]"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"FormatTimeAVSeries", "[", 
+            RowBox[{"call", "[", "key", "]"}], "]"}]}], "\[IndentingNewLine]",
+           "]"}]}], "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"OptionValue", "[", "\"\<ShowInfo\>\"", "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"$Failed", ",", 
+            RowBox[{"call", "[", "\"\<Meta Data\>\"", "]"}]}], "}"}], ",", 
+          "\[IndentingNewLine]", "$Failed"}], "\[IndentingNewLine]", "]"}]}], 
+       "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "AlphaVantageTimeSeriesDaily", "]"}], "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Options", "[", "AlphaVantageCallBuild", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<ShowInfo\>\"", "\[Rule]", "False"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AlphaVantageTimeSeriesDaily", "[", 
+    RowBox[{"symbol_", ",", 
+     RowBox[{"opts", ":", 
+      RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"call", ",", "key"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"call", " ", "=", " ", 
+       RowBox[{"AlphaVantageMakeCall", "[", 
+        RowBox[{
+         RowBox[{"\"\<Function\>\"", "\[Rule]", "\"\<TIME_SERIES_DAILY\>\""}],
+          ",", 
+         RowBox[{"\"\<Symbol\>\"", "\[Rule]", "symbol"}], ",", 
+         RowBox[{"FilterRules", "[", 
+          RowBox[{
+           RowBox[{"{", "opts", "}"}], ",", 
+           RowBox[{"Options", "[", "AlphaVantageCallBuild", "]"}]}], "]"}]}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Length", "[", 
+          RowBox[{"Keys", "[", "call", "]"}], "]"}], ">", "1"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"key", " ", "=", " ", 
+          RowBox[{"First", "[", 
+           RowBox[{"Complement", "[", 
+            RowBox[{
+             RowBox[{"Keys", "[", "call", "]"}], ",", 
+             RowBox[{"{", "\"\<Meta Data\>\"", "}"}]}], "]"}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"OptionValue", "[", "\"\<ShowInfo\>\"", "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"call", "[", "\"\<Meta Data\>\"", "]"}], ",", 
+             RowBox[{"FormatTimeAVSeries", "[", 
+              RowBox[{"call", "[", "key", "]"}], "]"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"FormatTimeAVSeries", "[", 
+            RowBox[{"call", "[", "key", "]"}], "]"}]}], "\[IndentingNewLine]",
+           "]"}]}], "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"OptionValue", "[", "\"\<ShowInfo\>\"", "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"$Failed", ",", 
+            RowBox[{"call", "[", "\"\<Meta Data\>\"", "]"}]}], "}"}], ",", 
+          "\[IndentingNewLine]", "$Failed"}], "\[IndentingNewLine]", "]"}]}], 
+       "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.78490907303332*^9, 3.784909284887776*^9}, {
+   3.784909352340087*^9, 3.7849093689852943`*^9}, {3.7849094354349337`*^9, 
+   3.78490947424743*^9}, {3.784909545743038*^9, 3.784909598687009*^9}, {
+   3.7849096696985903`*^9, 3.7849097198465223`*^9}, {3.784909800559348*^9, 
+   3.784909876872134*^9}, {3.7849225171923103`*^9, 3.784922607702024*^9}, {
+   3.7849226529172487`*^9, 3.784922654390709*^9}, {3.784923008579273*^9, 
+   3.784923031235402*^9}, {3.784923094404975*^9, 3.784923137271266*^9}, {
+   3.7849232107483263`*^9, 3.78492326351036*^9}, {3.784927206082776*^9, 
+   3.784927210682699*^9}, 3.784927249961795*^9, {3.7849273081547823`*^9, 
+   3.784927308612095*^9}, {3.7849273393973703`*^9, 3.784927395785573*^9}, {
+   3.784928393174643*^9, 3.784928399729599*^9}, {3.7849285052163877`*^9, 
+   3.784928595278707*^9}, {3.784928663516078*^9, 3.784928695153864*^9}, {
+   3.784928767803061*^9, 3.78492877*^9}, {3.784928804267898*^9, 
+   3.784928807240056*^9}, {3.784928927440413*^9, 3.784928931347979*^9}, 
+   3.784929023441319*^9, {3.7849290982095537`*^9, 3.784929099151615*^9}, {
+   3.784929143550044*^9, 3.7849292051209183`*^9}, {3.7849303548064203`*^9, 
+   3.784930416131981*^9}},ExpressionUUID->"64f5c54f-1c1f-4e11-a650-\
+31c17bb89749"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AlphaVantageSetAPIKey", "[", "\"\<9SOP9ZISQ3UOV9OT\>\"", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.784907600893134*^9, 3.7849076037072887`*^9}, {
+   3.784907738180613*^9, 3.784907740442419*^9}, 3.784908157293153*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"cac4f5e6-5097-475d-99c7-db7d38bca8b4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AlphaVantageTimeSeriesDaily", "[", 
+  RowBox[{"\"\<MSFT\>\"", ",", 
+   RowBox[{"\"\<APIKey\>\"", "\[Rule]", "\"\<9SOP9ZISQ3UOV9OT\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.784909403990243*^9, 3.784909413438452*^9}, {
+   3.784909482862216*^9, 3.784909483118197*^9}, {3.784909638839827*^9, 
+   3.784909647573197*^9}, 3.784909684764009*^9, {3.784922665174129*^9, 
+   3.784922666915578*^9}, {3.784928212878282*^9, 3.7849282179695673`*^9}, {
+   3.784930309014215*^9, 3.784930309192925*^9}, {3.784930359941161*^9, 
+   3.78493036020044*^9}},
+ CellLabel->"In[57]:=",ExpressionUUID->"9dafa7f6-f7e9-48b9-91b8-146acce0366b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-12-09\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"151.0700\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"152.2100\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"150.9100\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"151.3600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"15282906\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-12-06\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"150.9900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"151.8700\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"150.2700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"151.7500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"16410400\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-12-05\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"150.0500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"150.3200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"149.4800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"149.9300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"17880601\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-12-04\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"150.1400\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"150.1799\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"149.2000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"149.8500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"17580617\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-12-03\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"147.4900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"149.4300\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"146.6500\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"149.3100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"25192145\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-12-02\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"151.8100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"151.8300\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"148.3200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"149.5500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"27473616\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-29\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"152.1000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"152.3000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"151.2800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"151.3800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"11977300\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-27\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"152.3300\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"152.5000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"151.5200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"152.3200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"15201293\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-26\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"151.3600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"152.4200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"151.3200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"152.0300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"24635100\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-25\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"150.0000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"151.3500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"149.9200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"151.2300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"22428585\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-22\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"150.0700\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"150.3000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"148.8200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"149.5900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"15841680\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-21\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"149.4000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"149.8000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"148.5010\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"149.4800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18576083\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-20\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"150.3100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"150.8400\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"148.4600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"149.6200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"25720060\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-19\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"150.8800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"151.3300\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"150.1950\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"150.3900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"23960164\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-18\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"150.0700\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"150.5500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"148.9800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"150.3400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"21554762\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-15\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"148.9300\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"149.9900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"148.2700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"149.9700\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"23508807\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-14\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"147.0200\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"148.4100\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"147.0000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"148.0600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"19755100\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-13\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"146.7400\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"147.4625\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"146.2800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"147.3100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"17444230\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-12\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"146.2800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"147.5700\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"146.0600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"147.0700\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18648712\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-11\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"145.3400\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"146.4200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"144.7300\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"146.1100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"14370178\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-08\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"143.9800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"145.9900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"143.7600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"145.9600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"16752939\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-07\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"143.8400\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"144.8800\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"143.7700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"144.2600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"17786715\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-06\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"144.3700\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"144.5200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"143.2000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"144.0600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"16575798\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-05\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"144.9700\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"145.0200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"143.9050\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"144.4600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18250172\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-04\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"144.8300\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"145.0000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"144.1600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"144.5500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"16911999\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-11-01\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"144.2600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"144.4200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"142.9650\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"143.7200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"33128366\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-31\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"144.9000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"144.9300\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"142.9900\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"143.3700\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"24605135\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-30\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"143.5200\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"145.0000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"142.7900\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"144.6100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18496591\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-29\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"144.0800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"144.5000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"142.6500\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"142.8300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20589469\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-28\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"144.4000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"145.6700\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"143.5100\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"144.1900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"34912902\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-25\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.3400\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"141.1400\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.2000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"140.7300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"25959724\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-24\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.3900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.4200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.6700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.9400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"37278399\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-23\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.8800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"137.4500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.6100\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.2400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"31380309\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-22\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.9700\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.0100\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.2600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.3700\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"27935270\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-21\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.4500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.5000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"137.0100\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.4300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20078066\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-18\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.7600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.0000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.5600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.4100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"30650850\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-17\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.9500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"141.4200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.0200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.6900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"22102797\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-16\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.7900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.9900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.5300\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"140.4100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20841687\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-15\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.0600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"141.7900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.8100\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"141.5750\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"19917762\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-14\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.6900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.2900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.5200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.5500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"13591639\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-11\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.1200\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"141.0300\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.5000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.6800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"25551065\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-10\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.4900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.6699\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.2500\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.1000\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18396605\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-09\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.4600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.7000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.9700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.2400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20178482\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-08\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.0800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"137.7600\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.6200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"135.6700\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"26783336\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-07\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.1400\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.1800\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"137.0200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.1200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"16601284\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-04\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.7500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.2500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.4200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.1200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"23839548\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-03\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"134.9500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"136.7500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"133.2200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.2800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"26379798\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-02\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.2500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"136.3700\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"133.5799\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"134.6500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"32001763\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-10-01\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.6600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.2500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"137.0000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.0700\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"22581929\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-30\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.0500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.2150\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"137.7800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.0300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18430390\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-27\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.1500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.3600\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.6450\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.7300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"22498958\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-26\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.4400\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.1800\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.4400\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.5400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"17813512\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-25\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.5000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.9580\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.0300\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.3600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"22544054\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-24\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.3600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.6900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.8800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.3800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"30016670\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-23\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.2300\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.6300\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.4400\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.1400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"17408374\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-20\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"141.0100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"141.6500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.2500\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.4400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"40040766\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-19\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.3000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"142.3700\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"140.0736\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"141.0700\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"36095413\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-18\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.3600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.6700\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.5299\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.5200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"24473386\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-17\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.9600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"137.5200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.4250\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.3900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"17976285\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-16\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"135.8300\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"136.7000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.6600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.3300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"16731440\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-13\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.7800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.0600\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.5700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.3200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"23363057\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-12\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.8500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.4200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.8700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.5200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"27009981\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-11\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"135.9100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"136.2700\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.0900\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.1200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"24726117\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-10\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.8000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"136.8862\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"134.5100\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.0800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"28903378\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-09\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.5900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.7500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.4600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.5200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"25773932\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-06\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.0300\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.1800\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.2000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.1000\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20824504\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-05\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.1100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.3837\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.7600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"140.0500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"26119520\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-04\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.3000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"137.6900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.4800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.6300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18015310\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-09-03\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.6100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"137.2000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.7000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.0400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18880773\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-30\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.1500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.1800\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.2700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.8600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"23946123\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-29\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.2500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.4400\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.9100\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.1200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20179716\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-28\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"134.8800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"135.7600\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"133.5500\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"135.5600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"17343042\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-27\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.3900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"136.7200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"134.6600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"135.7400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"23115635\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-26\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"134.9900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"135.5600\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"133.9000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"135.4500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20325271\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-23\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.1897\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.3500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"132.8000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"133.3900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"38515386\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-22\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.6600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.2000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.2900\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.7800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18709662\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-21\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.5500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.4935\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.0000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.7900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"14982314\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-20\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.2100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.7100\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"137.2400\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.2600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"21188998\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-19\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.8550\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.5500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.8850\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.4100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"24370543\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-16\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"134.8800\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"136.4600\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"134.7200\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.1300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"25026151\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-15\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"134.3900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"134.5800\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"132.2500\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"133.6800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"28125416\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-14\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.3600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"136.9200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"133.6700\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"133.9800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"32527251\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-13\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.0500\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.8000\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.0000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.6000\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"25496593\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-12\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.0700\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"137.8600\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.2400\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"135.7900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20484348\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-09\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.6100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.3800\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.4600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"137.7100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"23466701\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-08\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"136.6000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.9900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.9300\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.8900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"27496508\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-07\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"133.7900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"135.6500\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"131.8284\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"135.2800\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"33414539\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-06\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"133.8000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"135.6800\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"133.2100\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"134.6900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"32696651\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-05\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"133.3000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"133.9298\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"130.7800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"132.2100\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"42749551\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-02\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.0900\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"138.3200\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.2600\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.9000\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"30791624\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-08-01\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.0000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.9383\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.9300\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.0600\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"40557502\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-31\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.3300\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.4900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"135.0800\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.2700\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"38598786\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-30\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.1400\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"141.2199\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.8005\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"140.3500\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"16846528\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-29\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"141.5000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"141.5100\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.3663\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"141.0300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"16605870\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-26\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.3700\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"141.6750\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"140.3000\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"141.3400\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"19037600\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-25\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.4300\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.6100\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"139.3215\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"140.1900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18356859\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-24\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"138.9000\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.7400\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.8500\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"140.7200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"20738275\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-23\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"139.7600\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.9900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"138.0300\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"139.2900\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"18034589\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-22\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"137.4100\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"139.1900\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"137.3300\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"138.4300\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"25080760\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Date\"\>", "\[Rule]", "\<\"2019-07-19\"\>"}], ",", 
+     RowBox[{"\<\"Open\"\>", "\[Rule]", "\<\"140.2200\"\>"}], ",", 
+     RowBox[{"\<\"High\"\>", "\[Rule]", "\<\"140.6700\"\>"}], ",", 
+     RowBox[{"\<\"Low\"\>", "\[Rule]", "\<\"136.4500\"\>"}], ",", 
+     RowBox[{"\<\"Close\"\>", "\[Rule]", "\<\"136.6200\"\>"}], ",", 
+     RowBox[{"\<\"Volume\"\>", "\[Rule]", "\<\"48992364\"\>"}]}], 
+    "\[RightAssociation]"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.78492870012044*^9, 3.784928774538477*^9, 3.784928823008045*^9, 
+   3.784928939276494*^9, 3.784929027290881*^9, 3.784929102028097*^9, 
+   3.784930301073546*^9, {3.784930332352373*^9, 3.7849303614849443`*^9}},
+ CellLabel->"Out[57]=",ExpressionUUID->"6cacac32-7f2b-4ab6-95cc-9993f9ef3534"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"call", " ", "=", " ", 
+   RowBox[{"AlphaVantageMakeCall", "[", 
+    RowBox[{
+     RowBox[{"\"\<Function\>\"", "\[Rule]", "\"\<TIME_SERIES_INTRADAY\>\""}], 
+     ",", 
+     RowBox[{"\"\<Symbol\>\"", "\[Rule]", "\"\<MSFT\>\""}], ",", 
+     RowBox[{"\"\<APIKey\>\"", "\[Rule]", "\"\<9SOP9ZISQ3UOV9OT\>\""}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.784927423462245*^9, {3.7849275845075207`*^9, 3.7849275911583014`*^9}, {
+   3.7849277694483337`*^9, 3.7849277731067753`*^9}, 3.784927826973619*^9, {
+   3.7849284214724827`*^9, 3.784928424206814*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"711774dd-7aaf-42df-8e53-f9462fb25ca7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Complement", "[", 
+  RowBox[{
+   RowBox[{"Keys", "[", "call", "]"}], ",", 
+   RowBox[{"{", "\"\<Meta Data\>\"", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.784928425480361*^9, 3.784928469366577*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"a20d3344-4662-4aa6-818c-22259486759d"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"Time Series (60min)\"\>", "}"}]], "Output",
+ CellChangeTimes->{{3.784928426075865*^9, 3.784928469595386*^9}},
+ CellLabel->"Out[50]=",ExpressionUUID->"e7f6fa6a-ea15-4442-9c27-3d5fabcf2aef"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1379, 962},
+WindowMargins->{{189, Automatic}, {31, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 164, 3, 99, "Title",ExpressionUUID->"06ecc5e4-8465-448f-b8eb-2d77ac3f8ab3"],
+Cell[747, 27, 314, 8, 84, "Text",ExpressionUUID->"36eb6b88-7791-4cef-bee0-2a1ec17afe78"],
+Cell[1064, 37, 764, 16, 71, "Input",ExpressionUUID->"d408a380-be78-46fc-a3fb-7a9f3917e325",
+ InitializationCell->True],
+Cell[1831, 55, 3221, 68, 462, "Input",ExpressionUUID->"519be6a4-6121-475b-a2ab-0cc32f04c1e2",
+ InitializationCell->True],
+Cell[5055, 125, 1771, 39, 163, "Input",ExpressionUUID->"3d4be716-d2d3-4837-93bb-15cec52c7728",
+ InitializationCell->True],
+Cell[6829, 166, 6790, 155, 761, "Input",ExpressionUUID->"64f5c54f-1c1f-4e11-a650-31c17bb89749",
+ InitializationCell->True],
+Cell[13622, 323, 336, 6, 31, "Input",ExpressionUUID->"cac4f5e6-5097-475d-99c7-db7d38bca8b4"],
+Cell[CellGroupData[{
+Cell[13983, 333, 647, 11, 31, "Input",ExpressionUUID->"9dafa7f6-f7e9-48b9-91b8-146acce0366b"],
+Cell[14633, 346, 49464, 907, 2313, "Output",ExpressionUUID->"6cacac32-7f2b-4ab6-95cc-9993f9ef3534"]
+}, Open  ]],
+Cell[64112, 1256, 674, 14, 31, "Input",ExpressionUUID->"711774dd-7aaf-42df-8e53-f9462fb25ca7"],
+Cell[CellGroupData[{
+Cell[64811, 1274, 306, 6, 31, "Input",ExpressionUUID->"a20d3344-4662-4aa6-818c-22259486759d"],
+Cell[65120, 1282, 221, 3, 35, "Output",ExpressionUUID->"e7f6fa6a-ea15-4442-9c27-3d5fabcf2aef"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
