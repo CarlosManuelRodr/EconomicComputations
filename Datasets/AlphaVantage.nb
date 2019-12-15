@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     66910,       1323]
-NotebookOptionsPosition[     65369,       1289]
-NotebookOutlinePosition[     65705,       1304]
-CellTagsIndexPosition[     65662,       1301]
+NotebookDataLength[     78776,       1591]
+NotebookOptionsPosition[     76784,       1549]
+NotebookOutlinePosition[     77122,       1564]
+CellTagsIndexPosition[     77079,       1561]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -115,13 +115,273 @@ Cell[BoxData[{
      "\"\<RawJSON\>\""}], "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.784923316053184*^9, 3.784923316054228*^9}, {
-  3.784926270694757*^9, 3.784926347030857*^9}, {3.784926817666857*^9, 
-  3.7849268637542133`*^9}, {3.784926902074538*^9, 3.784926938988846*^9}, {
-  3.78492711355931*^9, 3.784927149148801*^9}, {3.784927197383254*^9, 
-  3.784927199316546*^9}, {3.7849276063110247`*^9, 3.7849276740698233`*^9}, {
-  3.7849277107892113`*^9, 3.78492775763678*^9}, {3.78492786317592*^9, 
-  3.784927863348317*^9}},
- CellLabel->"In[12]:=",ExpressionUUID->"519be6a4-6121-475b-a2ab-0cc32f04c1e2"],
+   3.784926270694757*^9, 3.784926347030857*^9}, {3.784926817666857*^9, 
+   3.7849268637542133`*^9}, {3.784926902074538*^9, 3.784926938988846*^9}, {
+   3.78492711355931*^9, 3.784927149148801*^9}, {3.784927197383254*^9, 
+   3.784927199316546*^9}, {3.7849276063110247`*^9, 3.7849276740698233`*^9}, {
+   3.7849277107892113`*^9, 3.78492775763678*^9}, {3.78492786317592*^9, 
+   3.784927863348317*^9}, 3.7854260789221373`*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"519be6a4-6121-475b-a2ab-0cc32f04c1e2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AlphaVantageCallBuild", "[", 
+  RowBox[{
+   RowBox[{"\"\<Function\>\"", "\[Rule]", "\"\<TIME_SERIES_INTRADAY\>\""}], 
+   ",", 
+   RowBox[{"\"\<Symbol\>\"", "\[Rule]", "\"\<MSFT\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7854260852554607`*^9, 3.785426095220427*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"0eff6d53-1fd9-414b-b12d-c4ee49bf489b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPRequest",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{PaneSelectorBox[{False -> GridBox[{{
+            GraphicsBox[{
+              RGBColor[0, 
+               NCache[
+                Rational[2, 3], 0.6666666666666666], 0], 
+              DiskBox[{0, 0}], 
+              InsetBox[
+               FormBox[
+                StyleBox["\"GET\"", 
+                 Directive[10, 
+                  GrayLevel[1], Bold], StripOnInput -> False], 
+                TraditionalForm], 
+               Scaled[{0.53, 0.48}]]}, ImageSize -> 
+             Dynamic[{
+               Automatic, (3 CurrentValue["FontCapHeight"])/
+                AbsoluteCurrentValue[Magnification]}], Background -> None], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"URL: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TemplateBox[{
+                    TagBox[
+                    "\"https://www.alphavantage.co/query?function=TIME_SERIES_\
+INTRADAY&symbol=MSFT&apikey=demo&datatype=json&interval=60min&outputsize=\
+compact\"", Short], 
+                    "https://www.alphavantage.co/query?function=TIME_SERIES_\
+INTRADAY&symbol=MSFT&apikey=demo&datatype=json&interval=60min&outputsize=\
+compact"}, "HyperlinkURL"], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"ContentType: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["None", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            GraphicsBox[{
+              RGBColor[0, 
+               NCache[
+                Rational[2, 3], 0.6666666666666666], 0], 
+              DiskBox[{0, 0}], 
+              InsetBox[
+               FormBox[
+                StyleBox["\"GET\"", 
+                 Directive[10, 
+                  GrayLevel[1], Bold], StripOnInput -> False], 
+                TraditionalForm], 
+               Scaled[{0.53, 0.48}]]}, ImageSize -> 
+             Dynamic[{
+               Automatic, (3 CurrentValue["FontCapHeight"])/
+                AbsoluteCurrentValue[Magnification]}], Background -> None], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"URL: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TemplateBox[{
+                    TagBox[
+                    "\"https://www.alphavantage.co/query?function=TIME_SERIES_\
+INTRADAY&symbol=MSFT&apikey=demo&datatype=json&interval=60min&outputsize=\
+compact\"", Short], 
+                    "https://www.alphavantage.co/query?function=TIME_SERIES_\
+INTRADAY&symbol=MSFT&apikey=demo&datatype=json&interval=60min&outputsize=\
+compact"}, "HyperlinkURL"], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"ContentType: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["None", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPRequest[
+   Association[
+   "Scheme" -> "https", "Domain" -> "www.alphavantage.co", 
+    "Path" -> {"query"}, 
+    "Query" -> {
+     "function" -> "TIME_SERIES_INTRADAY", "symbol" -> "MSFT", "apikey" -> 
+      "demo", "datatype" -> "json", "interval" -> "60min", "outputsize" -> 
+      "compact"}], 
+   Association[]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.785426096933626*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"1ccf2bfd-c679-4a1c-ba5e-181d4e8357b1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   InterpretationBox[
+    RowBox[{
+     TagBox["HTTPRequest",
+      "SummaryHead"], "[", 
+     DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = 
+      "Ready"}, 
+      TemplateBox[{PaneSelectorBox[{False -> GridBox[{{
+              GraphicsBox[{
+                RGBColor[0, 
+                 NCache[
+                  Rational[2, 3], 0.6666666666666666], 0], 
+                DiskBox[{0, 0}], 
+                InsetBox[
+                 FormBox[
+                  StyleBox["\"GET\"", 
+                   Directive[10, 
+                    GrayLevel[1], Bold], StripOnInput -> False], 
+                  TraditionalForm], 
+                 Scaled[{0.53, 0.48}]]}, ImageSize -> 
+               Dynamic[{
+                 Automatic, (3 CurrentValue["FontCapHeight"])/
+                  AbsoluteCurrentValue[Magnification]}], Background -> None], 
+              
+              GridBox[{{
+                 RowBox[{
+                   TagBox["\"URL: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox[
+                    TemplateBox[{
+                    TagBox[
+                    "\"https://www.alphavantage.co/query?function=TIME_SERIES_\
+INTRADAY&symbol=MSFT&apikey=demo&datatype=json&interval=60min&outputsize=\
+compact\"", Short], 
+                    "https://www.alphavantage.co/query?function=TIME_SERIES_\
+INTRADAY&symbol=MSFT&apikey=demo&datatype=json&interval=60min&outputsize=\
+compact"}, "HyperlinkURL"], "SummaryItem"]}]}, {
+                 RowBox[{
+                   TagBox["\"ContentType: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["None", "SummaryItem"]}]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {
+                "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> {
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+            GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+            GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+            BaselinePosition -> {1, 1}], True -> GridBox[{{
+              GraphicsBox[{
+                RGBColor[0, 
+                 NCache[
+                  Rational[2, 3], 0.6666666666666666], 0], 
+                DiskBox[{0, 0}], 
+                InsetBox[
+                 FormBox[
+                  StyleBox["\"GET\"", 
+                   Directive[10, 
+                    GrayLevel[1], Bold], StripOnInput -> False], 
+                  TraditionalForm], 
+                 Scaled[{0.53, 0.48}]]}, ImageSize -> 
+               Dynamic[{
+                 Automatic, (3 CurrentValue["FontCapHeight"])/
+                  AbsoluteCurrentValue[Magnification]}], Background -> None], 
+              
+              GridBox[{{
+                 RowBox[{
+                   TagBox["\"URL: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox[
+                    TemplateBox[{
+                    TagBox[
+                    "\"https://www.alphavantage.co/query?function=TIME_SERIES_\
+INTRADAY&symbol=MSFT&apikey=demo&datatype=json&interval=60min&outputsize=\
+compact\"", Short], 
+                    "https://www.alphavantage.co/query?function=TIME_SERIES_\
+INTRADAY&symbol=MSFT&apikey=demo&datatype=json&interval=60min&outputsize=\
+compact"}, "HyperlinkURL"], "SummaryItem"]}]}, {
+                 RowBox[{
+                   TagBox["\"ContentType: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["None", "SummaryItem"]}]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {
+                "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> {
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+            GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+            GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+            BaselinePosition -> {1, 1}]}, 
+         Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+       "SummaryPanel"],
+      DynamicModuleValues:>{}], "]"}],
+    HTTPRequest[
+     Association[
+     "Scheme" -> "https", "Domain" -> "www.alphavantage.co", 
+      "Path" -> {"query"}, 
+      "Query" -> {
+       "function" -> "TIME_SERIES_INTRADAY", "symbol" -> "MSFT", "apikey" -> 
+        "demo", "datatype" -> "json", "interval" -> "60min", "outputsize" -> 
+        "compact"}], 
+     Association[]],
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], ",", "\"\<RawJSON\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.78542623575103*^9, 3.785426241525228*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"cb45b959-f330-4b44-9f47-49f222f588b3"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{"\<\"Information\"\>", 
+   "\[Rule]", "\<\"The **demo** API key is for demo purposes only. Please \
+claim your free API key at (https://www.alphavantage.co/support/#api-key) to \
+explore our full API offerings. It takes fewer than 20 seconds, and we are \
+committed to making it free forever.\"\>"}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.7854262426686172`*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"d09e6517-ff03-455b-b5aa-e47288863854"]
+}, Open  ]],
 
 Cell[BoxData[{
  RowBox[{
@@ -162,7 +422,7 @@ Cell[BoxData[{
    3.784909620503113*^9, 3.784909624910644*^9}, {3.784922785165196*^9, 
    3.7849228057224817`*^9}, {3.784923309594058*^9, 3.784923314715138*^9}, {
    3.784927055443306*^9, 3.7849270680849943`*^9}, 3.784928924653433*^9},
- CellLabel->"In[19]:=",ExpressionUUID->"3d4be716-d2d3-4837-93bb-15cec52c7728"],
+ CellLabel->"In[6]:=",ExpressionUUID->"3d4be716-d2d3-4837-93bb-15cec52c7728"],
 
 Cell[BoxData[{
  RowBox[{
@@ -318,31 +578,31 @@ Cell[BoxData[{
    3.784928807240056*^9}, {3.784928927440413*^9, 3.784928931347979*^9}, 
    3.784929023441319*^9, {3.7849290982095537`*^9, 3.784929099151615*^9}, {
    3.784929143550044*^9, 3.7849292051209183`*^9}, {3.7849303548064203`*^9, 
-   3.784930416131981*^9}},ExpressionUUID->"64f5c54f-1c1f-4e11-a650-\
-31c17bb89749"],
+   3.784930416131981*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"64f5c54f-1c1f-4e11-a650-31c17bb89749"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"AlphaVantageSetAPIKey", "[", "\"\<9SOP9ZISQ3UOV9OT\>\"", "]"}], 
-  ";"}]], "Input",
+  RowBox[{"AlphaVantageSetAPIKey", "[", "\"\<demo\>\"", "]"}], ";"}]], "Input",\
+
  CellChangeTimes->{{3.784907600893134*^9, 3.7849076037072887`*^9}, {
-   3.784907738180613*^9, 3.784907740442419*^9}, 3.784908157293153*^9},
- CellLabel->"In[9]:=",ExpressionUUID->"cac4f5e6-5097-475d-99c7-db7d38bca8b4"],
+   3.784907738180613*^9, 3.784907740442419*^9}, 3.784908157293153*^9, {
+   3.7854272778485413`*^9, 
+   3.785427281495007*^9}},ExpressionUUID->"cac4f5e6-5097-475d-99c7-\
+db7d38bca8b4"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"AlphaVantageTimeSeriesDaily", "[", 
-  RowBox[{"\"\<MSFT\>\"", ",", 
-   RowBox[{"\"\<APIKey\>\"", "\[Rule]", "\"\<9SOP9ZISQ3UOV9OT\>\""}]}], 
-  "]"}]], "Input",
+ RowBox[{"AlphaVantageTimeSeriesDaily", "[", "\"\<MSFT\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.784909403990243*^9, 3.784909413438452*^9}, {
    3.784909482862216*^9, 3.784909483118197*^9}, {3.784909638839827*^9, 
    3.784909647573197*^9}, 3.784909684764009*^9, {3.784922665174129*^9, 
    3.784922666915578*^9}, {3.784928212878282*^9, 3.7849282179695673`*^9}, {
    3.784930309014215*^9, 3.784930309192925*^9}, {3.784930359941161*^9, 
-   3.78493036020044*^9}},
- CellLabel->"In[57]:=",ExpressionUUID->"9dafa7f6-f7e9-48b9-91b8-146acce0366b"],
+   3.78493036020044*^9}, {3.7854266559552107`*^9, 
+   3.785426656192766*^9}},ExpressionUUID->"9dafa7f6-f7e9-48b9-91b8-\
+146acce0366b"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1288,7 +1548,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{1379, 962},
-WindowMargins->{{189, Automatic}, {31, Automatic}},
+WindowMargins->{{Automatic, -1473}, {55, Automatic}},
 FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1308,21 +1568,29 @@ Cell[580, 22, 164, 3, 99, "Title",ExpressionUUID->"06ecc5e4-8465-448f-b8eb-2d77a
 Cell[747, 27, 314, 8, 84, "Text",ExpressionUUID->"36eb6b88-7791-4cef-bee0-2a1ec17afe78"],
 Cell[1064, 37, 764, 16, 71, "Input",ExpressionUUID->"d408a380-be78-46fc-a3fb-7a9f3917e325",
  InitializationCell->True],
-Cell[1831, 55, 3221, 68, 462, "Input",ExpressionUUID->"519be6a4-6121-475b-a2ab-0cc32f04c1e2",
+Cell[1831, 55, 3250, 68, 462, "Input",ExpressionUUID->"519be6a4-6121-475b-a2ab-0cc32f04c1e2",
  InitializationCell->True],
-Cell[5055, 125, 1771, 39, 163, "Input",ExpressionUUID->"3d4be716-d2d3-4837-93bb-15cec52c7728",
- InitializationCell->True],
-Cell[6829, 166, 6790, 155, 761, "Input",ExpressionUUID->"64f5c54f-1c1f-4e11-a650-31c17bb89749",
- InitializationCell->True],
-Cell[13622, 323, 336, 6, 31, "Input",ExpressionUUID->"cac4f5e6-5097-475d-99c7-db7d38bca8b4"],
 Cell[CellGroupData[{
-Cell[13983, 333, 647, 11, 31, "Input",ExpressionUUID->"9dafa7f6-f7e9-48b9-91b8-146acce0366b"],
-Cell[14633, 346, 49464, 907, 2313, "Output",ExpressionUUID->"6cacac32-7f2b-4ab6-95cc-9993f9ef3534"]
+Cell[5106, 127, 374, 7, 31, "Input",ExpressionUUID->"0eff6d53-1fd9-414b-b12d-c4ee49bf489b"],
+Cell[5483, 136, 5043, 112, 67, "Output",ExpressionUUID->"1ccf2bfd-c679-4a1c-ba5e-181d4e8357b1"]
 }, Open  ]],
-Cell[64112, 1256, 674, 14, 31, "Input",ExpressionUUID->"711774dd-7aaf-42df-8e53-f9462fb25ca7"],
 Cell[CellGroupData[{
-Cell[64811, 1274, 306, 6, 31, "Input",ExpressionUUID->"a20d3344-4662-4aa6-818c-22259486759d"],
-Cell[65120, 1282, 221, 3, 35, "Output",ExpressionUUID->"e7f6fa6a-ea15-4442-9c27-3d5fabcf2aef"]
+Cell[10563, 253, 5390, 118, 96, "Input",ExpressionUUID->"cb45b959-f330-4b44-9f47-49f222f588b3"],
+Cell[15956, 373, 518, 9, 82, "Output",ExpressionUUID->"d09e6517-ff03-455b-b5aa-e47288863854"]
+}, Open  ]],
+Cell[16489, 385, 1770, 39, 163, "Input",ExpressionUUID->"3d4be716-d2d3-4837-93bb-15cec52c7728",
+ InitializationCell->True],
+Cell[18262, 426, 6812, 155, 761, "Input",ExpressionUUID->"64f5c54f-1c1f-4e11-a650-31c17bb89749",
+ InitializationCell->True],
+Cell[25077, 583, 358, 8, 31, "Input",ExpressionUUID->"cac4f5e6-5097-475d-99c7-db7d38bca8b4"],
+Cell[CellGroupData[{
+Cell[25460, 595, 585, 9, 31, "Input",ExpressionUUID->"9dafa7f6-f7e9-48b9-91b8-146acce0366b"],
+Cell[26048, 606, 49464, 907, 2313, "Output",ExpressionUUID->"6cacac32-7f2b-4ab6-95cc-9993f9ef3534"]
+}, Open  ]],
+Cell[75527, 1516, 674, 14, 31, "Input",ExpressionUUID->"711774dd-7aaf-42df-8e53-f9462fb25ca7"],
+Cell[CellGroupData[{
+Cell[76226, 1534, 306, 6, 31, "Input",ExpressionUUID->"a20d3344-4662-4aa6-818c-22259486759d"],
+Cell[76535, 1542, 221, 3, 35, "Output",ExpressionUUID->"e7f6fa6a-ea15-4442-9c27-3d5fabcf2aef"]
 }, Open  ]]
 }, Open  ]]
 }

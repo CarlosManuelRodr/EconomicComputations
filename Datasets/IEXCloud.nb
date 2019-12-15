@@ -1,0 +1,604 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     29829,        596]
+NotebookOptionsPosition[     28724,        568]
+NotebookOutlinePosition[     29060,        583]
+CellTagsIndexPosition[     29017,        580]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["IEX Cloud Wrapper", "Title",
+ CellChangeTimes->{{3.7850043357763557`*^9, 
+  3.78500433893585*^9}},ExpressionUUID->"4eb7e7e8-23fc-48b9-8ddc-\
+ada9f11e7510"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"IEXCloudSetAPIKey", "[", "key_", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{"$IEXCAPIKey", " ", "=", " ", "key"}], ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "IEXCloudSetAPIKey", "[", "\"\<Tsk_c30137c3efd84ecabadf3fe64dddf43d\>\"", 
+   "]"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Sample", " ", "key"}], " ", "*)"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.784907356301696*^9, 3.784907356302352*^9}, {
+  3.784907456304199*^9, 3.784907514358259*^9}, {3.7849075612542477`*^9, 
+  3.784907594942223*^9}, {3.784908883878564*^9, 3.784908884200691*^9}, {
+  3.784909620503113*^9, 3.784909624910644*^9}, {3.784922785165196*^9, 
+  3.7849228057224817`*^9}, {3.784923309594058*^9, 3.784923314715138*^9}, {
+  3.78500435520977*^9, 3.785004390232267*^9}, {3.785004429176906*^9, 
+  3.78500443111229*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"47654a45-4f81-4a31-93f9-4dc248843dce"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"IEXCloudSetVersion", "[", "version_", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{"$IEXCloudAPIVersion", " ", "=", " ", "version"}], ")"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"IEXCloudSetVersion", "[", "\"\<stable\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"IEXCloudCallBuild", "[", 
+    RowBox[{"method_", ",", "query_", ",", 
+     RowBox[{"key_", " ", ":", "$IEXCAPIKey"}]}], "]"}], ":=", 
+   RowBox[{"HTTPRequest", "[", "\[IndentingNewLine]", 
+    RowBox[{"<|", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Scheme\>\"", "\[Rule]", "\"\<https\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Domain\>\"", "\[Rule]", "\"\<sandbox.iexapis.com\>\""}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Path\>\"", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"$IEXCloudAPIVersion", ",", "method"}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Query\>\"", "\[Rule]", 
+       RowBox[{"Prepend", "[", 
+        RowBox[{"query", ",", 
+         RowBox[{"\"\<token\>\"", "\[Rule]", "key"}]}], "]"}]}]}], 
+     "\[IndentingNewLine]", "|>"}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"IEXCloudMakeCall", "[", 
+    RowBox[{"method_", ",", "query_", ",", 
+     RowBox[{"key_", " ", ":", "$IEXCAPIKey"}]}], "]"}], ":=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+     RowBox[{"IEXCloudCallBuild", "[", 
+      RowBox[{"method", ",", "query", ",", "key"}], "]"}], ",", 
+     "\"\<RawJSON\>\""}], "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.784923316053184*^9, 3.784923316054228*^9}, {
+  3.784926270694757*^9, 3.784926347030857*^9}, {3.784926817666857*^9, 
+  3.7849268637542133`*^9}, {3.784926902074538*^9, 3.784926938988846*^9}, {
+  3.78492711355931*^9, 3.784927149148801*^9}, {3.784927197383254*^9, 
+  3.784927199316546*^9}, {3.7849276063110247`*^9, 3.7849276740698233`*^9}, {
+  3.7849277107892113`*^9, 3.78492775763678*^9}, {3.78492786317592*^9, 
+  3.784927863348317*^9}, {3.785004407491292*^9, 3.7850044391524553`*^9}, {
+  3.7850045167363358`*^9, 3.785004519104397*^9}, {3.785004755918705*^9, 
+  3.785004823998974*^9}, {3.78500487834476*^9, 3.7850048785573463`*^9}, {
+  3.785004960575384*^9, 3.7850049845305*^9}, {3.785005042417025*^9, 
+  3.7850051320711718`*^9}, {3.785005203390519*^9, 3.785005303318294*^9}, {
+  3.7850054175786943`*^9, 3.785005439217471*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"23a6e5c7-5c13-4dd1-af64-658e49e0bc8a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"IEXCloudCallBuild", "[", 
+  RowBox[{"\"\</time-series/REPORTED_FINANCIALS/AAPL\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<from\>\"", "\[Rule]", "\"\<2018-01-01\>\""}], ",", 
+     RowBox[{"\"\<to\>\"", "\[Rule]", "\"\<2019-06-01\>\""}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.785005623040509*^9, 3.785005623640571*^9}, 
+   3.785005779883347*^9},
+ CellLabel->"In[31]:=",ExpressionUUID->"58557f13-9268-459f-88ac-6e5881838ceb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPRequest",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{PaneSelectorBox[{False -> GridBox[{{
+            GraphicsBox[{
+              RGBColor[0, 
+               NCache[
+                Rational[2, 3], 0.6666666666666666], 0], 
+              DiskBox[{0, 0}], 
+              InsetBox[
+               FormBox[
+                StyleBox["\"GET\"", 
+                 Directive[10, 
+                  GrayLevel[1], Bold], StripOnInput -> False], 
+                TraditionalForm], 
+               Scaled[{0.53, 0.48}]]}, ImageSize -> 
+             Dynamic[{
+               Automatic, (3 CurrentValue["FontCapHeight"])/
+                AbsoluteCurrentValue[Magnification]}], Background -> None], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"URL: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TemplateBox[{
+                    TagBox[
+                    "\"https://sandbox.iexapis.com/stable/time-series/\
+REPORTED_FINANCIALS/AAPL?token=Tsk_c30137c3efd84ecabadf3fe64dddf43d&from=2018-\
+01-01&to=2019-06-01\"", Short], 
+                    "https://sandbox.iexapis.com/stable/time-series/REPORTED_\
+FINANCIALS/AAPL?token=Tsk_c30137c3efd84ecabadf3fe64dddf43d&from=2018-01-01&to=\
+2019-06-01"}, "HyperlinkURL"], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"ContentType: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["None", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            GraphicsBox[{
+              RGBColor[0, 
+               NCache[
+                Rational[2, 3], 0.6666666666666666], 0], 
+              DiskBox[{0, 0}], 
+              InsetBox[
+               FormBox[
+                StyleBox["\"GET\"", 
+                 Directive[10, 
+                  GrayLevel[1], Bold], StripOnInput -> False], 
+                TraditionalForm], 
+               Scaled[{0.53, 0.48}]]}, ImageSize -> 
+             Dynamic[{
+               Automatic, (3 CurrentValue["FontCapHeight"])/
+                AbsoluteCurrentValue[Magnification]}], Background -> None], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"URL: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TemplateBox[{
+                    TagBox[
+                    "\"https://sandbox.iexapis.com/stable/time-series/\
+REPORTED_FINANCIALS/AAPL?token=Tsk_c30137c3efd84ecabadf3fe64dddf43d&from=2018-\
+01-01&to=2019-06-01\"", Short], 
+                    "https://sandbox.iexapis.com/stable/time-series/REPORTED_\
+FINANCIALS/AAPL?token=Tsk_c30137c3efd84ecabadf3fe64dddf43d&from=2018-01-01&to=\
+2019-06-01"}, "HyperlinkURL"], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"ContentType: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["None", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPRequest[
+   Association[
+   "Scheme" -> "https", "Domain" -> "sandbox.iexapis.com", 
+    "Path" -> {"stable", "/time-series/REPORTED_FINANCIALS/AAPL"}, 
+    "Query" -> {
+     "token" -> "Tsk_c30137c3efd84ecabadf3fe64dddf43d", "from" -> 
+      "2018-01-01", "to" -> "2019-06-01"}], 
+   Association[]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.785005623815731*^9, 3.7850057805731773`*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"46ec3f5e-7f70-433c-930e-8e91a991f7e4"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"result", " ", "=", " ", 
+   RowBox[{"IEXCloudMakeCall", "[", 
+    RowBox[{"\"\</stock/AAPL/book\>\"", ",", 
+     RowBox[{"{", "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.78500532142937*^9, 3.7850053297333307`*^9}, {
+   3.785005360500313*^9, 3.785005360677544*^9}, 3.785005391428442*^9, {
+   3.7850054459206753`*^9, 3.785005449941695*^9}, {3.7850055013676043`*^9, 
+   3.78500550877227*^9}, {3.785005750425408*^9, 3.785005774765045*^9}, {
+   3.785006069585314*^9, 3.785006088849031*^9}, {3.785006130000503*^9, 
+   3.785006142079727*^9}, {3.785006231978805*^9, 3.785006247055243*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"05e756cc-ba98-4c32-bd9d-bc613e59014f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["result"], "Input",
+ CellChangeTimes->{{3.7850059301385193`*^9, 3.785005932194585*^9}, 
+   3.78500615350674*^9, {3.785006258826622*^9, 3.78500625964642*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"09fbd322-4473-4554-9864-19a4bbd962a6"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"quote\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"AAPL\"\>"}], ",", 
+      RowBox[{"\<\"companyName\"\>", "\[Rule]", "\<\"Apple, Inc.\"\>"}], ",", 
+      
+      RowBox[{"\<\"primaryExchange\"\>", "\[Rule]", "\<\"AASDQN\"\>"}], ",", 
+      RowBox[{"\<\"calculationPrice\"\>", "\[Rule]", "\<\"tops\"\>"}], ",", 
+      RowBox[{"\<\"open\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"openTime\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"close\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"closeTime\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"high\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"low\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"latestPrice\"\>", "\[Rule]", "270.9`"}], ",", 
+      RowBox[{"\<\"latestSource\"\>", "\[Rule]", "\<\"IEX price\"\>"}], ",", 
+      RowBox[{"\<\"latestTime\"\>", "\[Rule]", "\<\"3:59:54 PM\"\>"}], ",", 
+      RowBox[{"\<\"latestUpdate\"\>", "\[Rule]", "1590488159670"}], ",", 
+      RowBox[{"\<\"latestVolume\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"iexRealtimePrice\"\>", "\[Rule]", "274.8`"}], ",", 
+      RowBox[{"\<\"iexRealtimeSize\"\>", "\[Rule]", "104"}], ",", 
+      RowBox[{"\<\"iexLastUpdated\"\>", "\[Rule]", "1613310793129"}], ",", 
+      RowBox[{"\<\"delayedPrice\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"delayedPriceTime\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"extendedPrice\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"extendedChange\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"extendedChangePercent\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"extendedPriceTime\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"previousClose\"\>", "\[Rule]", "271.61`"}], ",", 
+      RowBox[{"\<\"previousVolume\"\>", "\[Rule]", "32850101"}], ",", 
+      RowBox[{"\<\"change\"\>", "\[Rule]", "1.72`"}], ",", 
+      RowBox[{"\<\"changePercent\"\>", "\[Rule]", "0.00656`"}], ",", 
+      RowBox[{"\<\"volume\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"iexMarketPercent\"\>", "\[Rule]", 
+       "0.018596652175727684`"}], ",", 
+      RowBox[{"\<\"iexVolume\"\>", "\[Rule]", "406892"}], ",", 
+      RowBox[{"\<\"avgTotalVolume\"\>", "\[Rule]", "25242126"}], ",", 
+      RowBox[{"\<\"iexBidPrice\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"iexBidSize\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"iexAskPrice\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"iexAskSize\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"marketCap\"\>", "\[Rule]", "1249407784638"}], ",", 
+      RowBox[{"\<\"peRatio\"\>", "\[Rule]", "23"}], ",", 
+      RowBox[{"\<\"week52High\"\>", "\[Rule]", "277"}], ",", 
+      RowBox[{"\<\"week52Low\"\>", "\[Rule]", "148"}], ",", 
+      RowBox[{"\<\"ytdChange\"\>", "\[Rule]", "0.716834`"}], ",", 
+      RowBox[{"\<\"lastTradeTime\"\>", "\[Rule]", "1584098387767"}], ",", 
+      RowBox[{"\<\"isUSMarketOpen\"\>", "\[Rule]", "False"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"bids\"\>", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"\<\"asks\"\>", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"\<\"trades\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "277.6`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "104"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "871881422"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1586070748143"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "281.15`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "10"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "883966732"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "True"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "True"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1650499709118"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "279.462`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "102"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "877483309"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1653134882617"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "273.88`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "117"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "879090955"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1576161991536"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "273.87`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "104"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "881821551"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1637619424689"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "281.82`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "196"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "870033968"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1586624878219"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "275.219`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "203"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "865208514"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1641584091394"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "279.08`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "708"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "861734827"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1643149325345"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "280.71`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "104"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "873426775"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1623904115173"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "276.19`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "102"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "845315491"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1643699925031"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "275.01`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "107"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "852848800"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1649113309567"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "273.592`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "104"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "850886324"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1584292783036"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "269.24`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "104"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "878208466"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1647905090889"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "277.2`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "103"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "844346149"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1641503255748"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "270.35`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "197"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "858180733"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1638702505993"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "280.71`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "104"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "868804991"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1624935933254"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "270.3`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "104"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "846067789"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1653758759640"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "281.8`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "100"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "861870659"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1621264849501"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "272.2`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "102"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "854805747"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1620099408460"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"price\"\>", "\[Rule]", "279.968`"}], ",", 
+        RowBox[{"\<\"size\"\>", "\[Rule]", "102"}], ",", 
+        RowBox[{"\<\"tradeId\"\>", "\[Rule]", "857225837"}], ",", 
+        RowBox[{"\<\"isISO\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOddLot\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isOutsideRegularHours\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isSinglePriceCross\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"isTradeThroughExempt\"\>", "\[Rule]", "False"}], ",", 
+        RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1590949451179"}]}], 
+       "\[RightAssociation]"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"systemEvent\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"systemEvent\"\>", "\[Rule]", "\<\"C\"\>"}], ",", 
+      RowBox[{"\<\"timestamp\"\>", "\[Rule]", "1642183481029"}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.785005932429275*^9, 3.7850061539244633`*^9, 
+  3.78500626007471*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"7e080d94-10ee-4742-aaf4-75e577131d46"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1379, 962},
+WindowMargins->{{Automatic, 268}, {44, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 161, 3, 99, "Title",ExpressionUUID->"4eb7e7e8-23fc-48b9-8ddc-ada9f11e7510"],
+Cell[744, 27, 966, 21, 71, "Input",ExpressionUUID->"47654a45-4f81-4a31-93f9-4dc248843dce",
+ InitializationCell->True],
+Cell[1713, 50, 2593, 56, 301, "Input",ExpressionUUID->"23a6e5c7-5c13-4dd1-af64-658e49e0bc8a",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[4331, 110, 478, 10, 31, "Input",ExpressionUUID->"58557f13-9268-459f-88ac-6e5881838ceb"],
+Cell[4812, 122, 5085, 111, 67, "Output",ExpressionUUID->"46ec3f5e-7f70-433c-930e-8e91a991f7e4"]
+}, Open  ]],
+Cell[9912, 236, 708, 12, 31, "Input",ExpressionUUID->"05e756cc-ba98-4c32-bd9d-bc613e59014f"],
+Cell[CellGroupData[{
+Cell[10645, 252, 249, 3, 31, "Input",ExpressionUUID->"09fbd322-4473-4554-9864-19a4bbd962a6"],
+Cell[10897, 257, 17799, 307, 887, "Output",ExpressionUUID->"7e080d94-10ee-4742-aaf4-75e577131d46"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
