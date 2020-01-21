@@ -6,7 +6,7 @@ import os
 ipc_tickers = [ 'AC.MX','ALPEKA.MX','ALSEA.MX','AMXL.MX','ASURB.MX','BBAJIOO.MX',
                 'BIMBOA.MX','BOLSAA.MX','BSMXB.MX','CEMEXCPO.MX','CUERVO.MX','GAPB.MX',
                 'GCARSOA1.MX','GCC.MX','GENTERA.MX','GFNORTEO.MX','GMEXICOB.MX',
-                'GRUMAB.MX','IENOVA.MX','KIMBERA.MX','KOF','LABB.MX','LIVEPOLC-1.MX',
+                'GRUMAB.MX','IENOVA.MX','KIMBERA.MX','KOFUBL.MX','LABB.MX','LIVEPOLC-1.MX',
                 'MEGACPO.MX','ORBIA.MX','OMAB.MX','PE&OLES.MX','PINFRA.MX','RA.MX',
                 'TLEVISACPO.MX']
                 
