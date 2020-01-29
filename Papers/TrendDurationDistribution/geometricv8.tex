@@ -40,9 +40,11 @@ In financial time series there are time intervals in which market indices values
 
 \section{Introduction}
 \label{intro}
-One of the goals of financial-market analysis is to predict the future movements of prices and financial indices. In order to achieve this goal, a huge variety of methods to forecast markets behavior have been developed, ranging from complex mathematical models even to astrological pseudo-scientific techniques. An approach that has been recently growing in popularity is the statistical analysis of large sets of data, which has now become possible due to the increasing availability of computer power and high quality data sets. This approach has benefited from the contributions not only from economists, but also from many physicists and mathematicians who have applied methods and ideas of probability theory and statistical physics to finance. As a result of these efforts, a set of nontrivial statistical properties of historical data was observed and classified as ``stylized facts'' \cite{Rama}, which are expected to provide a better insight on markets structure and behavior.
+One of the goals of financial-market analysis is to predict the future movements of price assets and financial indices. In order to achieve this goal, a huge variety of methods to forecast markets behavior have been developed, ranging from complex mathematical models even to astrological pseudo-scientific techniques. An approach that has been recently growing in popularity is the statistical analysis of large sets of data, which has now become possible due to the increasing availability of computer power and high quality data sets. This approach has benefited from the contributions not only from economists, but also from many physicists and mathematicians who have applied methods and ideas of probability theory and statistical physics to finance. As a result of these efforts, a set of nontrivial statistical properties of historical data was observed and classified as ``stylized facts'' \cite{Rama}, which are expected to provide a better insight on markets structure and behavior.
 
-When looking at the price values of an asset on a time series chart, it is common to observe ``trends'' in which most of the values are greater (or smaller) than the previous ones, that can be seen as composed by smaller elemental trends, with periods in which the value increases or decreases monotonically, a popular subject within the so called \emph{technical analysis} of financial markets. Among other things, patterns in the trend direction of financial data are believed to be indicators of changes in the market and an indicative of future prices. The effectiveness of this technical analysis approach to financial markets is disputed and put at a stake by what is known as the Efficient Market Hypothesis (EMH), which indicates that current prices reflect available information of future values. These kind of trends are the main subject of the present work, in which we describe a basic statistical model consistent with the EMH that allows us to quantify trend direction in financial time series. Before going further, it is necessary to give some definitions. In Subsections \ref{def}, \ref{efficient} and \ref{stylized} of this introduction these definitions and other useful information will be presented. In Section \ref{model}, a model for the distribution of trends durations will be developed from the efficient market hypothesis. Section \ref{methodology} will explain how the data were analyzed and section \ref{discussion} provides an interpretation of the analysis.
+When looking at the price values of an asset on a time series chart, it is common to observe ``trends'' in which most of the values are greater (or smaller) than the previous ones, that can be seen as composed by smaller elemental trends, with periods in which the value increases or decreases monotonically, a popular subject within the so called \emph{technical analysis} of financial markets. Among other things, patterns in the trend direction of financial data are believed to be indicators of changes in the market and an indicative of future prices. The effectiveness of this technical analysis approach to financial markets is disputed and put at a stake by what is known as the Efficient Market Hypothesis (EMH), which indicates that current prices reflect available information of future values. These kind of elemental uninterrupted trends are the main subject of the present work, in which we describe a basic statistical model consistent with the EMH that allows us to quantify trend direction in financial time series. Fron now on, we call this elemental trends only trends.
+
+Before going further, it is necessary to give some definitions. In Subsections \ref{def}, \ref{efficient} and \ref{stylized} of this introduction these definitions and other useful information will be presented. In Section \ref{model}, a model for the distribution of trends durations will be developed from the efficient market hypothesis. Section \ref{methodology} will explain how the data were analyzed and section \ref{discussion} provides an interpretation of the analysis.
 \subsection{Definitions} 
 \label{def}
 Let $S(t)$ be the price of an asset or an index value at time $t$ and $X(t) = \log{S(t)}$ its logarithm. A common quantity used to study trends in financial time series is the \emph{log-return} of the price of an asset, $S(t)$ defined at time $t$ as
@@ -57,14 +59,16 @@ In this paper, we consider $\Delta t$ equal to 1 day and we use the values of th
 
 An \emph{elemental trend} of duration $k$ is defined as a subseries of $k+1$ values within the series $S(t)$ in which every value is greater (for an uptrend) or smaller or equal (for a downtrend) than the preceding one, an example of which is shown in Figure \ref{fig:trends} for the prices of the DJIA, in a time period between October 1978 and January 1979. The duration of an elemental downward/upward trend in daily data is the number of days before the price increases/decreases, as the price varies. Trends like these, and their duration are important because THIS AND THAT AND because MORE AND MORE ...
 
-The aim of this work is to present a statistical study of these type of short elementary trends using market closing price values from four different indices over a time sampling scale of $\Delta t=1$ day in the period between October 30, 1978 and September 26, 2019.
-
-\begin{figure}
+\begin{figure}[htb!]
 \begin{center}
 \includegraphics[width=0.45\textwidth]{img/TrendReturnsVisual.pdf}
 \end{center}
 \caption{\small \label{fig:trends}Elemental trends on the time series for the prices of the DJIA during the period from Oct/30/1978 to Jan/09/1979. The dashed line segments join the starting and ending points of each elemental trend.}
 \end{figure}
+
+The aim of this work is to present a statistical study of these type of short elementary trends using market closing price values from four different indices over a time sampling scale of $\Delta t=1$ day in the period between October 30, 1978 and September 26, 2019.
+
+
 
 
 \subsection{The Efficient Market Hypothesis}
@@ -171,13 +175,22 @@ In the next section we describe the data used for testing the model presented, a
 
 \section{Methodology}
 \label{methodology}
-\subsection{Data}
-For this work, data corresponding to closing prices of four indices were analyzed, namely Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and Nikkei 225 during the period between 30 October 1978 - 26 September 2019. The data was obtained from Yahoo Finance.
+\subsection{Data sample}
+For this work, data corresponding to dayly closing values of four indices were analyzed, namely Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and Nikkei 225 during the period between 30 October 1978 - 26 September 2019. The data was obtained from Yahoo Finance.
 
-\subsection{Building the sample}
+\subsection{Building the trends}
+
 For each series of index values, several time windows of 504 trading days (which represent two trading years in average) were created, each one shifted forward by one trading day with respect to the previous one. This procedure resulted in 4830 time windows for the DJIA, 4216 for the NASDAQ, 3901 for the IPC and 4584 for the Nikkei. For every sample in the time windows, the number of days at time $t$ before every sign change $T_d(t)$ (defined as the trend duration) is measured. For instance, given the sequence $-$ $ - + + + + + $ $-$, the recorded times will be $T_d = (2,5,1)$.
 
-Two histograms were built for each market measuring $T_d$ on the whole sample without time windows. One for upward trends and the other one for downward trends. Examples of both uptrend and downtrend histograms for different time windows are shown in Figure \ref{fig:oneGT}.
+Two histograms were built for each market measuring $T_d$ on the whole sample without time windows. One for upward trends and the other one for downward trends. histograms  of the overall of uptrends and downtrends durations for all samples are shown in Figure \ref{fig:AllTrends}. Figure xx shows the durations of separated uptrends and downtrends.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{img/AllTrends}
+\end{center}
+\caption{\small \label{fig:AllTrends}.}
+\end{figure}
+
 
 
 \subsection{The Anderson-Darling goodness of fit test}
