@@ -66,7 +66,7 @@ The aim of this work is to present a statistical study of these type of short el
 
 \subsection{The Efficient Market Hypothesis}
 \label{efficient}
-The Efficient Market Hypothesis (EMH) claims that the market quickly finds the rational price for a traded asset \cite{Mantegna}. The most important consequence of this hypothesis was shown by P. Samuelson \cite{Samuelson 2} and it is the fact that the best forecast for the future price of an asset is its present price.
+The Efficient Market Hypothesis (EMH), first stated by Eugene F. Fama in 1970, claims that the market quickly finds the rational price for a traded asset \cite{Mantegna}, as the current value incorporates all possible information about the price in the future. The most important consequence of this hypothesis was shown by P. Samuelson \cite{Samuelson 2} and it is the fact that the best forecast for the future price of an asset is its present price.
 \begin{equation}
 \label{emh1}
 \mathbb{E}(S(t+\Delta t)|\mathcal{F}_t ) = S(t),
@@ -116,27 +116,27 @@ S(t)=S_0 \prod_{i=1}^t Q_i
 \end{equation}
 where $Q_i$ are independent and identically distributed random variables following a log-normal distribution with parameters $\mu$ and $\sigma$. These two parameters come from the corresponding normal distribution for log-returns. As a direct consequence of the EMH in the form \eqref{emh2}, we have
 \begin{equation}
-\mathbb{E} (Q) = 1 + r_F,
+\mathbb{E} (Q) = 1 + r_F.
 \end{equation}
-and for a log-normal distributed random variable, we have also
+Whilst for a log-normal distributed random variable the expected value is
 \begin{equation}
-\mathbb{E}(Q) = \mathrm{e}^\mu \mathrm{e}^{\sigma^2/2}.
+\mathbb{E}(Q) = \mathrm{e}^\mu \mathrm{e}^{\sigma^2/2},
 \end{equation}
-This leads to a dependence between the two parameters
+by combining these two equations the following dependence between the parameters is found:
 \begin{equation}
-\sigma = \sqrt{2\left(\log(1+r_f)-\mu \right)}
+\sigma = \sqrt{2\left(\log(1+r_f)-\mu \right)},
 \end{equation}
-Starting from the cumulative distribution function for a log-normal random variable
+which allows us to compare the parameters from the distributions measures of the index price returns, as the values of the two parameters  $\mu$ and $\sigma$ come from the corresponding normal distribution for log-returns of the price data. Further, from the cumulative distribution function of a log-normal random variable 
 \begin{equation}
 F_Q(u)=\mathbb{P}(Q \leq u) = \frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
 \frac{\log(u) -\mu}{\sqrt{2 \sigma^2}} \right),
 \end{equation}
-the probability of a negative sign would be given by
+we find that the probability of a negative sign of the return is given by 
 \begin{equation}
 q=F_Q(1)=\mathbb{P}(Q \leq 1)=\frac{1}{2} + \frac{1}{2} \mathrm{erf}\left(
-\frac{- \mu}{\sqrt{4(\log(1+r_f)-\mu)}} \right),
+\frac{- \mu}{\sqrt{4(\log(1+r_f)-\mu)}} \right).
 \end{equation}
-which yields $q = 0.5 \pm 0.05$ for typical markets (see figure \ref{fig:qvalue}).
+For typical markets, the value of the risk-free rate of returns oscillates in the range $0 < r_F \leq 0.061$ as can be seen in Figure \ref{fig:qvalue}, where the values of $r_F$ corresponding to three markets for the period from 1978 to 2018 are shown. Using these values for $r_F$, the probability of negative returns is fund to be $q=0.5 \pm 0.05$, which is compatible with the EMH model, thus the Bernoulli process is a good approximation for the probability of a change in sign for the return data.
 
 \begin{figure}[h!tb]
 	\centering
@@ -158,16 +158,18 @@ which yields $q = 0.5 \pm 0.05$ for typical markets (see figure \ref{fig:qvalue}
 	\label{fig:qvalue}
 \end{figure}
 
-It becomes natural to use the biased Bernoulli process as the null hypothesis for the time series of signs \cite{scalasold}. It is well known that the distribution of the number $k$ of failures needed to get one success for a Bernoulli process with success probability $p=1-q$ is the geometric distribution ${\cal{G}}(p)$; the number of failures $N$ is given by
+Under this framework, it becomes natural to use the biased Bernoulli process as the null hypothesis for the time series of sign changes of the log-returns \cite{scalasold}. It is well known that the distribution of the number $k$ of failures needed to get one success for a Bernoulli process with success probability $p=1-q$ is the geometric distribution ${\cal{G}}(p)$. The number of failures is then given by 
 \begin{equation}
 P(k)=\mathbb{P}(N=k) = p(1 - p)^{k} = pq^{k}.
 \end{equation}
 The duration of a elemental downward trend in daily data is the number of days before the price increases, so the distribution of such trend durations should follow a geometric distribution. An identical argument applies to the duration of a upward trend. Such sequences of identical outcomes are also known as {\em runs} or {\em clumps} in the mathematical literature.
 
+In the next section we describe the data used for testing the model presented, as well as a discussion of the goodness of fit test applied to compare the observed and expected distributions, namely the  geometric distribution, of the duration of the trends of upwards/downwards price, which coincide with the sign of the log-returns.
+
 \section{Methodology}
 \label{methodology}
 \subsection{Data}
-Four indices were analyzed, namely Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and Nikkei 225 during the period 30 October 1978 - 26 September 2019. The data was obtained from Yahoo Finance.
+For this work, data corresponding to closing prices of four indices were analyzed, namely Dow Jones Industrial Average (DJIA), NASDAQ Composite, the Mexican \'Indice de Precios y Cotizaciones (IPC) and Nikkei 225 during the period between 30 October 1978 - 26 September 2019. The data was obtained from Yahoo Finance.
 
 \subsection{Building the sample}
 For each series of index values, several time windows of 504 trading days (which represent two trading years in average) were created, each one shifted forward by one trading day with respect to the previous one. This procedure resulted in 4830 time windows for the DJIA, 4216 for the NASDAQ, 3901 for the IPC and 4584 for the Nikkei. For every sample in the time windows, the number of days at time $t$ before every sign change $T_d(t)$ (defined as the trend duration) is measured. For instance, given the sequence $-$ $ - + + + + + $ $-$, the recorded times will be $T_d = (2,5,1)$.
@@ -176,9 +178,16 @@ Two histograms were built for each market measuring $T_d$ on the whole sample wi
 
 
 \subsection{The Anderson-Darling goodness of fit test}
-In order to compare the observed and expected distributions of  trend durations, the Anderson-Darling test described in reference \cite{Anderson} was used. The Anderson-Darling test was found to be the most suitable for this purpose because it places more weight on the tails of a distribution than other goodness of fit tests.
+In order to compare the observed and expected distributions of trend durations, the Anderson-Darling test described in reference \cite{Anderson} was used. The AD test belongs to a family of goodness of fit tests called the Cramér-von Mises tests, which includes the Anderson-Darling test, Watson's test and the Cramér-von Mises test itself. The family was originally developed to test continuous distributions, but a generalization for discrete distributions appeared for the first time in an article by Choulakian {\it et.al.} \cite{Choulakian}. The Anderson-Darling test was found to be the most suitable for this purpose because it places more weight on the tails of a distribution than other goodness of fit tests.
 
-Two separate tests were applied. The first is a test of whether the observed data is drawn from a distribution belonging to a parametric family $\mathcal{G}(p)$. This tell us whether the price fluctuations can be modelled as a Bernoulli process. The second is a test of whether the observed data comes from a geometric distribution with $p = 0.5$. Based on the model outlined in section \ref{model} we interpret a rejection of this null hypothesis as evidence that the market is not efficient.
+The principle behind this kind of tests is defining a statistic that serves to measure the distance between a theoretical distribution function $F_0(k)$ and the empirical (cumulative) distribution function for $n$ events, $\mathbf{F}_n(k)$. Every value of the statistic is associated with a $p$-value, that can be interpreted as the probability of obtaining a value of the statistic at least as large as the one obtained, given that the null hypothesis
+\begin{equation}  \label{eq_null_hypothesis} 
+\mathcal{H}_0: \mathbf{F}_n(k) = F_0 
+\end{equation}
+
+\noindent is true. If the $p$-value is smaller than a previously defined threshold value $\alpha$, the null hypothesis is rejected.
+
+Two separate tests were applied. The first is a test of whether the observed data is drawn from a distribution belonging to a parametric family $\mathcal{G}(p)$. This tell us whether the price fluctuations can be modeled as a Bernoulli process. The second is a test of whether the observed data comes from a geometric distribution with $p = 0.5$. Based on the model outlined in section \ref{model} we interpret a rejection of this null hypothesis as evidence that the market is not efficient.
 
 For a more complete discussion on Anderson-Darling Methodology see appendix \ref{apendice}.
 
