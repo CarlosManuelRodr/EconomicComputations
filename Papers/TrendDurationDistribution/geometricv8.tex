@@ -40,7 +40,7 @@
 
   \section{Introduction}
   \label{intro}
-  PEQUEÑO TEXTO SOBRE LA IMPORTANCIA DEL EXPERIMENTO Y EL ANÁLISIS DE DATOS EMPÍRICOS EN ECONOPHYSICS
+  INSERTAR TEXTO SOBRE LA IMPORTANCIA DEL EXPERIMENTO Y EL ANÁLISIS DE DATOS EMPÍRICOS EN ECONOPHYSICS
   
 One of the goals of financial-market analysis is to predict the future movements of price assets and financial indices. In order to achieve this goal, a huge variety of methods to forecast markets behavior have been developed, ranging from complex mathematical models even to astrological pseudo-scientific techniques. An approach that has been recently growing in popularity is the statistical analysis of large sets of data, which has now become possible due to the increasing availability of computer power and high quality data sets. This approach has benefited from the contributions not only from economists, but also from many physicists and mathematicians who have applied methods and ideas of probability theory and statistical physics to finance. As a result of these efforts, a set of nontrivial statistical properties of historical data was observed and classified as ``stylized facts'' \cite{Rama}, which are expected to provide a better insight on markets structure and behavior.
 
@@ -190,11 +190,19 @@ Two histograms were built for each market measuring $T_d$ on the whole sample wi
 \begin{center}
 \includegraphics[width=0.45\textwidth]{img/AllTrends}
 \end{center}
-\caption{\small Histogram of the overall of trends duration, of our four data samples. Descriptive statistics is displayed. AQUÍ HAY QUE PONER ESTA FIGURA HECHA CON LOS DATOS ANALIZADOS EN ESTE PAPER \label{fig:AllTrends}.}
+\caption{\small Histogram of the overall of trends duration, of our four data samples. Descriptive statistics is displayed. AQUÍ HAY QUE PONER ESTA FIGURA HECHA CON LOS DATOS ANALIZADOS EN ESTE PAPER. A LO MEJOR LA ESTADÍSTICA DESCRIPTIVA IRÍA MEJOR EN UNA TABLA SEPARADA \label{fig:AllTrends}.}
 \end{figure}
 
 \subsection{Constructing returns corresponding to elemental trends}
-AQUÍ HAY QUE PONER LAS DISTRIBUCIONES DE LOS TRENDS RETURNS Y UN TEXTO ADECUADO. 
+AQUÍ HAY QUE PONER LAS DISTRIBUCIONES DE LOS TRENDS RETURNS Y UN TEXTO ADECUADO.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{img/AllTReturns}
+\end{center}
+\caption{\small TReturns histogram for all data samples. Descriptive statistics is displayed. AQUÍ HAY QUE PONER ESTA FIGURA HECHA CON LOS DATOS ANALIZADOS EN ESTE PAPER. A LO MEJOR LA ESTADÍSTICA DESCRIPTIVA IRÍA MEJOR EN UNA TABLA SEPARADA \label{fig:AllTrends}.}
+\end{figure}
+
 
 \subsection{The Anderson-Darling goodness of fit test}
 In order to compare the observed and expected distributions of trend durations, the Anderson-Darling test described in reference \cite{Anderson} was used. The AD test belongs to a family of goodness of fit tests called the Cramér-von Mises tests, which includes the Anderson-Darling test, Watson's test and the Cramér-von Mises test itself. The family was originally developed to test continuous distributions, but a generalization for discrete distributions appeared for the first time in an article by Choulakian {\it et.al.} \cite{Choulakian}. The Anderson-Darling test was found to be the most suitable for this purpose because it places more weight on the tails of a distribution than other goodness of fit tests.
@@ -369,7 +377,7 @@ For the parametric family test in figure \ref{fig:PiValuesADFam}, it was observe
 \subsubsection{Trends Returns Volatility}
 
 \section{Discussion}
-It was observed that as time passes, the direction of price changes for the IPC and the NASDAQ is better described by a geometric distribution following the efficient market hypothesis $\mathcal{G}(0.5)$ (Figures \ref{fig:nasdaq} and \ref{fig:ipc}). Meanwhile the distribution of trend durations for the Dow Jones and Nikkei is generally reasonably well fitted by the geometric distribution. This fact can be interpreted as a possible evidence that the Mexican stock market (that has become public and regulated since 1975) has been increasing its efficiency, as reported by previous research \cite{Achach}. The same claim can be made about the NASDAQ, given that it is also a market of relatively recent creation. In contrast, the Dow Jones Industrial Average index represents a more mature market. However, there is also evidence that the New York Stock Exchange, represented by the Dow Jones, has swiftly increased its efficiency between the beginning of the 1980s and the end of the 1990s \cite{NYSE}. Figure \ref{fig:dji} shows that for the Dow Jones, the greatest deviations from the geometric distribution in the studied period occurred between the years 2000-2011. Figure \ref{fig:nikkei} shows that for the Nikkei, the greatest deviations from the geometric distribution in the studied period occurred between the years 1980-2000. 
+It was observed that as time passes, the direction of price changes for the IPC and the NASDAQ is better described by a geometric distribution following the efficient market hypothesis $\mathcal{G}(0.5)$ (Figures \ref{fig:nasdaq} and \ref{fig:ipc}). Meanwhile the distribution of trend durations for the Dow Jones and Nikkei is generally reasonably well fitted by the geometric distribution. This fact can be interpreted as a possible evidence that the Mexican stock market (that has become public and regulated since 1975) has been increasing its efficiency, as reported by previous research \cite{Achach}. The same claim can be made about the NASDAQ, given that it is also a market of relatively recent creation. In contrast, the Dow Jones Industrial Average index represents a more mature market. However, there is also evidence that the New York Stock Exchange, represented by the Dow Jones, has swiftly increased its efficiency between the beginning of the 1980s and the end of the 1990s \cite{NYSE}. Figure \ref{fig:dji} shows that for the Dow Jones, the greatest deviations from the geometric distribution in the studied period occurred between the years 2000-2011. Figure \ref{fig:nikkei} shows that for the Nikkei, the greatest deviations from the geometric distribution in the studied period occurred between the years 1980-2000.
 
 
 \section{Conclusions}
