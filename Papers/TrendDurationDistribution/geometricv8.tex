@@ -184,7 +184,9 @@ For this work, data corresponding to dayly closing values of four indices were a
 
 For each series of index values, several time windows of 504 trading days (which represent two trading years in average) were created, each one shifted forward by one trading day with respect to the previous one. This procedure resulted in 4830 time windows for the DJIA, 4216 for the NASDAQ, 3901 for the IPC and 4584 for the Nikkei. For every sample in the time windows, the number of days at time $t$ before every sign change $T_d(t)$ (defined as the trend duration) is measured. For instance, given the sequence $-$ $ - + + + + + $ $-$, the recorded times will be $T_d = (2,5,1)$.
 
-Two histograms were built for each market measuring $T_d$ on the whole sample without time windows. One for upward trends and the other one for downward trends. histograms  of the overall of uptrends and downtrends durations for all samples are shown in Figure \ref{fig:AllTrends}. Figure xx shows the durations of separated uptrends and downtrends.
+Histograms  of the overall of uptrends and downtrends durations for all samples are shown in Figure \ref{fig:AllTrends}.
+
+
 
 \begin{figure}
 \begin{center}
@@ -192,6 +194,8 @@ Two histograms were built for each market measuring $T_d$ on the whole sample wi
 \end{center}
 \caption{\small Histogram of the overall of trends duration, of our four data samples. Descriptive statistics is displayed. AQUÍ HAY QUE PONER ESTA FIGURA HECHA CON LOS DATOS ANALIZADOS EN ESTE PAPER. A LO MEJOR LA ESTADÍSTICA DESCRIPTIVA IRÍA MEJOR EN UNA TABLA SEPARADA \label{fig:AllTrends}.}
 \end{figure}
+
+In order to perform our analysis, two histograms were built for each market measuring $T_d$ on the whole sample without time windows. One for upward trends and the other one for downward trends. 
 
 \subsection{Constructing returns corresponding to elemental trends}
 AQUÍ HAY QUE PONER LAS DISTRIBUCIONES DE LOS TRENDS RETURNS Y UN TEXTO ADECUADO.
