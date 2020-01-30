@@ -319,6 +319,7 @@ Needs["AdvancedMapping`"]
 
 Returns[prices_, lag_:1]:= N[Log[Drop[prices,lag]]-Log[Drop[prices,-lag]]];
 DatedReturns[dates_, prices_, lag_:1] := Transpose[{Drop[dates, -1], N[Log[Drop[prices, lag]] - Log[Drop[prices, -lag]]]}];
+DatedReturns[datedPrices_, lag_:1] := DatedReturns[datedPrices[[All, 1]], datedPrices[[All, 2]], lag];
 
 UncorrelatedReturns[prices_, lag_]:= Take[Returns[prices, lag], {1, -1, lag+1}];
 
