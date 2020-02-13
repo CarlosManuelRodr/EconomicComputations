@@ -24,7 +24,7 @@ result = list(map(lambda ticker: get_intraday_data_from_ticker(ticker), ipc_tick
 if not os.path.exists('BMV'):
     os.makedirs('BMV')
 
-currentDate = date.today().strftime("%d-%m-%Y")
+currentDate = date.today().strftime("%Y-%m-%d")
 if not os.path.exists('BMV/' + currentDate):
     os.makedirs('BMV/' + currentDate)
 for i in range(len(ipc_tickers)):
