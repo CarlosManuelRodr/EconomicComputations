@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     56649,       1390]
-NotebookOptionsPosition[     53701,       1335]
-NotebookOutlinePosition[     54038,       1350]
-CellTagsIndexPosition[     53995,       1347]
+NotebookDataLength[     58015,       1455]
+NotebookOptionsPosition[     54977,       1398]
+NotebookOutlinePosition[     55405,       1415]
+CellTagsIndexPosition[     55362,       1412]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -69,7 +69,7 @@ Cell[BoxData[
   3.775315561526162*^9, 3.775315591559514*^9}, {3.778609793782337*^9, 
   3.778609818466599*^9}, {3.778609958116081*^9, 3.778609966249319*^9}},
  CellLabel->
-  "In[104]:=",ExpressionUUID->"0c904a72-482a-4eae-a5dc-82ad6531b313"],
+  "In[118]:=",ExpressionUUID->"0c904a72-482a-4eae-a5dc-82ad6531b313"],
 
 Cell[BoxData[
  RowBox[{
@@ -79,11 +79,12 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{
        RowBox[{"NotebookDirectory", "[", "]"}], ",", 
-       "\"\<DJI_NASDAQ_MXX_NIKKEI_dataset.wdx\>\""}], "}"}], "]"}], "]"}]}], 
-  ";"}]], "Input",
- CellChangeTimes->{{3.778609868699403*^9, 3.778609884182879*^9}},
+       "\"\<DJI_NASDAQ_MXX_NIKKEI_datasetV2.wdx\>\""}], "}"}], "]"}], "]"}]}],
+   ";"}]], "Input",
+ CellChangeTimes->{{3.778609868699403*^9, 3.778609884182879*^9}, 
+   3.806071694628648*^9},
  CellLabel->
-  "In[100]:=",ExpressionUUID->"b402280e-429b-4c15-a6e8-d92270ad7f92"],
+  "In[119]:=",ExpressionUUID->"b402280e-429b-4c15-a6e8-d92270ad7f92"],
 
 Cell[BoxData[
  RowBox[{
@@ -103,7 +104,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.7786099231968*^9, 3.7786099348004713`*^9}, {
   3.778609981423934*^9, 3.778609997215836*^9}},
  CellLabel->
-  "In[106]:=",ExpressionUUID->"9d9c8913-3be9-4e9a-add5-07cc504f234e"],
+  "In[120]:=",ExpressionUUID->"9d9c8913-3be9-4e9a-add5-07cc504f234e"],
 
 Cell[CellGroupData[{
 
@@ -115,22 +116,25 @@ Cell[BoxData[
   "]"}]], "Input",
  CellChangeTimes->{{3.778610002784693*^9, 3.7786100523909197`*^9}},
  CellLabel->
-  "In[110]:=",ExpressionUUID->"a3af4d4c-5b7b-4464-8851-bbe5c598dd67"],
+  "In[121]:=",ExpressionUUID->"a3af4d4c-5b7b-4464-8851-bbe5c598dd67"],
 
 Cell[BoxData[
- TemplateBox[{RowBox[{
+ TemplateBox[{
+   RowBox[{
      StyleBox["\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
-     "\"Thu 26 Sep 2019\""}],RowBox[{"DateObject", "[", 
+     "\"Fri 7 Aug 2020\""}], 
+   RowBox[{"DateObject", "[", 
      RowBox[{
        RowBox[{"{", 
-         RowBox[{"2019", ",", "9", ",", "26"}], "}"}], ",", "\"Day\"", ",", 
+         RowBox[{"2020", ",", "8", ",", "7"}], "}"}], ",", "\"Day\"", ",", 
        "\"Gregorian\"", ",", 
        RowBox[{"-", "5.`"}]}], "]"}]},
   "DateObject",
   Editable->False]], "Output",
- CellChangeTimes->{{3.778610004939294*^9, 3.778610053074357*^9}},
+ CellChangeTimes->{{3.778610004939294*^9, 3.778610053074357*^9}, 
+   3.8060724207663813`*^9},
  CellLabel->
-  "Out[110]=",ExpressionUUID->"91d6f819-8836-4b99-b2b3-c3c73ba322f2"]
+  "Out[121]=",ExpressionUUID->"1e138ee4-56db-4c97-a246-606a86f0ada3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -141,15 +145,15 @@ Cell[BoxData[
    RowBox[{"All", ",", "\"\<Name\>\""}], "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.778610094271452*^9, 3.7786100987906723`*^9}},
  CellLabel->
-  "In[111]:=",ExpressionUUID->"57bbbb4e-f20c-4f36-9447-266cb1f9334c"],
+  "In[122]:=",ExpressionUUID->"57bbbb4e-f20c-4f36-9447-266cb1f9334c"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"\<\"^DJI\"\>", ",", "\<\"^IXIC\"\>", ",", "\<\"^MXX\"\>", 
    ",", "\<\"^N225\"\>"}], "}"}]], "Output",
- CellChangeTimes->{3.778610099026186*^9},
+ CellChangeTimes->{3.778610099026186*^9, 3.8060724234114256`*^9},
  CellLabel->
-  "Out[111]=",ExpressionUUID->"917ff588-b8c1-404e-b2a9-892bf705156d"]
+  "Out[122]=",ExpressionUUID->"ddc907cd-0da1-41ee-8876-8e1be09e5050"]
 }, Open  ]],
 
 Cell[BoxData[{
@@ -171,7 +175,7 @@ Cell[BoxData[{
     RowBox[{"[", "4", "]"}], "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.7786100836395197`*^9, 3.778610120510841*^9}},
  CellLabel->
-  "In[166]:=",ExpressionUUID->"2ca2b39f-d550-4de3-a129-45f88a8dcf4f"],
+  "In[123]:=",ExpressionUUID->"2ca2b39f-d550-4de3-a129-45f88a8dcf4f"],
 
 Cell[BoxData[{
  RowBox[{
@@ -201,7 +205,7 @@ Cell[BoxData[{
   3.7786103570017776`*^9, 3.778610364527047*^9}, {3.778610398257571*^9, 
   3.778610403583578*^9}},
  CellLabel->
-  "In[170]:=",ExpressionUUID->"7a40ebfd-758e-4980-bf3b-bfdfc3257ebc"],
+  "In[127]:=",ExpressionUUID->"7a40ebfd-758e-4980-bf3b-bfdfc3257ebc"],
 
 Cell[BoxData[{
  RowBox[{
@@ -231,7 +235,7 @@ Cell[BoxData[{
   3.77861035944956*^9, 3.778610365479097*^9}, {3.778610407297538*^9, 
   3.77861041185282*^9}},
  CellLabel->
-  "In[172]:=",ExpressionUUID->"884f4020-8138-446d-b77a-7f7e61c39d2f"],
+  "In[129]:=",ExpressionUUID->"884f4020-8138-446d-b77a-7f7e61c39d2f"],
 
 Cell[BoxData[{
  RowBox[{
@@ -261,7 +265,7 @@ Cell[BoxData[{
   3.778610360714078*^9, 3.778610367229534*^9}, {3.778610414457539*^9, 
   3.778610416596636*^9}},
  CellLabel->
-  "In[174]:=",ExpressionUUID->"21b617db-674f-49e9-8e6e-4c96bff849e8"],
+  "In[131]:=",ExpressionUUID->"21b617db-674f-49e9-8e6e-4c96bff849e8"],
 
 Cell[BoxData[{
  RowBox[{
@@ -291,7 +295,7 @@ Cell[BoxData[{
   3.778610361584879*^9, 3.7786103696469173`*^9}, {3.778610415225391*^9, 
   3.77861041871659*^9}},
  CellLabel->
-  "In[176]:=",ExpressionUUID->"9f072701-0941-420f-9b79-a54fe91e8128"],
+  "In[133]:=",ExpressionUUID->"9f072701-0941-420f-9b79-a54fe91e8128"],
 
 Cell[BoxData[
  RowBox[{
@@ -301,7 +305,7 @@ Cell[BoxData[
   ";"}]], "Input",
  CellChangeTimes->{{3.77861043600602*^9, 3.778610448828093*^9}},
  CellLabel->
-  "In[179]:=",ExpressionUUID->"c31016a9-2979-4726-9c0a-281786f0699c"],
+  "In[135]:=",ExpressionUUID->"c31016a9-2979-4726-9c0a-281786f0699c"],
 
 Cell[CellGroupData[{
 
@@ -312,17 +316,19 @@ Cell[BoxData[
     RowBox[{"{", 
      RowBox[{
       RowBox[{"NotebookDirectory", "[", "]"}], ",", 
-      "\"\<DJI_NASDAQ_MXX_NIKKEI_datasetV2.wdx\>\""}], "}"}], "]"}], ",", 
+      "\"\<DJI_NASDAQ_MXX_NIKKEI_datasetV3.wdx\>\""}], "}"}], "]"}], ",", 
    "updatedDataset"}], "]"}]], "Input",
- CellChangeTimes->{{3.7786104568357887`*^9, 3.7786104673419533`*^9}},
+ CellChangeTimes->{{3.7786104568357887`*^9, 3.7786104673419533`*^9}, {
+  3.8060724407065067`*^9, 3.8060724408355813`*^9}},
  CellLabel->
-  "In[180]:=",ExpressionUUID->"a1d7754e-e9a0-4c5a-b8ff-e247ebe29441"],
+  "In[136]:=",ExpressionUUID->"a1d7754e-e9a0-4c5a-b8ff-e247ebe29441"],
 
-Cell[BoxData["\<\"/home/carlos/Documentos/Programacion/EconomicComputations/\
-Datasets/DJI_NASDAQ_MXX_NIKKEI_datasetV2.wdx\"\>"], "Output",
- CellChangeTimes->{3.7786104688485727`*^9},
+Cell[BoxData["\<\"C:\\\\Users\\\\hp\\\\Documents\\\\Programacion\\\\\
+EconomicComputations\\\\Datasets\\\\Prices\\\\DJI_NASDAQ_MXX_NIKKEI_datasetV3.\
+wdx\"\>"], "Output",
+ CellChangeTimes->{3.7786104688485727`*^9, 3.806072446303112*^9},
  CellLabel->
-  "Out[180]=",ExpressionUUID->"3a0ba02d-1977-4b6a-970c-f08a8772be4c"]
+  "Out[136]=",ExpressionUUID->"13f5af7c-b56a-4be9-9480-c2fbeb3d40bd"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -381,10 +387,11 @@ Cell[BoxData[
            RowBox[{"\<\"Dates\"\>", "\[Rule]", 
             RowBox[{"{", 
              RowBox[{
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Mon 30 Oct 1978\""}],
+                   Plain], "\"Mon 30 Oct 1978\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -393,10 +400,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Tue 31 Oct 1978\""}],
+                   Plain], "\"Tue 31 Oct 1978\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -405,10 +413,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Thu 2 Nov 1978\""}],RowBox[{"DateObject", "[", 
+                   Plain], "\"Thu 2 Nov 1978\""}], 
+                RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "11", ",", "2"}], "}"}], ",", 
@@ -416,10 +426,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Fri 3 Nov 1978\""}],RowBox[{"DateObject", "[", 
+                   Plain], "\"Fri 3 Nov 1978\""}], 
+                RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "11", ",", "3"}], "}"}], ",", 
@@ -427,10 +439,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Sun 5 Nov 1978\""}],RowBox[{"DateObject", "[", 
+                   Plain], "\"Sun 5 Nov 1978\""}], 
+                RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "11", ",", "5"}], "}"}], ",", 
@@ -438,10 +452,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Mon 6 Nov 1978\""}],RowBox[{"DateObject", "[", 
+                   Plain], "\"Mon 6 Nov 1978\""}], 
+                RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "11", ",", "6"}], "}"}], ",", 
@@ -449,10 +465,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Wed 8 Nov 1978\""}],RowBox[{"DateObject", "[", 
+                   Plain], "\"Wed 8 Nov 1978\""}], 
+                RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "11", ",", "8"}], "}"}], ",", 
@@ -460,10 +478,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Thu 9 Nov 1978\""}],RowBox[{"DateObject", "[", 
+                   Plain], "\"Thu 9 Nov 1978\""}], 
+                RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "11", ",", "9"}], "}"}], ",", 
@@ -471,10 +491,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Fri 10 Nov 1978\""}],
+                   Plain], "\"Fri 10 Nov 1978\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -483,10 +504,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Sun 12 Nov 1978\""}],
+                   Plain], "\"Sun 12 Nov 1978\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -497,10 +519,11 @@ Cell[BoxData[
                Editable->False], ",", 
               TemplateBox[{"10334"},
                "OutputSizeLimit`Skeleton"], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Thu 12 Sep 2019\""}],
+                   Plain], "\"Thu 12 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -509,10 +532,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Fri 13 Sep 2019\""}],
+                   Plain], "\"Fri 13 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -521,10 +545,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Sat 14 Sep 2019\""}],
+                   Plain], "\"Sat 14 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -533,10 +558,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Mon 16 Sep 2019\""}],
+                   Plain], "\"Mon 16 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -545,10 +571,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Tue 17 Sep 2019\""}],
+                   Plain], "\"Tue 17 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -557,10 +584,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Thu 19 Sep 2019\""}],
+                   Plain], "\"Thu 19 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -569,10 +597,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Fri 20 Sep 2019\""}],
+                   Plain], "\"Fri 20 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -581,10 +610,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Sun 22 Sep 2019\""}],
+                   Plain], "\"Sun 22 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -593,10 +623,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Mon 23 Sep 2019\""}],
+                   Plain], "\"Mon 23 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -605,10 +636,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                "DateObject",
                Editable->False], ",", 
-              TemplateBox[{RowBox[{
+              TemplateBox[{
+                RowBox[{
                   StyleBox[
                   "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                   Plain], "\"Wed 25 Sep 2019\""}],
+                   Plain], "\"Wed 25 Sep 2019\""}], 
                 RowBox[{"DateObject", "[", 
                   RowBox[{
                     RowBox[{"{", 
@@ -630,7 +662,7 @@ Cell[BoxData[
                DynamicBox[ToBoxes[
                  FEPrivate`FrontEndResource[
                  "FEStrings", "sizeBriefExplanation"], StandardForm],
-                ImageSizeCache->{61., {2., 8.}}],
+                ImageSizeCache->{40.5, {2., 5.}}],
                StripOnInput->False,
                DynamicUpdating->True,
                LineSpacing->{1, 2},
@@ -661,7 +693,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
                 StandardForm],
-               ImageSizeCache->{54., {0., 8.}}],
+               ImageSizeCache->{50.5, {1., 5.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -698,7 +730,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
                 StandardForm],
-               ImageSizeCache->{61., {0., 8.}}],
+               ImageSizeCache->{42., {1., 5.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -735,7 +767,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
                 StandardForm],
-               ImageSizeCache->{46., {0., 8.}}],
+               ImageSizeCache->{81.5, {2., 5.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -772,7 +804,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
                 StandardForm],
-               ImageSizeCache->{83., {0., 8.}}],
+               ImageSizeCache->{99., {1., 5.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -887,10 +919,12 @@ Cell[BoxData[
              RowBox[{"\<\"Dates\"\>", "\[Rule]", 
               RowBox[{"{", 
                RowBox[{
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Mon 30 Oct 1978\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Mon 30 Oct 1978\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "10", ",", "30"}], "}"}], ",", 
@@ -898,10 +932,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Tue 31 Oct 1978\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Tue 31 Oct 1978\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "10", ",", "31"}], "}"}], ",", 
@@ -909,10 +945,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Thu 2 Nov 1978\""}],
+                    Plain], "\"Thu 2 Nov 1978\""}], 
                   RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
@@ -921,10 +958,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Fri 3 Nov 1978\""}],
+                    Plain], "\"Fri 3 Nov 1978\""}], 
                   RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
@@ -933,10 +971,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Sun 5 Nov 1978\""}],
+                    Plain], "\"Sun 5 Nov 1978\""}], 
                   RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
@@ -945,10 +984,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Mon 6 Nov 1978\""}],
+                    Plain], "\"Mon 6 Nov 1978\""}], 
                   RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
@@ -957,10 +997,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Wed 8 Nov 1978\""}],
+                    Plain], "\"Wed 8 Nov 1978\""}], 
                   RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
@@ -969,10 +1010,11 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Thu 9 Nov 1978\""}],
+                    Plain], "\"Thu 9 Nov 1978\""}], 
                   RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
@@ -981,10 +1023,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Fri 10 Nov 1978\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Fri 10 Nov 1978\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "11", ",", "10"}], "}"}], ",", 
@@ -992,10 +1036,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Sun 12 Nov 1978\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Sun 12 Nov 1978\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"1978", ",", "11", ",", "12"}], "}"}], ",", 
@@ -1005,10 +1051,12 @@ Cell[BoxData[
                  Editable->False], ",", 
                 TemplateBox[{"10335"},
                  "OutputSizeLimit`Skeleton"], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Fri 13 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Fri 13 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "13"}], "}"}], ",", 
@@ -1016,10 +1064,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Sat 14 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Sat 14 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "14"}], "}"}], ",", 
@@ -1027,10 +1077,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Mon 16 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Mon 16 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "16"}], "}"}], ",", 
@@ -1038,10 +1090,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Tue 17 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Tue 17 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "17"}], "}"}], ",", 
@@ -1049,10 +1103,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Thu 19 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Thu 19 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "19"}], "}"}], ",", 
@@ -1060,10 +1116,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Fri 20 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Fri 20 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "20"}], "}"}], ",", 
@@ -1071,10 +1129,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Sun 22 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Sun 22 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "22"}], "}"}], ",", 
@@ -1082,10 +1142,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Mon 23 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Mon 23 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "23"}], "}"}], ",", 
@@ -1093,10 +1155,12 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False], ",", 
-                TemplateBox[{RowBox[{
+                TemplateBox[{
+                  RowBox[{
                     StyleBox[
                     "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
-                    Plain], "\"Wed 25 Sep 2019\""}],RowBox[{"DateObject", "[", 
+                    Plain], "\"Wed 25 Sep 2019\""}], 
+                  RowBox[{"DateObject", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"2019", ",", "9", ",", "25"}], "}"}], ",", 
@@ -1104,7 +1168,6 @@ Cell[BoxData[
                     RowBox[{"-", "5.`"}]}], "]"}]},
                  "DateObject",
                  Editable->False]}], "}"}]}]}], "\[RightAssociation]"}], ",", 
-           
            RowBox[{"\[LeftAssociation]", 
             TemplateBox[{"1"},
              "OutputSizeLimit`Skeleton"], "\[RightAssociation]"}], ",", 
@@ -1126,7 +1189,7 @@ Cell[BoxData[
                DynamicBox[ToBoxes[
                  FEPrivate`FrontEndResource[
                  "FEStrings", "sizeBriefExplanation"], StandardForm],
-                ImageSizeCache->{61., {2., 8.}}],
+                ImageSizeCache->{40.5, {2., 5.}}],
                StripOnInput->False,
                DynamicUpdating->True,
                LineSpacing->{1, 2},
@@ -1157,7 +1220,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
                 StandardForm],
-               ImageSizeCache->{54., {0., 8.}}],
+               ImageSizeCache->{50.5, {1., 5.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -1194,7 +1257,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
                 StandardForm],
-               ImageSizeCache->{61., {0., 8.}}],
+               ImageSizeCache->{42., {1., 5.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -1231,7 +1294,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
                 StandardForm],
-               ImageSizeCache->{46., {0., 8.}}],
+               ImageSizeCache->{81.5, {2., 5.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -1268,7 +1331,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
                 StandardForm],
-               ImageSizeCache->{83., {0., 8.}}],
+               ImageSizeCache->{99., {1., 5.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -1333,10 +1396,12 @@ Cell[BoxData[
  CellLabel->"Out[90]=",ExpressionUUID->"19f476fd-9d1f-482e-ae41-7ea539a054af"]
 }, Open  ]]
 },
-WindowSize->{1395, 750},
-WindowMargins->{{Automatic, 193}, {Automatic, 105}},
-FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
-StyleDefinitions->"Default.nb"
+WindowSize->{949, 467},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>0.8 Inherited,
+FrontEndVersion->"12.1 para Microsoft Windows (64-bit) (March 18, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"13bf20f0-44de-4c13-a785-b9306488365c"
 ]
 (* End of Notebook Content *)
 
@@ -1349,48 +1414,48 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 237, 4, 31, "Input",ExpressionUUID->"437a9360-677f-456f-bbc7-8455ff413c23"],
-Cell[798, 26, 1947, 45, 255, "Input",ExpressionUUID->"0c904a72-482a-4eae-a5dc-82ad6531b313",
+Cell[558, 20, 237, 4, 22, "Input",ExpressionUUID->"437a9360-677f-456f-bbc7-8455ff413c23"],
+Cell[798, 26, 1947, 45, 171, "Input",ExpressionUUID->"0c904a72-482a-4eae-a5dc-82ad6531b313",
  InitializationCell->True],
-Cell[2748, 73, 455, 12, 31, "Input",ExpressionUUID->"b402280e-429b-4c15-a6e8-d92270ad7f92"],
-Cell[3206, 87, 708, 18, 31, "Input",ExpressionUUID->"9d9c8913-3be9-4e9a-add5-07cc504f234e"],
+Cell[2748, 73, 483, 13, 23, "Input",ExpressionUUID->"b402280e-429b-4c15-a6e8-d92270ad7f92"],
+Cell[3234, 88, 708, 18, 22, "Input",ExpressionUUID->"9d9c8913-3be9-4e9a-add5-07cc504f234e"],
 Cell[CellGroupData[{
-Cell[3939, 109, 317, 8, 31, "Input",ExpressionUUID->"a3af4d4c-5b7b-4464-8851-bbe5c598dd67"],
-Cell[4259, 119, 549, 13, 44, "Output",ExpressionUUID->"91d6f819-8836-4b99-b2b3-c3c73ba322f2"]
+Cell[3967, 110, 317, 8, 22, "Input",ExpressionUUID->"a3af4d4c-5b7b-4464-8851-bbe5c598dd67"],
+Cell[4287, 120, 584, 16, 36, "Output",ExpressionUUID->"1e138ee4-56db-4c97-a246-606a86f0ada3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4845, 137, 271, 6, 31, "Input",ExpressionUUID->"57bbbb4e-f20c-4f36-9447-266cb1f9334c"],
-Cell[5119, 145, 268, 6, 35, "Output",ExpressionUUID->"917ff588-b8c1-404e-b2a9-892bf705156d"]
+Cell[4908, 141, 271, 6, 22, "Input",ExpressionUUID->"57bbbb4e-f20c-4f36-9447-266cb1f9334c"],
+Cell[5182, 149, 292, 6, 25, "Output",ExpressionUUID->"ddc907cd-0da1-41ee-8876-8e1be09e5050"]
 }, Open  ]],
-Cell[5402, 154, 719, 19, 101, "Input",ExpressionUUID->"2ca2b39f-d550-4de3-a129-45f88a8dcf4f"],
-Cell[6124, 175, 1053, 28, 55, "Input",ExpressionUUID->"7a40ebfd-758e-4980-bf3b-bfdfc3257ebc"],
-Cell[7180, 205, 1053, 28, 55, "Input",ExpressionUUID->"884f4020-8138-446d-b77a-7f7e61c39d2f"],
-Cell[8236, 235, 1046, 28, 55, "Input",ExpressionUUID->"21b617db-674f-49e9-8e6e-4c96bff849e8"],
-Cell[9285, 265, 1056, 28, 55, "Input",ExpressionUUID->"9f072701-0941-420f-9b79-a54fe91e8128"],
-Cell[10344, 295, 325, 8, 31, "Input",ExpressionUUID->"c31016a9-2979-4726-9c0a-281786f0699c"],
+Cell[5489, 158, 719, 19, 68, "Input",ExpressionUUID->"2ca2b39f-d550-4de3-a129-45f88a8dcf4f"],
+Cell[6211, 179, 1053, 28, 38, "Input",ExpressionUUID->"7a40ebfd-758e-4980-bf3b-bfdfc3257ebc"],
+Cell[7267, 209, 1053, 28, 38, "Input",ExpressionUUID->"884f4020-8138-446d-b77a-7f7e61c39d2f"],
+Cell[8323, 239, 1046, 28, 38, "Input",ExpressionUUID->"21b617db-674f-49e9-8e6e-4c96bff849e8"],
+Cell[9372, 269, 1056, 28, 38, "Input",ExpressionUUID->"9f072701-0941-420f-9b79-a54fe91e8128"],
+Cell[10431, 299, 325, 8, 22, "Input",ExpressionUUID->"c31016a9-2979-4726-9c0a-281786f0699c"],
 Cell[CellGroupData[{
-Cell[10694, 307, 435, 11, 31, "Input",ExpressionUUID->"a1d7754e-e9a0-4c5a-b8ff-e247ebe29441"],
-Cell[11132, 320, 266, 4, 35, "Output",ExpressionUUID->"3a0ba02d-1977-4b6a-970c-f08a8772be4c"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[11435, 329, 273, 5, 31, "Input",ExpressionUUID->"d6fcddac-cace-4c24-8d6c-264745d30383"],
-Cell[11711, 336, 234, 4, 35, "Output",ExpressionUUID->"67fd7c8e-1f2b-4385-b6e1-b747c22b9463"]
+Cell[10781, 311, 488, 12, 23, "Input",ExpressionUUID->"a1d7754e-e9a0-4c5a-b8ff-e247ebe29441"],
+Cell[11272, 325, 319, 5, 25, "Output",ExpressionUUID->"13f5af7c-b56a-4be9-9480-c2fbeb3d40bd"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11982, 345, 257, 5, 31, "Input",ExpressionUUID->"d923354f-9d96-4d32-9405-fda20047fc23"],
-Cell[12242, 352, 342, 6, 35, "Output",ExpressionUUID->"71fb56b3-03eb-4d25-b90e-09f012062a1a"]
+Cell[11628, 335, 273, 5, 22, "Input",ExpressionUUID->"d6fcddac-cace-4c24-8d6c-264745d30383"],
+Cell[11904, 342, 234, 4, 25, "Output",ExpressionUUID->"67fd7c8e-1f2b-4385-b6e1-b747c22b9463"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12621, 363, 163, 3, 31, "Input",ExpressionUUID->"8de25935-89f1-4077-959f-7a5bb4f36df3"],
-Cell[12787, 368, 19875, 468, 227, "Output",ExpressionUUID->"2fa7f01c-f39c-43c1-90d2-c9cbbd4a1275"]
+Cell[12175, 351, 257, 5, 22, "Input",ExpressionUUID->"d923354f-9d96-4d32-9405-fda20047fc23"],
+Cell[12435, 358, 342, 6, 25, "Output",ExpressionUUID->"71fb56b3-03eb-4d25-b90e-09f012062a1a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32699, 841, 200, 4, 31, "Input",ExpressionUUID->"a016e734-7d76-4d81-ba48-120b3e8baa82"],
-Cell[32902, 847, 279, 5, 35, "Output",ExpressionUUID->"27715e6a-ffbf-4ca4-9897-122c8d1e079f"]
+Cell[12814, 369, 163, 3, 22, "Input",ExpressionUUID->"8de25935-89f1-4077-959f-7a5bb4f36df3"],
+Cell[12980, 374, 20340, 494, 194, "Output",ExpressionUUID->"2fa7f01c-f39c-43c1-90d2-c9cbbd4a1275"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33218, 857, 544, 13, 31, "Input",ExpressionUUID->"751d717b-bca5-49f6-8690-03f15611cf3f"],
-Cell[33765, 872, 19920, 460, 229, "Output",ExpressionUUID->"19f476fd-9d1f-482e-ae41-7ea539a054af"]
+Cell[33357, 873, 200, 4, 22, "Input",ExpressionUUID->"a016e734-7d76-4d81-ba48-120b3e8baa82"],
+Cell[33560, 879, 279, 5, 25, "Output",ExpressionUUID->"27715e6a-ffbf-4ca4-9897-122c8d1e079f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33876, 889, 544, 13, 22, "Input",ExpressionUUID->"751d717b-bca5-49f6-8690-03f15611cf3f"],
+Cell[34423, 904, 20538, 491, 194, "Output",ExpressionUUID->"19f476fd-9d1f-482e-ae41-7ea539a054af"]
 }, Open  ]]
 }
 ]

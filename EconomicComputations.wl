@@ -571,7 +571,7 @@ FindImportantDates[extremeDates_List, sameMarkets_Integer, window_Integer:100] :
 ];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Symmetry analysis*)
 
 
@@ -630,11 +630,6 @@ If[FileExistsQ[exeFile],
 		|>;
 		
 		Return[testResult];
-	]
-	,
-	MessageDialog[
-	"In order to be able to use the Tn symmetry statistic functions, you need them to compile them manually.
-Please follow the instructions in the README file."
 	]
 ];
 
